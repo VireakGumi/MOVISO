@@ -1,9 +1,11 @@
-<<<<<<< HEAD
-
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
     margin-top: 5%;
 }
-.background_seller_customer_choosin{
+.background{
     position: absolute;
     left: 0px;
     top: 0px;
@@ -19,13 +21,13 @@ form{
     flex-direction: row;
     background-color: rgba(192, 185, 185, 0.623);
     justify-content: space-evenly;
-    width: 75%;
+    width: 70%;
     height: 70vh;
     margin: auto;
 }
 .form_left{
     text-align: center;
-    width: 73%;
+    width: 70%;
 }
 .logo_on_form{
     margin-top: 4.8%;
@@ -93,67 +95,28 @@ button:nth-child(1){
 button:nth-child(1):hover{
     background-color: rgb(143, 6, 6); ;
     color: white;
-=======
-*{
-    margin: 0;
-    padding: 0;
 }
-body{
-    font-family: sans-serif;
-    margin-top: 5%;
-    background-image: url(../../assets/bg-register-customer.png);
-    background-size: cover;
-}
-form{
-    display: flex;
-    flex-direction: row;
-    width: 70%;
-    height: 80vh;
-    margin: auto;
-}
-.form-left{
-    text-align: center;
-    background-color: rgba(239, 196, 196, 0.756);
-    flex:1%; 
-}
-img{
-    margin-top: 9%;
-}
-.form-right{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    flex: 1%;
-    background-color: rgba(232, 209, 209, 0.822);
-    padding: 4%;
-
-}
-input{
+.container input{
     margin-bottom: 5%;
-    width: 80%;
 }
-button{
+.container button{
     width: 30%;
     padding: 2%;
     background-color: rgb(143, 6, 6);
     border: none;
     color: white;
-    margin-left: 70%;
+    margin-left: 70%; 
     border-radius: 10px;
 }
 h3{
     color: rgb(143, 6, 6);
-    padding: 5%;
+    padding-bottom: 5%;
     font-weight: bold;
 }
-h2{
-    padding: 5%;
+.container h2{
+    padding: 8% 0% 5% 0%;
     font-weight: bold;
-}
-p{
-    padding: 5%;
 }
 .icon img{
     padding: 2%;
->>>>>>> 1422e519e0e33a783243f2f4a3aaba328dcf83e3
-}
+} 
