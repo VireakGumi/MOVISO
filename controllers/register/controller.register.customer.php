@@ -1,0 +1,2 @@
+<?php
+$isSeller = 'seller'; 
