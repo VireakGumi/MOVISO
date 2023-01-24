@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTER CUSTOMER</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../views/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../views/css/style.css">
 </head>
 
@@ -42,7 +42,7 @@
                 <input type="date" class="form-control" placeholder="Date of birth *" name="dateofbirth">
                 <small class="form-text text-danger"><?php echo $date_error; ?></small>
 
-                <button>SUBMIT</button>
+                <button >SUBMIT</button>
             </div>
         </div>
     </form>
