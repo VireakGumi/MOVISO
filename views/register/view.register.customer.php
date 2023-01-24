@@ -49,11 +49,3 @@
 </body>
 
 </html>
-<?php
-if ( $userName_valid && $email_valid && $password_valid  && $creditCard_valid  && $date_valid){
-    echo $userName. "<br>";
-    echo $email. "<br>";
-    echo $password. "<br>";
-    echo $creditCard. "<br>";
-    echo $date. "<br>";
-}

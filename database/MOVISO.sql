@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2023 at 08:17 AM
+-- Generation Time: Jan 24, 2023 at 01:56 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,14 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `customers` (
-  `customer_id` int(10) NOT NULL,
-  `first_name` varchar(25) NOT NULL,
-  `last_name` varchar(25) NOT NULL,
-  `user_name` varchar(25) NOT NULL,
-  `email` varchar(250) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `credit_card_number` int(16) NOT NULL,
-  `phone_number` varchar(13) NOT NULL
+  `customer_id` int(11) NOT NULL,
+  `username` varchar(80) NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `credit_card_number` varchar(16) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -47,11 +44,10 @@ CREATE TABLE `customers` (
 CREATE TABLE `sellers` (
   `seller_id` int(11) NOT NULL,
   `company_name` varchar(50) NOT NULL,
-  `email` varchar(250) NOT NULL,
-  `password` varchar(50) NOT NULL,
   `phone_number` varchar(13) NOT NULL,
-  `location` varchar(30) NOT NULL,
-  `credit_card_number` int(16) NOT NULL
+  `location` varchar(250) NOT NULL,
+  `credit_card_number` varchar(16) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -62,10 +58,9 @@ CREATE TABLE `sellers` (
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `user_name` varchar(25) NOT NULL,
-  `password` varchar(25) NOT NULL,
   `email` varchar(250) NOT NULL,
-  `role` varchar(30) NOT NULL
+  `password` varchar(16) NOT NULL,
+  `role` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -76,13 +71,15 @@ CREATE TABLE `users` (
 -- Indexes for table `customers`
 --
 ALTER TABLE `customers`
-  ADD PRIMARY KEY (`customer_id`);
+  ADD PRIMARY KEY (`customer_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `sellers`
 --
 ALTER TABLE `sellers`
-  ADD PRIMARY KEY (`seller_id`);
+  ADD PRIMARY KEY (`seller_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `users`
@@ -98,7 +95,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sellers`
