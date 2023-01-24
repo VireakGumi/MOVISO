@@ -30,7 +30,6 @@ form{
     height: 70vh;
     margin: auto;
 }
-
 .form_left{
     text-align: center;
     width: 70%;
@@ -59,25 +58,6 @@ form{
     margin-top: 13%;
     font-weight: bold;
 
-}
-.name-phone-register{
-    display: flex;
-    gap: 8px;
-}
-.customer_or_seller:nth-child(1){
-    margin-left: 15%;
-}
-.customer_or_seller{
-    display: flex;
-    flex:1;
-}
-.customer_or_seller label{
-    font-size: 22px;
-    margin-left: 5%;
-}
-.choosing{
-    margin-top: 10%;
-    display: flex;
 }
 .btn{
     margin-top: 8%;
