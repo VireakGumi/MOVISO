@@ -22,12 +22,12 @@
                 <div class="text">
                     <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                     <ul>
-                        <li>Vireak Roeun</li>
-                        <li>Chhilin Yun</li>
-                        <li>Choreth Kosal</li>
-                        <li>Navy Rorn</li>
-                        <li>Darath Pum</li>
-                        <li>Nit Nem</li>
+                        <li><a href="">Vireak Roeun</a> </li>
+                        <li><a href=""> Chhilin Yun</a></li>
+                        <li><a href="">Choreth Kosal</a> </li>
+                        <li><a href="">Navy Rorn</a> </li>
+                        <li><a href="">Darath Pum</a> </li>
+                        <li><a href="">Nit Nem</a> </li>
                     </ul>
                 </div>
             </div>
@@ -37,7 +37,8 @@
                     <h3><span>Contact</span> </h3>
                     <p><span>Email:</span> vireakroeunmovieso@gmail.com</p>
                     <p><span>Phone Number</span> : 011-222-4444</p>
-                    <p> <span>Location:</span> BP 511, Phum Tropeang Chhuk (Borey Sorla) Sangtak, Street 371, Phnom Penh.
+                    <p> <span>Location:</span> BP 511, Phum Tropeang Chhuk (Borey Sorla) Sangtak, Street 371, Phnom
+                        Penh.
                     </p>
                     <p><span>Contact us:</span> if anything happened. we are make sure to serve you well.</p>
                 </div>
