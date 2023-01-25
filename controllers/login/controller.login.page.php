@@ -1,15 +1,14 @@
 <?php
 require ("../../database/database.php");
 require ("../validate/controller.validate.form.php");
-$statement = $connection->prepare("select * from customers");
-
+$statement = $connection->prepare("select * from users");
 $statement->execute();
-$customers = $statement->fetchAll();
+$users = $statement->fetchAll();
 $isFound=false;
 
-foreach ($customers as $customer):
+foreach ($users as $user):
     if (!empty($_POST["password"]) && !empty($_POST["email"])){
-        if(($customer["password"] ==$_POST["password"]) && ($customer["email"] == $_POST["email"])){
+        if(($user["password"] ==$_POST["password"]) && ($user["email"] == $_POST["email"])){
             $isFound=true;  
         }
     }    
