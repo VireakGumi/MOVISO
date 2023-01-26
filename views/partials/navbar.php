@@ -2,7 +2,7 @@
 require_once('views/partials/header.php');
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Secondary navigation">
+<nav class="navbar navbar-expand-lg navbar-dark " aria-label="Secondary navigation"  style="background-color: #620212; color: white;">
     <div class="container-fluid">
         <a class="navbar-brand mx-4" href="/"><img src="../../assets/moviso-logo2.png" alt="" width="85px"></a>
         <div class="collapse navbar-collapse px-4 d-flex justify-content-lg-between flex-lg-row align-items-md-start flex-md-column align-items-sm-start flex-sm-column" id="navbarNavAltMarkup">
