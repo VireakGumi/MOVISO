@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/style.css"> -->
 
-<footer class="page-footer pt-5 ">
-    <div class=" text-md-left ">
-        <div class="row page-footer">
+<footer class="page-footer pt-5 bg-dark text-light w-100 ">
+    <div class=" text-md-left w-100">
+        <div class="row page-footer d-flex justify-content-around">
 
             <div class="col-md-3 footer-img-logo">
                 <img src="../../assets/moviso-logo.png" alt="" width="200">
@@ -47,3 +47,8 @@
         </div>
     </div>
 </footer>
+
+</div>
+</body>
+
+</html>
