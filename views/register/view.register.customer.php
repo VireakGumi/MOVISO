@@ -8,6 +8,7 @@
     <title>REGISTER CUSTOMER</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
     <form action="#" method="post" >
         <div class="form_left">
             <img src="../../assets/moviso-logo1.png" class="logo_on_form" alt="" width="65%">
-            <h3>WELCOME</h3>
+            <h3>Welcome</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.Velit aut facilis autem odio 
                 exercitationem Lorem ipsum dolor sit amet consectetur, adipisicing elit consectetur, adipisicing elit</p>
             <div class="icon">
@@ -25,27 +26,54 @@
             </div>
         </div>
         <div class="form_right">
-            <div class="container">
-                <h2>REGISTER</h2>
-                <input type="text" class="form-control" placeholder="User Name *" name="Username" >
-                <!-- <small><?php echo $userName_error; ?></small> -->
+            <div class="container ">
+                <h2 class="text-center">REGISTER</h2>
 
-                <input type="text" class="form-control" placeholder="Email *" name="email" >
-                <!-- <small><?php echo $email_error; ?></small> -->
+                <div id="user-field" >
+                    <input type="text" id ="user_value" class="form-control" placeholder="User Name *" name="" onkeyup="username()" onclick="normal('user-field')">
+                    <span id="icons">
+                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-exclamation-circle"></i>
+                    </span>
+                    <!-- <small><?php echo $userName_error; ?></small> -->
+                </div>
 
-                <input type="password" class="form-control" placeholder="Password *" name="Password">
-                <!-- <small><?php echo $password_error; ?></small> -->
+                <div id="email-field" >
+                    <input type="email" id ="email_value" class="form-control" placeholder="Email *" onkeyup="email()" onclick="normal('email-field')">
+                    <span id="icons">
+                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-exclamation-circle"></i>
+                    </span>
+                    <!-- <small><?php echo $email_error; ?></small> -->
+                </div>
+
+                <div id="password-field" >
+                    <input type="password" id ="password_value" class="form-control" placeholder="Password *" onkeyup="password()" onclick="normal('password-field')">
+                    <span id="icons">
+                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-exclamation-circle"></i>
+                    </span>
+                    <!-- <small><?php echo $password_error; ?></small> -->
+                </div>
 
                 <input type="date" class="form-control" placeholder="Date of birth *" name="dateofbirth">
                 <!-- <small><?php echo $date_error; ?></small> -->
-
-                <input type="number" class="form-control" placeholder="Credit Card *" name="creditcard">
-                <!-- <small><?php echo $phoneNumber_error; ?></small> -->
-                <button>BACK</button>
+                
+                <div id ="card-field">
+                    <input type="text" id = "card_value" class="form-control" placeholder="Credit Card *" name="creditcard" onkeyup="card()" onclick="normal('card-field')">
+                    <!-- <small><?php echo $phoneNumber_error; ?></small> -->
+                    <span id="icons">
+                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-exclamation-circle"></i>
+                    </span>
+                </div>
+                
+    
                 <button>SUBMIT</button>
             </div>
         </div>
     </form>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

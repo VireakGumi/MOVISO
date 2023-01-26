@@ -110,3 +110,29 @@ h3{
 .icon img{
     padding: 2%;
 } 
+.success input,.success input:focus{
+    border:3px solid green;
+    outline: none;
+}
+.fail input,.fail input:focus{
+    border:3px solid red;
+    outline: none;
+}
+.success #icons i.fa-check-circle{
+    color: green;
+    visibility: visible;
+}
+.fail #icons i.fa-exclamation-circle{
+    color:red;
+    visibility: visible;
+}
+.success,.fail{
+    position: relative;
+    
+}
+#icons i{
+    position: absolute;
+    right:10px;
+    top:12px;
+    visibility: hidden;
+}
