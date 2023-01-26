@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTER CUSTOMER</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="views/css/bootstrap.min.css">
+    <link rel="stylesheet" href="views/css/style.css">
 </head>
 
 <body>
@@ -38,37 +37,18 @@
                     <!-- <small><?php echo $userName_error; ?></small> -->
                 </div>
 
-                <div id="email-field" >
-                    <input type="email" id ="email_value" class="form-control" placeholder="Email *" onkeyup="email()" onclick="normal('email-field')">
-                    <span id="icons">
-                        <i class="fa fa-check-circle"></i>
-                        <i class="fa fa-exclamation-circle"></i>
-                    </span>
-                    <!-- <small><?php echo $email_error; ?></small> -->
-                </div>
+                <input type="text" class="form-control" placeholder="Email *" name="email" >
+                <!-- <small><?php echo $email_error; ?></small> -->
 
-                <div id="password-field" >
-                    <input type="password" id ="password_value" class="form-control" placeholder="Password *" onkeyup="password()" onclick="normal('password-field')">
-                    <span id="icons">
-                        <i class="fa fa-check-circle"></i>
-                        <i class="fa fa-exclamation-circle"></i>
-                    </span>
-                    <!-- <small><?php echo $password_error; ?></small> -->
-                </div>
+                <input type="password" class="form-control" placeholder="Password *" name="Password">
+                <!-- <small><?php echo $password_error; ?></small> -->
 
                 <input type="date" class="form-control" placeholder="Date of birth *" name="dateofbirth">
                 <!-- <small><?php echo $date_error; ?></small> -->
-                
-                <div id ="card-field">
-                    <input type="text" id = "card_value" class="form-control" placeholder="Credit Card *" name="creditcard" onkeyup="card()" onclick="normal('card-field')">
-                    <!-- <small><?php echo $phoneNumber_error; ?></small> -->
-                    <span id="icons">
-                        <i class="fa fa-check-circle"></i>
-                        <i class="fa fa-exclamation-circle"></i>
-                    </span>
-                </div>
-                
-    
+
+                <input type="number" class="form-control" placeholder="Credit Card *" name="creditcard">
+                <!-- <small><?php echo $phoneNumber_error; ?></small> -->
+                <button>BACK</button>
                 <button>SUBMIT</button>
             </div>
         </div>
