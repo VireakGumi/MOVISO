@@ -44,14 +44,16 @@ form{
     margin-left: 15%;
     margin-right: 15%;
 }
-.information h2{
+.container h2{
     font-weight: bold;
     color: rgb(143, 6, 6);
-    margin-bottom: 5%;
+    margin-top: 10%;
+    
 }
 .form_right{
     width: 52%;
     background-color: rgba(165, 162, 162, 0.356);
+    padding: 10px;
 }
 .form_right h1, .form_right p{
     margin-left: 15%;
@@ -125,5 +127,37 @@ button:nth-child(1):hover{
     border: none;
 }
 .text{
-    font-weight: bold !important;;
+    font-weight: bold !important;
+}
+.success input,.success input:focus{
+    border:3px solid green;
+    outline: none;
+}
+.fail input,.fail input:focus{
+    border:3px solid red;
+    outline: none;
+}
+.success #icons i.fa-check-circle{
+    color: green;
+    visibility: visible;
+    font-size: 20px;
+}
+.fail #icons i.fa-exclamation-circle{
+    color:red;
+    visibility: visible;
+    font-size: 20px;
+}
+.normal input,.normal input:focus{
+    border:0px solid;
+    outline: none;
+}
+.success,.fail{
+    position: relative;
+    
+}
+#icons i{
+    position: absolute;
+    right:10px;
+    top:12px;
+    visibility: hidden;
 }
