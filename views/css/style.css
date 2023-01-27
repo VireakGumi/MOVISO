@@ -17,7 +17,7 @@ body{
     filter: blur(5px);
 }
 
-h2{
+form h2{
     color: #750013;
 }
 form{
@@ -98,7 +98,7 @@ button:nth-child(1):hover{
     margin-left: 70%; 
     border-radius: 10px;
 }
-h3{
+form h3{
     color: rgb(143, 6, 6);
     padding-bottom: 5%;
     font-weight: bold;

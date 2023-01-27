@@ -6,12 +6,12 @@ require_once('views/partials/navbar.php');
 ?>
 
 <header class=" masthead text-white text-center pb-5">
-    <img src="" alt="" style="background: url(../../assets/poster.jpg) no-repeat; background-size: cover;     position: fixed;
+    <img src="" alt="" style="background: url(../../assets/poster.jpg) no-repeat; background-size: cover; position: fixed;
     left: 0px;
     top: 0px;
     z-index: -1;
     width: 100%;
-    height: 60%;
+    height: 70%;
     -webkit-filter: blur(3px);
     filter: blur(3px);">
     <div class="container d-flex align-items-center flex-column ">

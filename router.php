@@ -3,11 +3,11 @@
 $url = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 $router = [
-    "/" => 'controllers/home/home.php',
+    "/" => 'controllers/home/controller.home.php',
     "/explore" => 'controllers/explore/explore.php',
     "/trailer" => 'controllers/trailer/trailer.php',
     "/login" => 'controllers/login/longin.php',
-    "/register" => 'controllers/register/register.php'
+    "/register" => 'controllers/register/controller.register.customer.php'
 ];
 
 function abort($code = 404)  {

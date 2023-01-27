@@ -88,15 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $company_valid=true;
     };
     
-    if (empty($location)){
-        $location_error="Please enter a location";
-    }elseif((validate_location($location))){
-        $location_error="Location must be at least more than or equal 16";
-    }else{
-        $location_valid=true;
-    };
-    
-
     if(empty($email)){
         $email_error="Please enter an email.";
     }elseif (!validate_email($email)) {
@@ -146,6 +137,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 }
 
-// require("../../views/register/seller.register.view.php");
 
 ?>
