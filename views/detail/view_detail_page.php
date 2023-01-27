@@ -1,45 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Page</title>
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body class="bg-dark">
+
+<?php
+require '../partials/view.navbar.php';
+?>
     <div class="container text-white">
         <div class="container_1 m-5 d-flex justify-content-evenly w-100">
-            <img src="../../assets/jung_e.jpg" alt="" class="w-50">
+            <img src=<?=$img?> alt="" class="w-50">
             <div class="movie_information w-100 m-5">
-                <h1 class="mt-5 mb-5">JUNG_E</h1>
+                <h1 class="mt-5 mb-5"><?=$movie_name?></h1>
                 <div class="genre d-flex mt-5">
                     <h5 class="">GENRE:</h5>
-                    <a href="#" class="ms-5 text-white">Science Fiction, Action, Adventure</a>
+                    <a href="#" class="ms-5 text-white"><?=$genre?></a>
                 </div>
                 <div class="duration d-flex mt-5">
                     <h5 class="">DURATION:</h5>
-                    <p class="ms-5">98 MIN</p>
+                    <p class="ms-5"><?=$duration?></p>
                 </div>
                 <div class="released d-flex mt-5">
                     <h5>RELEASED:</h5>
-                    <P class="ms-5">2023-JAN-20</P>
+                    <P class="ms-5"><?=$released?></P>
                 </div>
                 <div class="country d-flex mt-5">
                     <h5>COUNTRY:</h5>
-                    <a href="#" class="ms-5 text-white">South Korea</a>
+                    <a href="#" class="ms-5 text-white"><?=$country?></a>
                 </div>
                 <div class="production d-flex mt-5">
                     <h5>PRODUCTION:</h5>
-                    <a href="#" class="ms-5 text-white">Lezhin Studio</a>
+                    <a href="#" class="ms-5 text-white"><?=$production?></a>
+                </div>
+                <div class="me-5 mt-5">
+                    <button>Ticket</button>
                 </div>
             </div>
         </div>
         <div class="trailer">
             <hr class=" w-100 border border-2">
-            <iframe class="w-100 mt-4"width="560" height="315" src="https://www.youtube.com/embed/XNjSNlKBdbw?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="w-100 mt-4"width="560" height="315" src=<?=$trailer?> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="vote mt-3">
                 <img src="../../assets/like.png" alt="">
                 <label class="ms-3"for="">0</label>
@@ -57,9 +52,9 @@
                 <h6 class="bg-danger rounded-pill p-2 pe-3 ps-3">TODAY</h6>
                 <i class="material-icons ms-3 me-3">chevron_left</i>
                 <hr>
-                <h6><span class="ms-3 me-3">|</span> 24-JAN <span class="ms-3 me-3">|</span></h6>
+                <h6><span class="ms-3 me-3">|</span> 29-JAN <span class="ms-3 me-3">|</span></h6>
                 <hr>
-                <h6>25-JAN <span class="ms-3 me-3">|</span></h6>
+                <h6>30-JAN <span class="ms-3 me-3">|</span></h6>
                 <i class="material-icons ms-3 me-3">chevron_right</i>
             </div>
             <div class="card_showtime w-100 rounded mt-3 p-3 mb-5">
@@ -103,5 +98,5 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+<?php
+require '../partials/view.footer.php';
