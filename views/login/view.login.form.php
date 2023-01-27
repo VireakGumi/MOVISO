@@ -1,4 +1,4 @@
-<?php require("../partials/head.php"); ?>
+<?php require("../../views/partials/head.php"); ?>
     
     <img src="../../assets/bg-login-form.png" alt="" class="background">
     
