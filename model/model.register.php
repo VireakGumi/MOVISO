@@ -8,8 +8,7 @@ function createCustomer($userName, $email,$password, $creditCard,$date)
        ':username' => $userName,    
        ':email' => $email,
        ':password' => $password,
-       ':date' => $date,
-       ':creditcard' => $creditCard,
+       ':date' => $date, 
 
     ]);
 

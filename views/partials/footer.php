@@ -1,6 +1,4 @@
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/style.css"> -->
+
 
 <footer class="page-footer pt-5 bg-dark text-light w-100 ">
     <div class=" text-md-left w-100">
@@ -9,7 +7,7 @@
             <div class="col-md-3 footer-img-logo">
                 <img src="../../assets/moviso-logo.png" alt="" width="200">
                 <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <div class="icon-image">
+                <div class="icon-image d-flex">
                     <img src="../../assets/google.png" class="" alt="" width="40">
                     <img src="../../assets/telegram.png" class="d-flex justify-content-center align-items-center "
                         alt="" width="40">
@@ -48,7 +46,6 @@
     </div>
 </footer>
 
-</div>
 </body>
 
 </html>
