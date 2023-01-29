@@ -2,10 +2,12 @@
 require_once('views/partials/header.php');
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100 top-0" aria-label="Secondary navigation"  style="background-color: #620212; color: white;">
+<nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100 top-0" aria-label="Secondary navigation"
+    style="background-color: #620212; color: white; z-index: 1000;">
     <div class="container-fluid">
         <a class="navbar-brand mx-4" href="/"><img src="../../assets/moviso-logo2.png" alt="" width="85px"></a>
-        <div class="collapse navbar-collapse px-4 d-flex justify-content-lg-between flex-lg-row align-items-md-start flex-md-column align-items-sm-start flex-sm-column" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse px-4 d-flex justify-content-lg-between flex-lg-row align-items-md-start flex-md-column align-items-sm-start flex-sm-column"
+            id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a href="/"
                     class="<?= urls("/") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link px-0 pb-1 mx-3"

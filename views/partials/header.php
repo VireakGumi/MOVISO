@@ -10,10 +10,13 @@
     <link rel="stylesheet" href="../../views/css/style.css">
     <script src="views/js/bootstrap.min.js"></script>
     <script src="views/js/main.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
-        .hover{
+        .hover {
             border-color: transparent !important;
         }
+
         .hover:hover {
             border-bottom: 4px solid red !important;
         }
