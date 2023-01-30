@@ -1,6 +1,18 @@
 <?php
+session_start();
 require '../../database/database.php';
-require '../../model/model.movie_detail.php';
+
+$movieId = isset($_SESSION["movie_id"])? $_SESSION["movie_id"]: '';
+// require '../../model/model.movies.php';
+function getData($table,$id){
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM $table WHERE movies_id = $id" );
+    $statement->execute();
+    $result = $statement->fetch();
+    return $result;
+}
+
+
 function checkData($value){
     $isTrue = 0;
     if (!empty($value)){
@@ -10,25 +22,27 @@ function checkData($value){
     }
     return $isTrue;
 }
-$movie_detail = [];
-$movie = [];
+$movies = [];
 if(!empty($movieId)){
-    $movie_detail = getData('movie_detail',$movieId);
-    $movie = getData('movies',$movieId);
+    $movies = getData('movies',$movieId);
 }
-$movie_name= checkData($movie['movie_title'])? $movie['movie_title']: '';
+$movie_name= checkData($movies['movie_title'])? $movies['movie_title']: '';
 
-$genre= checkData($movie_detail['genre'])? $movie_detail['genre']: '';
+$genre= checkData($movies['genre'])? $movies['genre']: '';
 
-$duration= checkData($movie_detail['duration'])? $movie_detail['duration']: '';
+$duration= checkData($movies['duration'])? $movies['duration']: '';
 
-$released= checkData($movie_detail['released'])? $movie_detail['released']: '';
+$released= checkData($movies['released'])? $movies['released']: '';
 
-$country=checkData($movie_detail['country'])? $movie_detail['country']: '';
+$country=checkData($movies['country'])? $movies['country']: '';
 
-$production=checkData($movie_detail['production'])? $movie_detail['production']: '';
+$production=checkData($movies['production'])? $movies['production']: '';
 
-$img=checkData($movie_detail['img'])? $movie_detail ['img']: '';
+$img=checkData($movies['img'])? "../../assets/" .$movies['img']: '';
 
-$trailer=checkData($movie_detail['trailer'])? $movie_detail['trailer']:'';
+$trailer=checkData($movies['trailer'])?  $movies['trailer']:'';
+
+// }
 require '../../views/detail/view_detail_page.php';
+?>
+

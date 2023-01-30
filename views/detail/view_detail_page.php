@@ -1,11 +1,18 @@
-
-<?php
-require '../partials/view.navbar.php';
-?>
-    <div class="container text-white">
-        <div class="container_1 m-5 d-flex justify-content-evenly w-100">
-            <img src=<?=$img?> alt="" class="w-50">
-            <div class="movie_information w-100 m-5">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie_detail</title>
+    <link rel="stylesheet" href="../../views/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../views/css/style.css">
+</head>
+<body class="bg-dark">
+    <div class="container text-white ">
+        <div class="container_1 m-5 ms-0 d-flex justify-content-evenly w-100">
+            <img src="<?= $img?>" alt="" class="w-75">
+            <div class="movie_information w-100 m-5 mt-0">
                 <h1 class="mt-5 mb-5"><?=$movie_name?></h1>
                 <div class="genre d-flex mt-5">
                     <h5 class="">GENRE:</h5>
@@ -34,7 +41,7 @@ require '../partials/view.navbar.php';
         </div>
         <div class="trailer">
             <hr class=" w-100 border border-2">
-            <iframe class="w-100 mt-4"width="560" height="315" src=<?=$trailer?> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="w-100 mt-4"width="560" height="500" src=<?=$trailer?> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div class="vote mt-3">
                 <img src="../../assets/like.png" alt="">
                 <label class="ms-3"for="">0</label>
@@ -74,7 +81,7 @@ require '../partials/view.navbar.php';
                 <div class="card_header d-flex justify-content-around">
                     <div class="logo_theatre d-flex m-3">
                         <img src="../../assets/moviso-logo-removebg-preview.png" alt="" class="card_logo">
-                        <h6 class="mt-4 ms-5">MAJOR CINEPLEX AEON MALL PHNOM PENH</h6>
+                        <h6 class="mt-4 ms-5">MAJOR CINEPLEX AEON MEAN CHEY</h6>
                     </div>
                 <h6 class="m-4">2D</h6>
                 </div>
@@ -87,7 +94,7 @@ require '../partials/view.navbar.php';
                 <div class="card_header d-flex justify-content-around">
                     <div class="logo_theatre d-flex m-3">
                         <img src="../../assets/moviso-logo-removebg-preview.png" alt="" class="card_logo">
-                        <h6 class="mt-4 ms-5">MAJOR CINEPLEX AEON MALL PHNOM PENH</h6>
+                        <h6 class="mt-4 ms-5">MAJOR CINEPLEX AEON SEN SOK</h6>
                     </div>
                 <h6 class="m-4">2D</h6>
                 </div>
@@ -98,5 +105,5 @@ require '../partials/view.navbar.php';
             </div>
         </div>
     </div>
-<?php
-require '../partials/view.footer.php';
+</body>
+</html>
