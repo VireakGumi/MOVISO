@@ -9,7 +9,7 @@ function showHint(str) {
                 document.getElementById("product").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "../../controllers/search/search.controller.php?q=" + str, true);
+        xmlhttp.open("GET", "../../controllers/search/search.controller.php?search=" + str, true);
         xmlhttp.send();
     }
 }
@@ -30,6 +30,3 @@ function normal() {
     }
 }
 
-function show(){
-    
-}

@@ -1,12 +1,7 @@
 
 <?php
 
-require ("database/database.php");
-
-
-$statement = $connection->prepare("select * from users");
-$statement->execute();
-$users = $statement->fetchAll();
+$users = getUser();
 $isFound=false;
 $isFoundEmail=false;
 
