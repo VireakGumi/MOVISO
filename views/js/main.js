@@ -19,7 +19,7 @@ function email() {
 }
 
 function password() {
-    var password = document.getElementById('password_value').value;
+    var password = document.getElementById('password_value').value;1
     var coditionPassword = /^[A-Za-z0-9]{8,16}$/;
     if (coditionPassword.test(password )) {
         document.querySelector('#password-field').classList = "success";

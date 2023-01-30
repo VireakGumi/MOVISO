@@ -36,22 +36,47 @@
                         <i class="fa fa-check-circle"></i>
                         <i class="fa fa-exclamation-circle"></i>
                     </span>
-                    <!-- <small><?php echo $userName_error; ?></small> -->
+                    <small><?php echo $userName_error; ?></small>
                 </div>
 
-                <input type="text" class="form-control" placeholder="Email *" name="email" >
-                <!-- <small><?php echo $email_error; ?></small> -->
+                <div id="email-field" >
+                    <input type="email" id ="email_value" class="form-control" placeholder="Email *" name="" onkeyup="email()" onclick="normal('email-field')">
+                    <span id="icons">
+                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-exclamation-circle"></i>
+                    </span>
+                    <small><?php echo $email_error; ?></small>
+                </div>
 
-                <input type="password" class="form-control" placeholder="Password *" name="Password">
-                <!-- <small><?php echo $password_error; ?></small> -->
+                <div id="password-field" >
+                    <input type="password" id ="password_value" class="form-control" placeholder="Password *" name="" onkeyup="password()" onclick="normal('password-field')">
+                    <span id="icons">
+                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-exclamation-circle"></i>
+                    </span>
+                    <small><?php echo $password_error; ?></small>
+                </div>
 
-                <input type="date" class="form-control" placeholder="Date of birth *" name="dateofbirth">
-                <!-- <small><?php echo $date_error; ?></small> -->
+                <div id="card-field" >
+                    <input type="number" id ="card_value" class="form-control" placeholder="Credit card *" name="" onkeyup="card()" onclick="normal('card-field')">
+                    <span id="icons">
+                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-exclamation-circle"></i>
+                    </span>
+                    <!-- <small><?php echo $card_error; ?></small> -->
+                </div>
 
-                <input type="number" class="form-control" placeholder="Credit Card *" name="creditcard">
-                <!-- <small><?php echo $phoneNumber_error; ?></small> -->
-                <button>BACK</button>
+                <div id="date-field" >
+                    <input type="date" id ="date_value" class="form-control" placeholder="Date of birth *" name="" onkeyup="date()" onclick="normal('date-field')">
+                    <span id="icons">
+                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-exclamation-circle"></i>
+                    </span>
+                    <small><?php echo $date_error; ?></small>
+                </div>
+    
                 <button>SUBMIT</button>
+                
             </div>
         </div>
     </form>
