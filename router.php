@@ -7,7 +7,9 @@ $router = [
     "/explore" => 'controllers/listshow/controller.listshow.page.php',
     "/trailer" => 'controllers/trailer/trailer.php',
     "/login" => 'controllers/login/controller.login.page.php',
+    "/logout" => 'controllers/logout/controller.logout.page.php',
     "/register" => 'controllers/register/controller.register.customer.php'
+    
 ];
 
 // function abort($code = 404)  {

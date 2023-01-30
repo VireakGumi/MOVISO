@@ -1,21 +1,31 @@
+
 <?php
-// require ("controllers/validate/controller.validate.form.php");
-$statement = $connection->prepare("select * from users");
-$statement->execute();
-$users = $statement->fetchAll();
+// session_start();
+require ("controllers/validate/controller.validate.form.php");
+$user = getUser();
 $isFound=false;
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST["password"]) && isset($_POST["email"])) {
-        foreach ($users as $user):
-            if (($user["password"] == $_POST["password"]) && ($user["email"] == $_POST["email"])) {
-                $isFound = true;
+if (isset($_POST["password"]) && ($_POST["email"]))
+{
+    foreach ($users as $user):
+        
+        if (!empty($_POST["password"]) && !empty($_POST["email"]))
+        {
+            // echo (password_verify( $_POST["password"],$user["password"]));
+            if(password_verify( $_POST["password"],$user["password"]) && ($user["email"] == $_POST["email"]))
+            {
+                $_SESSION["password"] = $_POST["password"];
+                $_SESSION["email"] = $user["email"];
+                $_SESSION['user_id'] = $user["user_id"];
+                $isFound=true;  
             }
-        endforeach;
-        if ($isFound) {
-            header("Location:/");
-        }
+        }    
+    endforeach;
+    if($isFound){
+        header ("Location:/");
     }
 }
 
 require ("views/login/view.login.form.php");
+
+?>

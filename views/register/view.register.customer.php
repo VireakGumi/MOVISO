@@ -16,8 +16,8 @@
     </div>
     <div class="form_right">
         <div class="container">
-            <h2 class="text-center">REGISTER</h2><br>
-            <input type="text" class="form-control" placeholder="User Name *" name="Username">
+            <h2 class="text-center">REGISTER</h2>
+            <input type="text" class="form-control" placeholder="User Name *" name="username">
             <small class="form-text text-danger">
                 <?php echo $userName_error; ?>
             </small>
@@ -34,8 +34,13 @@
 
             <input type="number" class="form-control" placeholder="Credit Card *" name="creditcard">
             <small class="form-text text-danger">
-                <?php echo strlen($phoneNumber_error) > 0? $phoneNumber_error: ""; ?>
+                <?php echo $creditCard_error; ?>
             </small>
+
+            <input type="number" class="form-control" placeholder="Phone number *" name="phonenumber">
+            <small class="form-text text-danger">
+                <?php echo $phoneNumber_error; ?>
+            </small><br>
 
             <button>SUBMIT</button>
         </div>
