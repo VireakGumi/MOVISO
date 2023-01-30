@@ -1,8 +1,10 @@
 <?php
-    session_start();
-    require "model/model.php";
-    $movies = getMoives();
+session_start();
+require "model/model.php";
+$movies = getMoives();
 
-    require "views/listshows/view.listshow.php";
-    
-    
+require "views/listshows/view.listshow.php";
+
+
+?>
+

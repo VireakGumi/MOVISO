@@ -1,12 +1,12 @@
 function showHint(str) {
     if (str.length == 0) {
-        document.getElementById("txtHint").innerHTML = "";
+        document.getElementById("product").innerHTML = "";
         return;
     } else {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("txtHint").innerHTML = this.responseText;
+                document.getElementById("product").innerHTML = this.responseText;
             }
         };
         xmlhttp.open("GET", "../../controllers/search/search.controller.php?q=" + str, true);
@@ -30,4 +30,6 @@ function normal() {
     }
 }
 
-
+function show(){
+    
+}

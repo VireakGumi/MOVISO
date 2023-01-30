@@ -242,7 +242,6 @@ button:hover {
 }
 
 .list {
-    /* margin-top: -67px;    */
     display: flex;
     flex-direction: column;
     padding: 2%;
@@ -251,36 +250,18 @@ button:hover {
     font-family: sans-serif;
 }
 
-.allcard {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.card {
-    margin-top: 2%;
-    background-color: rgb(52, 44, 44);
-}
-
-.card:hover {
-    transform: translate(-5px, -5px);
-    border: 2px solid gray;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    transition-duration: 500ms;
-}
-
 .search {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    background: none;
+    width: 100%;
+    height: 100%;
 }
 
 .search input {
     border: none;
     outline: none;
-    margin-left: 40%;
     width: 45%;
     padding: 0.7%;
     border-top-left-radius: 20px;
@@ -289,10 +270,15 @@ button:hover {
     color: white;
 
 }
+.search input, .search .product{
+    margin-left: 40%;
+    width: 48%;
 
-.search .material-icons {
+
+}
+.search label {
     background-color: #8d8889;
-    padding: 0.7%;
+    padding: 0.46%;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 

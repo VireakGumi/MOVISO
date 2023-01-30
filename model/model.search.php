@@ -2,6 +2,8 @@
 
 $userInput= $_REQUEST["q"];
 
-$query = "SELECT movie_title from movies where title movie_title '%{$userInput}%' or movie_title like '{$userInput}%'";
+$query = "SELECT movie_title FROM movies WHERE movie_title LIKE '%{$userInput}%' OR movie_title LIKE '{$userInput}%'";
 $state = $connection->query($query);
-$arr = $state->fetchAll(PDO::FETCH_ASSOC);
+$data = $state->fetchAll(PDO::FETCH_ASSOC);
+
+// print_r($data);
