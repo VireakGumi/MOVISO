@@ -1,8 +1,5 @@
 <?php
-
 require_once('views/partials/navbar.php');
-
-
 ?>
 
 <body>
@@ -14,11 +11,11 @@ require_once('views/partials/navbar.php');
                     <input type="search" placeholder="Search" id="fname" name="fname" onkeyup="showHint(this.value)">
                     <label for="fname" class="cursor-pointer text-white"><i class="material-icons">search</i></label>
                 </form>
-                <div id="product" class="text-white d-flex flex-column mx-1" >
-                    
+                <div id="product" class="text-white d-flex flex-column mx-1">
+
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="choose">
             <button class="hover-zoom"><i class="material-icons">chevron_left</i></button>
             <button>ALL MOVIES</button>
@@ -31,7 +28,6 @@ require_once('views/partials/navbar.php');
         <div class="card-container ms-3">
             <?php
             foreach ($movies as $movie) {
-
 
                 ?>
                 <section class="cards">
@@ -51,7 +47,7 @@ require_once('views/partials/navbar.php');
 
                         </div>
                         <img src="<?="../../assets/" . $movie['img']; ?>" alt="" class="card__img">
-                        <a href="/" class="card_link text-decoration-none" name=""
+                        <a href="/detail" class="card_link text-decoration-none" name=""
                             onclick="<?php $_SESSION['movie_id'] = $movie["movies_id"] ?>">
                             <img src="<?="../../assets/" . $movie['img']; ?>" alt="" class="card__img--hover">
 
