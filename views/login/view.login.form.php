@@ -14,7 +14,8 @@
                 <h2 class="text-center text">LOGIN</h2><br>
 
                 <div id="email_field">
-                    <input  type="email" id="email_value" name="email" class="form-control" placeholder="Email *" onkeyup="email()" onclick="normal('email_value')">
+                    <input  type="email" id="email_value" name="email" class="form-control" placeholder="Email *" onkeyup="email()" onclick="normal('')">
+                    <small class="form-text text-danger"><?php echo $email_incorrect;?></small><br>
                     <span id="icons">
                         <i class="fa fa-check-circle"></i>
                         <i class="fa fa-exclamation-circle"></i>
@@ -22,7 +23,8 @@
                 </div>
 
                 <div id="password_field">
-                    <input type="password" id="password_value" name="password" class="form-control" placeholder="Password *" onkeyup="password()">
+                    <input type="password" id="password_value" name="password" class="form-control" placeholder="Password *" >
+                    <small class="form-text text-danger"><?php echo $password_incorrect;?></small><br>
                     <span id="icons">
                         <i class="fa fa-check-circle"></i>
                         <i class="fa fa-exclamation-circle"></i>

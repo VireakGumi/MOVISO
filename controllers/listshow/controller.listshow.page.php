@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require "model/model.php";
+    require "model/model.register.php";
     $movies = getMoives();
 
     require "views/listshows/view.listshow.php";
