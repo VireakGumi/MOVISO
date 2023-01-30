@@ -7,17 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moviso</title>
     <link rel="stylesheet" href="views/css/bootstrap.min.css">
-    <link rel="stylesheet" href="views/css/style">
+    <link rel="stylesheet" href="../../views/css/style.css">
     <script src="views/js/bootstrap.min.js"></script>
+    <script src="views/js/main.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
-        .hover{
+        .hover {
             border-color: transparent !important;
         }
+
         .hover:hover {
             border-bottom: 4px solid red !important;
         }
     </style>
 </head>
 
-<body>
-    <div class="container bg-dark"></div>
+<body class='bg-dark'>
+    <div class="">

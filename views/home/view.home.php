@@ -6,15 +6,13 @@ require_once('views/partials/navbar.php');
 ?>
 
 <header class=" masthead text-white text-center pb-5">
-    <img src="" alt="" style="background: url(../../assets/poster.jpg) no-repeat; background-size: cover;     position: fixed;
+    <img src="../../assets/poster.jpg" class='background' alt="" style=" position: absolute;
     left: 0px;
-    top: 0px;
+    top: 30px;
     z-index: -1;
-    width: 100%;
-    height: 60%;
     -webkit-filter: blur(3px);
     filter: blur(3px);">
-    <div class="container d-flex align-items-center flex-column ">
+    <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
         <img class="masthead-avatar" src="../../assets/moviso-logo1.png" alt="..." width="50%" />
         <!-- Masthead Heading-->
@@ -24,10 +22,10 @@ require_once('views/partials/navbar.php');
     </div>
 </header>
 <!-- Portfolio Section-->
-<section class="page-section container-fluid portfolio bg-dark " id="portfolio">
-    <div class="container py-5">
+<section class="page-section container-fluid portfolio bg-dark" id="portfolio">
+    <div class="container">
         <!-- Portfolio Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary py-2 pb-5 text-white">Movies</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary py-5 pb-5 text-white">Movies</h2>
         <!-- Portfolio Grid Items-->
         <div class="row justify-content-center text-white text-left">
             <!-- Portfolio Item 1-->
@@ -82,7 +80,7 @@ require_once('views/partials/navbar.php');
 <section class="page-section bg-dark text-white mb-0" id="about">
     <div class="container">
         <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-white py-4">About</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-white pb-5">About</h2>
         <!-- About Section Content-->
         <div class="row">
             <div class="col-lg-4 ms-auto">
