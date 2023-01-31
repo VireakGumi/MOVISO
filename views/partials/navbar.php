@@ -35,8 +35,8 @@ if (isset($_SESSION["password"]) && isset($_SESSION["email"]))
                     aria-current="page">HOME</a>
                 <a href="/explore"
                     class=" <?= urls("/explore") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">EXPLORE</a>
-                <a href="/trailer"
-                    class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">TRAILER</a>
+                <!-- <a href="/trailer"
+                    class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">TRAILER</a> -->
             </div>
             <div class="navbar-nav">
 

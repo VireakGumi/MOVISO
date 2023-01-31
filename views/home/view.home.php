@@ -23,56 +23,14 @@ require_once('views/partials/navbar.php');
 </header>
 <!-- Portfolio Section-->
 <section class="page-section container-fluid portfolio bg-dark" id="portfolio">
-    <div class="container">
-        <!-- Portfolio Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary py-5 pb-5 text-white">Movies</h2>
-        <!-- Portfolio Grid Items-->
-        <div class="row justify-content-center text-white text-left">
-            <!-- Portfolio Item 1-->
-            <div class="col-md-6 col-lg-3 mb-5">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                    <img class="img-fluid" src="../../assets/images.jfif" alt="..." width="300px" height="200px" />
-                    <h4>heheh</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, quia.</p>
-                </div>
-            </div>
-            <!-- Portfolio Item 2-->
-            <div class="col-md-6 col-lg-3 mb-5">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                    <img class="img-fluid" src="../../assets/home_antman3.jfif" alt="..." width="300px" height="200px" />
-                    <h4>heheh</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, quia.</p>
-                </div>
-            </div>
-            <!-- Portfolio Item 3--> 
-            <div class="col-md-6 col-lg-3 mb-5">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                    <img class="img-fluid" src="../../assets/00.jpg" alt="..." width="300px" height="200px" />
-                    <h4>heheh</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, quia.</p>
-                </div>
-            </div>
-            <!-- Portfolio Item 4-->
-            <div class="col-md-6 col-lg-3 mb-5 mb-lg-0">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                    <img class="img-fluid" src="../../assets/0x0.jpg" alt="..." width="300px" height="200px" />
-                    <h4>heheh</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, quia.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-start text-white ">
-            <div class="col-md-10 col-lg-6 mb-5 mb-lg-0">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                    <img src="../../assets/Rectangle 31.png" alt="" width="100%">
-                </div>
-            </div>
-            <div class="col-md-10 col-lg-6 mb-5 mb-lg-0">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                    <img src="../../assets/Rectangle 31.png" alt="" width="100%">
-                </div>
-            </div>
-        </div>
+    <!-- Portfolio Section Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-secondary py-5 pb-5 text-white">Movies</h2>
+    <!-- Portfolio Grid Items-->
+    <div class="card-container ms-3">
+        <?php
+        $row = 8;
+        require('views/createCard.php');
+        ?>
     </div>
 </section>
 

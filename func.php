@@ -1,5 +1,5 @@
 <?php
 
-function urls($value){
+function urls($value){ 
     return $_SERVER['REQUEST_URI'] === $value;
 }

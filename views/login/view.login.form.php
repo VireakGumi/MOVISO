@@ -14,7 +14,7 @@
                 <h2 class="text-center text">LOGIN</h2><br>
 
                 <div id="email_field">
-                    <input  type="email" id="email_value" name="email" class="form-control" placeholder="Email *" onkeyup="email()" onclick="normal('')">
+                    <input  type="email" id="email_value" name="email" class="form-control" placeholder="Email *" onkeyup="emailCheck()" onclick="normal('')">
                     <small class="form-text text-danger"><?php echo $email_incorrect;?></small><br>
                     <span id="icons">
                         <i class="fa fa-check-circle"></i>
@@ -33,11 +33,11 @@
                
                 <a href="#" class="d-flex flex-column align-items-center text-decoration-none ">Forget Password?</a><br>
 
-                <!-- <input type="submit" class=" login form-control " value="LOGIN"> -->
                 <button class="login form-control"> LOGIN</button>
             </div>
         </div>
     </form>
     </body>
     <script src="views/js/main.js"></script>
+
     </html>

@@ -4,8 +4,8 @@ session_start();
 require ("database/database.php");
 
 require ("controllers/validate/controller.validate.form.php");
-$user = getUser();
 
+$user = getUser();
 
 $isFound=false;
 

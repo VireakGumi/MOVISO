@@ -1,8 +1,6 @@
 
 
 <?php
-
-
 require ("controllers/validate/controller.validate.form.php");
 require("views/register/view.register.customer.php");
 $isFound=false;
