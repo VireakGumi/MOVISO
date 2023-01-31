@@ -1,8 +1,12 @@
 
 <?php
-// session_start();
+session_start();
+require ("database/database.php");
+
 require ("controllers/validate/controller.validate.form.php");
+
 $user = getUser();
+
 $isFound=false;
 
 if (isset($_POST["password"]) && ($_POST["email"]))

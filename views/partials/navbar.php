@@ -2,13 +2,8 @@
 
 session_start();
 require_once('views/partials/header.php');
-$statement = $connection->prepare("select * from customers");
-$statement->execute();
-$customers = $statement->fetchAll();
 
-$statement = $connection->prepare("select * from users");
-$statement->execute();
-$users = $statement->fetchAll();
+$users = getUser();
 $isFound=false;
 
 if (isset($_SESSION["password"]) && isset($_SESSION["email"]))
@@ -37,11 +32,11 @@ if (isset($_SESSION["password"]) && isset($_SESSION["email"]))
             <div class="navbar-nav">
                 <a href="/"
                     class="<?= urls("/") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link px-0 pb-1 mx-3"
-                    aria-current="page">Home</a>
+                    aria-current="page">HOME</a>
                 <a href="/explore"
-                    class=" <?= urls("/explore") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">Explore</a>
-                <a href="/trailer"
-                    class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">Trailer</a>
+                    class=" <?= urls("/explore") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">EXPLORE</a>
+                <!-- <a href="/trailer"
+                    class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">TRAILER</a> -->
             </div>
             <div class="navbar-nav">
 
@@ -58,17 +53,17 @@ if (isset($_SESSION["password"]) && isset($_SESSION["email"]))
                                      <?php 
                                     }
                                 }
-                                ?><a href="/logout" class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1">Logout</a><br><?php
+                                ?><a href="/logout" class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1">LOGOUT</a><br><?php
                     }
         
                     else{
                         ?>
                         <a href="/login"
-                            class=" <?= urls("/login") ? 'border-bottom border-4 border-danger ' : 'hover ' ?> border-bottom border-4 nav-link mx-3 px-0 pb-1">Login
+                            class=" <?= urls("/login") ? 'border-bottom border-4 border-danger ' : 'hover ' ?> border-bottom border-4 nav-link mx-3 px-0 pb-1">LOGIN
                         
                             <a href="/register"
                                 class=" <?= urls("/register") ? 'border-bottom border-4 border-danger ' : 'hover ' ?> border-bottom border-4 nav-link px-0 pb-1 mx-3"
-                                aria-disabled="true">Register</a>
+                                aria-disabled="true">REGISTER</a>
                 <?php
                     }
                     ?>
