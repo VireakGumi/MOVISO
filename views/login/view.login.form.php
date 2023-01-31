@@ -39,5 +39,5 @@
         </div>
     </form>
     </body>
-    <script src="../js/main.js"></script>
+    <script src="views/js/main.js"></script>
     </html>

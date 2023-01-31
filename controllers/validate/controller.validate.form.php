@@ -54,6 +54,7 @@ function validate_phonenumber($phoneNumber){
     return strlen($phoneNumber)>16;
 }
 
+
 $userName_error = "";
 $company_error = "";
 $email_error = "";
@@ -91,15 +92,16 @@ function getDataKey($key){
     }
 }
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $userName= getDataKey('username');
-    $email= getDataKey('email');
-    $password= getDataKey('password');
-    $date= getDataKey('dateofbirth');
-    $creditCard= getDataKey('creditcard');
-    $phoneNumber= getDataKey('phonenumber');
-    $company= getDataKey('company');
-    $location= getDataKey('location');
+    $userName= getDataKey('username'); 
+    $email= getDataKey('email'); 
+    $password= getDataKey('password');  
+    $date= getDataKey('dateofbirth'); 
+    $creditCard= getDataKey('creditcard'); 
+    $phoneNumber= getDataKey('phonenumber'); 
+    $company= getDataKey('company'); 
+    $location= getDataKey('location'); 
 
     if (empty($userName)){
         $userName_error="Please enter a user name";
@@ -121,14 +123,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $email_error="Please enter an email.";
     }elseif($isFoundEmail){
         $email_error = "Email must be not exits.";
-    }
-    elseif ((!validate_email($email))) {
+    }elseif ((!validate_email($email))) {
         $email_error = "Email must contain '@'.";
-    }
-    
-    else{
+    }else{
         $email_valid=true;
     };
+    
     if($isFound){
         $email_incorrect="Incorrect email.";
     }
@@ -138,10 +138,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password_error = "Please write your password here.";
     } elseif(!(validate_password($password))){
         $password_error = "password must be more than or equal 8.";
-    }
-    else{
+    }else{
         $password_valid=true;
     };
+
     if($isFound){
         $password_incorrect="Incorrect password.";
     }
@@ -167,9 +167,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $creditCard_valid=true;
     };
 
+
     if (empty($phoneNumber)){
         $phoneNumber_error = "Please write your phonenumber.";
-
     }elseif(validate_phonenumber($phoneNumber)){
         $phoneNumber_error = "Phone number must be at least more than or equal 16.";
     }else{
