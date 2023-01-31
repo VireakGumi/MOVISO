@@ -31,7 +31,7 @@
                 <h2 class="text-center">REGISTER</h2>
 
                 <div id="user-field" >
-                    <input type="text" id ="user_value" class="form-control" placeholder="User Name *" name="" onkeyup="username()" onclick="normal('user-field')">
+                    <input type="text" id ="user_value" class="form-control" placeholder="User Name *" name="username" onkeyup="userNameCheck()" onclick="normal('user-field')">
                     <span id="icons">
                         <i class="fa fa-check-circle"></i>
                         <i class="fa fa-exclamation-circle"></i>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div id="email-field" >
-                    <input type="email" id ="email_value" class="form-control" placeholder="Email *" name="" onkeyup="email()" onclick="normal('email-field')">
+                    <input type="email" id ="email_value" class="form-control" placeholder="Email *" name="email" onkeyup="emailCheck()" onclick="normal('email-field')">
                     <span id="icons">
                         <i class="fa fa-check-circle"></i>
                         <i class="fa fa-exclamation-circle"></i>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div id="password-field" >
-                    <input type="password" id ="password_value" class="form-control" placeholder="Password *" name="" onkeyup="password()" onclick="normal('password-field')">
+                    <input type="password" id ="password_value" class="form-control" placeholder="Password *" name="password" onkeyup="passwordCheck()" onclick="normal('password-field')">
                     <span id="icons">
                         <i class="fa fa-check-circle"></i>
                         <i class="fa fa-exclamation-circle"></i>
@@ -58,7 +58,7 @@
                 </div>
 
                 <div id="phone-field" >
-                    <input type="text" id ="phone_value" class="form-control" placeholder="Phone Number *" name="" onkeyup="phone()" onclick="normal('phone-field')">
+                    <input type="text" id ="phone_value" class="form-control" placeholder="Phone Number *" name="phonenumber" onkeyup="phoneCheck()" onclick="normal('phone-field')">
                     <span id="icons">
                         <i class="fa fa-check-circle"></i>
                         <i class="fa fa-exclamation-circle"></i>
@@ -71,8 +71,9 @@
                 
             </div>
         </div>
-    </form>
-    <script src="views/js/main.js"></script>
+    </div>
+</form>
+</div>
 </body>
-
+<script src="views/js/main.js"></script>
 </html>

@@ -1,14 +1,21 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 <?php
-require ("controllers/validate/controller.validate.from.php");
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ( $userName_valid && $email_valid && $password_valid  && $creditCard_valid  && $date_valid){
-        require ('../../model/register.model.php');
-        createCustomer($_POST["username"],$_POST["email"],$_POST["password"],$_POST["creditcard"],$_POST["dateofbirth"]);
-        
-    }
-}
 
+require ("controllers/validate/controller.validate.form.php");
 require("views/register/view.register.customer.php");
-?>
+$isFound=false;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ( $userName_valid && $email_valid && $password_valid   && $phoneNumber_valid){
+        $passwordEncryp=password_hash($_POST["password"],PASSWORD_BCRYPT);
+        $userId = createUser($_POST["username"],$_POST["email"],$passwordEncryp,$_POST["phonenumber"]);
+        createCustomer($userId);
+        $isFound=true;
+
+    }
+    if($isFound){
+        header("Location: /");
+    }
+
+}
