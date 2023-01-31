@@ -33,11 +33,10 @@
                
                 <a href="#" class="d-flex flex-column align-items-center text-decoration-none ">Forget Password?</a><br>
 
-                <!-- <input type="submit" class=" login form-control " value="LOGIN"> -->
                 <button class="login form-control"> LOGIN</button>
             </div>
         </div>
     </form>
     </body>
-    <script src="../js/main.js"></script>
+    <script src="views/js/main.js"></script>
     </html>

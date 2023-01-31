@@ -1,9 +1,8 @@
 <?php
-// session_start();
 require_once('views/partials/navbar.php');
 ?>
 
-<body>
+
     <div class="list">
         <div class="d-flex ms-5">
             <h5 class="text-white">CATEGROY</h5>

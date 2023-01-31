@@ -200,24 +200,27 @@ span {
 .fail #icons i.fa-exclamation-circle{
     color:red;
     visibility: visible;
+}
+.success,.fail{
+    position: relative;
     font-size: 20px;
 }
 .normal input,.normal input:focus{
     border:0px solid;
     outline: none;
 }
-.success,.fail{
-    position: relative;
-    
-}
 #icons i{
     position: absolute;
     right:10px;
+    top:13px;
+    visibility: hidden;
+}
+/* input{
+    padding: 10px;
     top:12px;
     visibility: hidden;
     display: flex;
-    
-}
+} */
 
 /* -------------------------page list show----------------- */
 .choose {
