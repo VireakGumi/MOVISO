@@ -1,9 +1,9 @@
 <?php
 require_once('views/partials/navbar.php');
 ?>
-<div class="container text-white ">
+<div class="container text-white" style="margin-top:100px;">
     <div class="container_1 m-5 ms-0 d-flex justify-content-evenly w-100">
-        <img src="<?= $img ?>" alt="" class="w-75">
+        <img src="<?= $img ?>" alt="" width="500px">
         <div class="movie_information w-100 m-5 mt-0">
             <h1 class="mt-5 mb-5">
                 <?= $movie_name ?>

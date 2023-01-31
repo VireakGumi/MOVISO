@@ -1,7 +1,6 @@
 <?php
-session_start();
 require 'database/database.php';
-$movieId = isset($_SESSION["movie_id"])? $_SESSION["movie_id"]: '';
+$movieId = isset($_GET["id"])? $_GET["id"]: '';
 // require ('model/model.php');
 
 function getData($table,$id){

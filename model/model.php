@@ -13,15 +13,14 @@ function createCustomer($userId)
 }
 
 
-function createUser($userName, $email, $password, $creditCard, $phoneNumber, $role = TRUE)
+function createUser($userName, $email, $password, $phoneNumber, $role = TRUE)
 {
     global $connection;
-    $statement = $connection->prepare("insert into users (user_name,email,password,credit_card_number,phone_number,role) values (:username,:email,:password,:creditcard,:phonenumber,:role)");
+    $statement = $connection->prepare("insert into users (user_name,email,password,phone_number,role) values (:username,:email,:password,:phonenumber,:role)");
     $statement->execute([
         'username' => $userName,
         ':email' => $email,
         ':password' => $password,
-        ':creditcard' => $creditCard,
         ':phonenumber' => $phoneNumber,
         ':role' => $role,
     ]);
@@ -42,6 +41,12 @@ function getUser()
     return $statement->fetchAll();
 
 }
+function getCustomer(){
+    global $connection;
+    $statement = $connection->prepare("select * from customers");
+    $statement->execute();
+    return $statement->fetchAll();
+}
 function getMoives()
 {
     global $connection;
@@ -54,8 +59,9 @@ function getMoives()
 function getSearch($letter)
 {
     global $connection;
-    $query = "SELECT movie_title FROM movies WHERE movie_title LIKE '%{$letter}%' OR movie_title LIKE '{$letter}%'";
+    $query = "SELECT movies_id,movie_title FROM movies WHERE movie_title LIKE '%{$letter}%' OR movie_title LIKE '{$letter}%'";
     $state = $connection->prepare($query);
     $state->execute();
     return $state->fetchAll(PDO::FETCH_ASSOC);
 }
+
