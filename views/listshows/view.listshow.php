@@ -7,18 +7,11 @@ require_once('views/partials/navbar.php');
 
 <body>
     <div class="list">
-        <div class="top d-flex align-items-center ms-5">
+        <div class="search">
             <h5 class="text-white">CATEGROY</h5>
-            <div class="d-flex flex-column w-100 align-items-center" id="search-blog">
-                <form action="" method="get" class="search" class="">
-                    <input type="search" placeholder="Search" id="fname" name="fname" onkeyup="showHint(this.value)">
-                    <label for="fname" class="cursor-pointer text-white"><i class="material-icons">search</i></label>
-                </form>
-                <div id="product" class="text-white d-flex flex-column mx-1" >
-                    
-                </div>
-            </div>
-        </div> 
+            <input type="search" placeholder="Search">
+            <i class="material-icons">search</i>
+        </div>
         <div class="choose">
             <button class="hover-zoom"><i class="material-icons">chevron_left</i></button>
             <button>ALL MOVIES</button>
@@ -28,7 +21,7 @@ require_once('views/partials/navbar.php');
             <button>SHOW</button>
             <button><i class="material-icons">chevron_right</i></button>
         </div>
-        <div class="card-container ms-3">
+        <div class="card-container">
             <?php
             foreach ($movies as $movie) {
 
@@ -52,7 +45,7 @@ require_once('views/partials/navbar.php');
                         </div>
                         <img src="<?="../../assets/" . $movie['img']; ?>" alt="" class="card__img">
                         <a href="/" class="card_link text-decoration-none" name=""
-                            onclick="<?php $_SESSION['movie_id'] = $movie["movies_id"] ?>">
+                            onclick="<?php $_SESSION['movie_id'] = $movie["movies_id"]?>">
                             <img src="<?="../../assets/" . $movie['img']; ?>" alt="" class="card__img--hover">
 
                             <div class="card__info">
