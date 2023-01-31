@@ -1,7 +1,4 @@
 <?php
-// require_once('views/partials/header.php');
-
-
 
 session_start();
 require_once('views/partials/header.php');

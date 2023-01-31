@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="views/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../views/css/style.css">
     <script src="views/js/bootstrap.min.js"></script>
-    <script src="views/js/main.js"></script>
+    <script src="../../views/js/main.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <style>
@@ -24,4 +24,3 @@
 </head>
 
 <body class='bg-dark'>
-    <div class="">
