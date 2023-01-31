@@ -19,27 +19,24 @@
             <h2 class="text-center">REGISTER</h2>
             <input type="text" class="form-control" placeholder="User Name *" name="username">
             <small class="form-text text-danger">
-                <?php echo $userName_error; ?>
+                <?=isset($userName_error)? $userName_error : " "?>
             </small>
 
             <input type="text" class="form-control" placeholder="Email *" name="email">
             <small class="form-text text-danger">
-                <?php echo $email_error; ?>
+                <?=isset($email_error)? $email_error : " " ?>
             </small>
 
             <input type="password" class="form-control" placeholder="Password *" name="password">
             <small class="form-text text-danger">
-                <?php echo $password_error; ?>
+                <?=isset($password_error)? $password_error : " " ?>
             </small>
 
-            <input type="number" class="form-control" placeholder="Credit Card *" name="creditcard">
-            <small class="form-text text-danger">
-                <?php echo $creditCard_error; ?>
-            </small>
+           
 
             <input type="number" class="form-control" placeholder="Phone number *" name="phonenumber">
             <small class="form-text text-danger">
-                <?php echo $phoneNumber_error; ?>
+                <?=isset($phoneNumber_error)? $phoneNumber_error : " " ?>
             </small><br>
 
             <button>SUBMIT</button>
@@ -48,5 +45,5 @@
 </form>
 </div>
 </body>
-
+<script src="../js/main.js"></script>
 </html>

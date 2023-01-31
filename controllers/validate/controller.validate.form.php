@@ -84,7 +84,7 @@ $creditCard_valid = false;
 $phoneNumber_valid = false;
 $location_valid=false;
 
-function getData($key){
+function getDataKey($key){
     if (isset($_POST[$key])){
         $value = $_POST[$key];
         return $value;
@@ -92,14 +92,14 @@ function getData($key){
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $userName= getData('username');
-    $email= getData('email');
-    $password= getData('password');
-    $date= getData('dateofbirth');
-    $creditCard= getData('creditcard');
-    $phoneNumber= getData('phonenumber');
-    $company= getData('company');
-    $location= getData('location');
+    $userName= getDataKey('username');
+    $email= getDataKey('email');
+    $password= getDataKey('password');
+    $date= getDataKey('dateofbirth');
+    $creditCard= getDataKey('creditcard');
+    $phoneNumber= getDataKey('phonenumber');
+    $company= getDataKey('company');
+    $location= getDataKey('location');
 
     if (empty($userName)){
         $userName_error="Please enter a user name";
@@ -116,15 +116,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{
         $company_valid=true;
     };
-    
-    if (empty($location)){
-        $location_error="Please enter a location";
-    }elseif((validate_location($location))){
-        $location_error="Location must be at least more than or equal 16";
-    }else{
-        $location_valid=true;
-    };
-    
 
     if(empty($email)){
         $email_error="Please enter an email.";

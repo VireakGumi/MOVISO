@@ -216,6 +216,8 @@ span {
     right:10px;
     top:12px;
     visibility: hidden;
+    display: flex;
+    
 }
 
 /* -------------------------page list show----------------- */
@@ -252,12 +254,13 @@ button:hover {
     width: 100%;
     font-family: sans-serif;
     margin-top:5% ;
+
 }
 .username{
     margin-top: -5%;
 }
 
-.search {
+#search {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -266,10 +269,10 @@ button:hover {
     height: 100%;
 }
 
-.search input {
+#search input {
     border: none;
     outline: none;
-    width: 45%;
+    /* width: 30%; */
     padding: 0.7%;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -277,21 +280,21 @@ button:hover {
     color: white;
 
 }
-.search input, .search .product{
+#search input, #search .product{
     margin-left: 40%;
     width: 48%;
 
 
 }
-.search label {
+#search label {
     background-color: #8d8889;
-    padding: 0.46%;
+    padding: 0.4%;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 
 }
 
-.search input::placeholder {
+#search input::placeholder {
     padding: 0.7%;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -451,4 +454,19 @@ small{
     margin-top: 0.5%;
     margin-bottom: 5%;
     font-weight: bolder;
+}
+.seat{
+    background-color: rgb(168, 166, 166);
+}
+.showtime{
+    background-color: rgb(196, 194, 194);
+}
+.card_logo{
+    width: 10%;
+}
+.card_showtime{
+    background-color: rgba(139, 138, 138, 0.548);
+}
+.time{
+    margin-left: 15%;
 }

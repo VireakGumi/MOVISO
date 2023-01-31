@@ -1,16 +1,23 @@
 <?php
-
+// session_start();
 require_once('views/partials/navbar.php');
-
-
 ?>
 
 <body>
     <div class="list">
-        <div class="search">
+        <div class="d-flex ms-5">
             <h5 class="text-white">CATEGROY</h5>
-            <input type="search" placeholder="Search">
-            <i class="material-icons">search</i>
+            <div class="d-flex flex-column w-100" id="search-blog">
+                <div class="d-flex">
+                    <form action="" method="get" id="search" class="w-100">
+                        <input type="search" placeholder="Search" id="fname" name="fname" onkeyup="showHint(this.value)">
+                        <label for="fname" class="cursor-pointer text-white"><i class="material-icons">search</i></label>
+                    </form>
+                </div>
+                <div id="product" class="text-white d-flex flex-column mx-3">
+
+                </div>
+            </div>
         </div>
         <div class="choose">
             <button class="hover-zoom"><i class="material-icons">chevron_left</i></button>
@@ -24,7 +31,6 @@ require_once('views/partials/navbar.php');
         <div class="card-container">
             <?php
             foreach ($movies as $movie) {
-
 
                 ?>
                 <section class="cards">
@@ -44,9 +50,8 @@ require_once('views/partials/navbar.php');
 
                         </div>
                         <img src="<?="../../assets/" . $movie['img']; ?>" alt="" class="card__img">
-                        <a href="/" class="card_link text-decoration-none" name=""
-                            onclick="<?php $_SESSION['movie_id'] = $movie["movies_id"]?>">
-                            <img src="<?="../../assets/" . $movie['img']; ?>" alt="" class="card__img--hover">
+                        <a href="/detail?id=<?= $movie['movies_id'] ?>" class="card_link text-decoration-none" name="">
+                            <img src="<?="../../assets/" . $movie['img']; ?>" alt="" class="card__img--hover" >
 
                             <div class="card__info">
                                 <h3 class="card__title">

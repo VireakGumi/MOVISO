@@ -1,8 +1,15 @@
 
 <?php
-// session_start();
+session_start();
+require ("database/database.php");
+
 require ("controllers/validate/controller.validate.form.php");
 $user = getUser();
+
+$statement = $connection->prepare("select * from users");
+$statement->execute();
+$users = $statement->fetchAll();
+
 $isFound=false;
 
 if (isset($_POST["password"]) && ($_POST["email"]))
