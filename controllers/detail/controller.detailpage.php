@@ -1,7 +1,6 @@
 <?php
 require 'database/database.php';
 $movieId = isset($_GET["id"])? $_GET["id"]: '';
-// require ('model/model.php');
 
 function getData($table,$id){
     global $connection;

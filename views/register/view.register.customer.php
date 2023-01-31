@@ -17,24 +17,22 @@
     <div class="form_right">
         <div class="container">
             <h2 class="text-center">REGISTER</h2>
-            <input type="text" class="form-control" placeholder="User Name *" name="username">
+            <input type="text" class="form-control mt-3" placeholder="User Name *" name="username">
             <small class="form-text text-danger">
                 <?=isset($userName_error)? $userName_error : " "?>
             </small>
 
-            <input type="text" class="form-control" placeholder="Email *" name="email">
+            <input type="text" class="form-control mt-3" placeholder="Email *" name="email">
             <small class="form-text text-danger">
                 <?=isset($email_error)? $email_error : " " ?>
             </small>
 
-            <input type="password" class="form-control" placeholder="Password *" name="password">
+            <input type="password" class="form-control mt-3" placeholder="Password *" name="password">
             <small class="form-text text-danger">
                 <?=isset($password_error)? $password_error : " " ?>
             </small>
 
-           
-
-            <input type="number" class="form-control" placeholder="Phone number *" name="phonenumber">
+            <input type="number" class="form-control mt-3j" placeholder="Phone number *" name="phonenumber">
             <small class="form-text text-danger">
                 <?=isset($phoneNumber_error)? $phoneNumber_error : " " ?>
             </small><br>
