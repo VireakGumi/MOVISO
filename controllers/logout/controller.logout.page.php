@@ -1,6 +1,8 @@
 <?php
 session_start();
-session_destroy();
+setcookie("Password","", time() - 1, "/");
+setcookie("Email","", time() -1 , "/");
+
 header("Location:/");
 
 
