@@ -15,12 +15,13 @@ if (isset($_POST["password"]) && ($_POST["email"]))
         
         if (!empty($_POST["password"]) && !empty($_POST["email"]))
         {
-            // echo (password_verify( $_POST["password"],$user["password"]));
             if(password_verify( $_POST["password"],$user["password"]) && ($user["email"] == $_POST["email"]))
             {
-                $_SESSION["password"] = $_POST["password"];
-                $_SESSION["email"] = $user["email"];
-                $_SESSION['user_id'] = $user["user_id"];
+                setcookie("Password",$_POST["password"], time() + (86400 * 30), "/");
+                setcookie("Email",$user["email"], time() + (86400 * 30), "/");
+                setcookie("UserId",$user["user_id"], time() + (86400 * 30), "/");
+
+
                 $isFound=true;  
             }
         }    
