@@ -1,6 +1,5 @@
 <?php
 require_once('../../database/database.php');
-session_start();
 $userInput = $_REQUEST["search"];
 require('../../model/model.php');
 $data = getSearch($userInput);

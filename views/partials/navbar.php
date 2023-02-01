@@ -6,13 +6,13 @@ require_once('views/partials/header.php');
 $users = getUser();
 $isFound=false;
 
-if (isset($_SESSION["password"]) && isset($_SESSION["email"]))
+if (isset($_COOKIE["Password"]) && isset($_COOKIE["Email"]))
 {
     foreach ($users as $user):
         
-        if (!empty($_SESSION["password"]) && !empty($_SESSION["email"]))
+        if (!empty($_COOKIE["Password"]) && !empty($_COOKIE["Email"]))
         {
-            if(password_verify($_SESSION["password"],$user["password"]) && ($user["email"] == $_SESSION["email"]))
+            if(password_verify($_COOKIE["Password"],$user["password"]) && ($user["email"] == $_COOKIE["Email"]))
             {
                 $isFound=true;  
             }
@@ -21,6 +21,7 @@ if (isset($_SESSION["password"]) && isset($_SESSION["email"]))
 
 }
 ?>
+
 
 
 <nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100 top-0" aria-label="Secondary navigation"
@@ -35,8 +36,8 @@ if (isset($_SESSION["password"]) && isset($_SESSION["email"]))
                     aria-current="page">HOME</a>
                 <a href="/explore"
                     class=" <?= urls("/explore") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">EXPLORE</a>
-                <a href="/trailer"
-                    class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">TRAILER</a>
+                <!-- <a href="/trailer"
+                    class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">TRAILER</a> -->
             </div>
             <div class="navbar-nav">
 
@@ -45,7 +46,7 @@ if (isset($_SESSION["password"]) && isset($_SESSION["email"]))
                     
                     if ($isFound){
                         foreach($users as $user){
-                                if($_SESSION['user_id'] == $user['user_id']){
+                                if($_COOKIE['UserId'] == $user['user_id']){
                                     ?>
                                      
                                      

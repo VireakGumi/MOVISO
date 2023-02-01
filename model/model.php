@@ -1,6 +1,5 @@
 <?php
-
-function createCustomer($userId)
+function createCustomer($userId) : bool
 {
     global $connection;
 
@@ -13,7 +12,7 @@ function createCustomer($userId)
 }
 
 
-function createUser($userName, $email, $password, $phoneNumber, $role = TRUE)
+function createUser(string $userName, string $email, string $password, int $phoneNumber, bool $role = TRUE) : bool
 {
     global $connection;
     $statement = $connection->prepare("insert into users (user_name,email,password,phone_number,role) values (:username,:email,:password,:phonenumber,:role)");
@@ -41,12 +40,15 @@ function getUser()
     return $statement->fetchAll();
 
 }
-function getCustomer(){
+
+function getCustomer()
+{
     global $connection;
     $statement = $connection->prepare("select * from customers");
     $statement->execute();
     return $statement->fetchAll();
 }
+
 function getMoives()
 {
     global $connection;
