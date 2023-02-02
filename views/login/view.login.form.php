@@ -32,6 +32,7 @@
 
                 <!-- <input type="submit" class=" login form-control " value="LOGIN"> -->
                 <a href="<?php if($isFound){ echo '../home/home.php';} else{echo '#';}?>"><button class=" login form-control "> LOGIN</button></a>
+                <p>Don't have an acount? <a href="../../controllers/register/controller.register.customer.php">login now</a></p>
             </div>
         </div>
     </form>
