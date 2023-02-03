@@ -12,7 +12,7 @@ function createCustomer($userId) : bool
 }
 
 
-function createUser(string $userName, string $email, string $password, int $phoneNumber, bool $role = TRUE) : bool
+function createUser(string $userName, string $email, string $password, int $phoneNumber, bool $role = TRUE) : int
 {
     global $connection;
     $statement = $connection->prepare("insert into users (user_name,email,password,phone_number,role) values (:username,:email,:password,:phonenumber,:role)");
@@ -28,7 +28,6 @@ function createUser(string $userName, string $email, string $password, int $phon
 
     $number = count($result) - 1;
     $userRole = $result[$number];
-    print_r($userRole['user_id']);
     return $userRole['user_id'];
 }
 
@@ -67,3 +66,39 @@ function getSearch($letter)
     return $state->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function createShow(string $title, int $price, string $genre, string $duration, date $released, string $country, string $production, string $img, string $trailer, string $description)
+{
+    global $connection;
+    $statement=$connection->prepare("INSERT into movies (movie_title, description, genre, duration, released, country, production, trailer, img, price) VALUES (:title, :description, :genre, :duration, :released, :country, :production, :img, :trailer, :pricee)"); 
+    $statement->execute(
+        [
+            ':title' => $title,
+            ':description' => $description,
+            ':genre' => $genre,
+            ':duration' => $duration,
+            ':released' => $released,
+            ':country' => $country,
+            ':production' => $production,
+            ':img' => $img,
+            ':trailer' => $trailer,
+            ':price' => $price,
+        ]
+    );
+}
+
+function newVenue($name, $address){
+    $statement=$connection->prepare("INSERT INTO venue (name, address) VALUES (:name, :address)");
+    $statement->execute(
+        [
+            ':name' => $name,
+            ':address' => $address,
+        ]
+        );
+    $statement=$connection->prepare("SELECT * FROM venue");
+    $result=$statement->fetcAll();
+
+    $number= count($result)-1;
+    $venueId=$result[$number];
+    return $venueId['venue_id'];
+
+}
