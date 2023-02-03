@@ -20,12 +20,12 @@
                 <div class="text">
                     <p>This website had built by students 2023 generation of PNC:</p>
                     <ul>
-                        <li><a href="">Vireak Roeun</a> </li>
-                        <li><a href=""> Chhilin Yun</a></li>
-                        <li><a href="">Choreth Kosal</a> </li>
-                        <li><a href="">Navy Rorn</a> </li>
-                        <li><a href="">Darath Pum</a> </li>
-                        <li><a href="">Nit Nem</a> </li>
+                        <li>Vireak Roeun</li>
+                        <li>Chhilin Yun</li>
+                        <li>Choreth Kosal</li>
+                        <li>Navy Rorn</li>
+                        <li>Darath Pum</li>
+                        <li>Nit Noem</li>
                     </ul>
                 </div>
             </div>
