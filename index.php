@@ -1,3 +1,10 @@
 <?php
+require_once('database/database.php');
+require ('model/model.php');
+require_once('func.php');
+require_once('router.php');
 
-require_once('controllers/register/controller.register.customer.php');
+
+
+
+?>

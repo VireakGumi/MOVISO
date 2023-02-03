@@ -1,6 +1,6 @@
-function username() {
-    var userName = document.getElementById('user_value').value;
-    var conditionUsername = /^[A-Za-z]{3,30}$/;
+function userNameCheck() {
+    let userName = document.getElementById('user_value').value;
+    let conditionUsername = /^[A-Z]{1}[a-z-A-Za" "]{3,}$/;
     if (conditionUsername.test(userName)) {
         document.querySelector('#user-field').classList = "success";
     } else {
@@ -8,9 +8,9 @@ function username() {
     }
 }
 
-function email() {
-    var email = document.getElementById('email_value').value;
-    var conditionEmial = /^[a-z._]{2,}@[a-z]{3,}[.]{1,}[a-z.]{2,}$/;
+function emailCheck() {
+    let email = document.getElementById('email_value').value;
+    let conditionEmial = /^[a-z._]{2,}@[a-z]{3,}[.]{1,}[a-z.]{2,}$/;
     if (conditionEmial.test(email)) {
         document.querySelector('#email-field').classList = "success";
     } else {
@@ -18,31 +18,92 @@ function email() {
     }
 }
 
-function password() {
-    var password = document.getElementById('password_value').value;1
-    var coditionPassword = /^[A-Za-z0-9]{8,16}$/;
-    if (coditionPassword.test(password )) {
+function passwordCheck() {
+    let password = document.getElementById('password_value').value;
+    let conditionPassword = /^[A-Za-z0-9]{8,16}$/;
+    if (conditionPassword.test(password )) {
         document.querySelector('#password-field').classList = "success";
     } else {
         document.querySelector('#password-field').classList = "fail";
     }
 }
 
-function card() {
-    var card = document.getElementById('card_value').value;
-    var coditionCard = /^[0-9]{16}$/;
-    if (coditionCard.test(card)) {
+function confirmpassCheck() {
+    let confirmpassword = document.getElementById('confirmpass_value').value;
+    let password = document.getElementById('password_value').value;
+    if (confirmpassword == password) {
+        document.querySelector('#confirmpass-field').classList = "success";
+    } else {
+        document.querySelector('#confirmpass-field').classList = "fail";
+    }
+}
+
+function phoneCheck() {
+    let phone = document.getElementById('phone_value').value;
+    let conditionphone = /^[0-9]{9,10}$/;
+    if (conditionphone.test(phone)) {
+        document.querySelector('#phone-field').classList = "success";
+    } else {
+        document.querySelector('#phone-field').classList = "fail";
+    }
+}
+
+function cardCheck() {
+    let card = document.getElementById('card_value').value;
+    let conditionCard =/^[0-9]{16}$/;
+    if (conditionCard.test(card)) {
         document.querySelector('#card-field').classList = "success";
     } else {
         document.querySelector('#card-field').classList = "fail";
+    }   
+}
+
+function dateCheck() {
+    let todayDate = new Date();
+    let month = todayDate.getMonth() + 1 ;
+    let maxyear = todayDate.getUTCFullYear() - 12;
+    let minyear = todayDate.getUTCFullYear() - 100;
+    let date = todayDate.getDate();
+
+    if (month < 10){
+        month = "0" + month;
     }
+    if(date < 10){
+        date = "0" + date;
+    }
+    
+    let maxDate = maxyear + "-" + month + "-" + date
+
+    let minDate = minyear + "-" + month + "-" + date
+
+    document.getElementById("date").setAttribute("max", maxDate);
+
+    document.getElementById("date").setAttribute("min", minDate);
 }
 
 function normal(key) {
     let keys = "#" + key;
-    var keyValues = document.querySelector(keys);
-    var input = keyValues.querySelector("input");
+    let keyValues = document.querySelector(keys);
+    let input = keyValues.querySelector("input");
     if (input.value.length == 0) {
         keyValues.classList = "normal";
     }
 }
+
+function showHint(str) {
+    if (str.length == 0) {
+        document.getElementById("product").innerHTML = "";
+        return;
+    } else {
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("product").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "../../controllers/search/search.controller.php?search=" + str, true);
+        xmlhttp.send();
+    }
+}
+
+dateCheck()
