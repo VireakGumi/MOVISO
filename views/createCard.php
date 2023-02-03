@@ -19,19 +19,26 @@ foreach ($movies as $movie) {
                     </div>
 
                 </div>
-                <img src="<?="../../assets/" . $movie['img']; ?>" alt="" class="card__img">
+                <img src="<?="../../assets/" . $movie['img']; ?>" alt="" class="card__img ">
 
                 <a href="/detail?id=<?= $movie['movies_id'] ?>" class="card_link text-decoration-none" name="">
 
                     <img src="<?="../../assets/" . $movie['img']; ?>" alt="" class="card__img--hover">
 
                     <div class="card__info">
-                        <h3 class="card__title">
+                        <h3 class="card__title text-danger">
                             <?= $movie["movie_title"] ?>
                         </h3>
-                        <h3 class="card__category ">
-                            <?= $movie["description"] ?>
-                        </h3>
+                        <div class="card_released mt-3 d-flex justify-content-between">
+                            <div class="released text-dark">
+                                <?= $movie["released"] ?>
+                            </div>
+                            <div class=" prices text-dark">
+                                <span class="text-danger">$</span><?= $movie["prices"]?>
+
+                            </div>
+
+                        </div>
                 </a>
                 </div>
             </article>

@@ -29,7 +29,7 @@ require_once('views/partials/navbar.php');
             <button>SHOW</button>
             <button><i class="material-icons">chevron_right</i></button>
         </div>
-        <div class="card-container ms-3">
+        <div class="card-container">
             <?php
             $row = 16;
 

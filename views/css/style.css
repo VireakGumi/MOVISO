@@ -169,6 +169,7 @@ h3{
 .icon-image img {
     margin-left: 10px ;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 span {
