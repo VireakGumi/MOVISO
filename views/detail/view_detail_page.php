@@ -34,6 +34,10 @@
                     <h5>PRODUCTION:</h5>
                     <a href="#" class="ms-5 text-white"><?=$production?></a>
                 </div>
+                <div class="production d-flex mt-5">
+                    <h5>DESCRIPTION:</h5>
+                    <a href="#" class="ms-5 text-white"><?=$description?></a>
+                </div>
                 <div class="me-5 mt-5">
                     <button>Ticket</button>
                 </div>
