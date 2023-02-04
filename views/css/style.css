@@ -473,3 +473,104 @@ small{
 .time{
     margin-left: 15%;
 }
+/* -----------------------------------------------------Form add movie----------------------------- */
+.list_movie{
+    
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 90vh;
+    background-color: rgba(211, 195, 195, 0.554);
+    border-radius: 20px;
+
+}
+.contain-movie{
+    margin-top: 5%;
+    font-weight: bold;
+    color: rgb(143, 6, 6);
+    font-size: 45px;
+}
+
+.form-movie{
+    display: flex;
+    flex-direction: row;
+}
+.movie-left{
+
+    width: 70%;
+    margin-top: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    
+}
+.movies{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom:0.5%;
+}
+.movies input{
+    width: 280px;
+
+}
+
+.movie-right{
+    margin-top: 3%;
+
+    width: 50%;
+    margin-right: 5%;
+
+}
+
+.movie-left .movies {
+    margin-bottom: 2%;
+}
+
+form .movies{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1%;
+}
+.movie-btn{
+    display: flex;
+    flex-direction: row;
+    
+    margin-right: 5%;
+    /* background-color: #750013; */
+    justify-content: end;
+    margin-bottom: 5%;
+}
+.movie-btn :nth-child(1){
+    margin-right: -25%;
+    padding-left: 3%;
+    
+}
+.movie-btn :nth-child(2){
+
+    padding-left: 2%;
+    
+}
+.movie-btn button{
+    background-color: #750013;
+    width: 10%;
+    display: flex;
+}
+form .img {
+    text-align: center;
+    padding: 3%;
+
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 2%;
+    background-color: rgb(240, 248, 255);
+  }
+.img #image {
+    cursor: pointer;
+  }
+form .img input[type=file] {
+    display: none;
+  }
