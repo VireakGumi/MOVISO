@@ -1,6 +1,7 @@
 
 
 <?php
+session_start();
 require ("controllers/validate/controller.validate.form.php");
 $isFound=false;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -8,7 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $passwordEncryp=password_hash($_POST["password"],PASSWORD_BCRYPT);
         $userId = createUser($_POST["username"],$_POST["email"],$passwordEncryp,$_POST["phonenumber"]);
         createCustomer($userId);
+        setcookie("Username",$_POST["username"], time() + (86400 * 30), "/");
+        setcookie("Password",$_POST["password"], time() + (86400 * 30), "/");
+        setcookie("Email",$user["email"], time() + (86400 * 30), "/");
+        setcookie("UserId",$user["user_id"], time() + (86400 * 30), "/");
         $isFound=true;
+
         
     }
     if($isFound){
