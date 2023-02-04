@@ -83,7 +83,7 @@
                
                 <div id="card-field">
                     <input type="text" id="card_value" placeholder="0000 0000 0000 0000" class="form-control" 
-                        name="creditcard" onkeyup="cardCheck()" onclick="normal('card-field')">
+                        name="creditcard" onkeypress="cardCheck()" onclick="normal('card-field')" maxlength="19"  maxlength="19">
                     <small class="text-danger">
                         <!-- <?php echo $creditcard_error; ?> -->
                     </small>
