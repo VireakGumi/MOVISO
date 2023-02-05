@@ -66,4 +66,12 @@ function getSearch($letter)
     $state->execute();
     return $state->fetchAll(PDO::FETCH_ASSOC);
 }
-
+function delete($id)
+{
+    global $connection;
+    $query = "DELETE FROM movies WHERE movie_id=:id";
+    $state = $connection->prepare($query);
+    $state->execute([
+        ':id' => $id,
+    ]);
+}
