@@ -1,5 +1,5 @@
 <?php
-function createCustomer($userId) : bool
+function createCustomer($userId): bool
 {
     global $connection;
 
@@ -12,7 +12,7 @@ function createCustomer($userId) : bool
 }
 
 
-function createUser(string $userName, string $email, string $password, int $phoneNumber, bool $role = TRUE) : bool
+function createUser(string $userName, string $email, string $password, int $phoneNumber, bool $role = TRUE): bool
 {
     global $connection;
     $statement = $connection->prepare("insert into users (user_name,email,password,phone_number,role) values (:username,:email,:password,:phonenumber,:role)");
@@ -67,3 +67,10 @@ function getSearch($letter)
     return $state->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function update($data)
+{
+    global $connection;
+    $query = "UPDATE movies SET movie_title=:title, genre=:genre, price=:price released=:released, duration=:duration WHERE movies_id=:id";
+    $state = $connection->prepare($query);
+    $state->execute($data);
+}
