@@ -473,3 +473,10 @@ small{
 .time{
     margin-left: 15%;
 }
+/* /* -----------------------seller edite-------------- */
+
+.container .table-add-record button{
+    width: 9%;
+    padding: 3px;
+    border-radius: 3px;
+}
