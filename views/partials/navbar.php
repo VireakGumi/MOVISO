@@ -20,19 +20,20 @@ if (isset($_COOKIE["Password"]) && isset($_COOKIE["Email"])) {
 
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ($userName_valid && $email_valid && $password_valid && $address_valid && $date_valid && $phoneNumber_valid) {
-        if ($_POST["password"] == $_POST["confirmpassword"]) {
-            $passwordEncryp = password_hash($_POST["password"], PASSWORD_BCRYPT);
-            $userId = createUser($_POST["username"], $_POST["email"], $passwordEncryp, $_POST["phonenumber"]);
-            createCustomer($userId);
-            setcookie("Username", $_POST["username"], time() + (86400 * 30), "/");
-            $isFound = true;
+    if ( $userName_valid && $email_valid && $password_valid && $address_valid && $date_valid && $phoneNumber_valid){
+        if($_POST["password"]==$_POST["confirmpassword"]){
+        $passwordEncryp=password_hash($_POST["password"],PASSWORD_BCRYPT);
+        $userId = createUser($_POST["username"],$_POST["email"],$_POST["address"],$_POST["creditcard"],$_POST["dateofbirth"],$passwordEncryp,$_POST["phonenumber"]);
+        createCustomer($userId);
+        
+        $isFound=true;
 
         }
     }
-
+  
 }
 ?>
+
 
 
 <nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100 top-0" aria-label="Secondary navigation"

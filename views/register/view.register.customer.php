@@ -54,6 +54,18 @@
                     </small>
                 </div>
 
+                <div id="confirmpass-field">
+                    <input type="password" id="confirmpass_value" class="form-control" placeholder="Confirm Password *"
+                        name="confirmpassword" onkeyup="confirmpassCheck()" onclick="normal('confirmpass-field')">
+                    <span id="icons">
+                        <i class="fa fa-check-circle"></i>
+                        <i class="fa fa-exclamation-circle"></i>
+                    </span>
+                    <small class="text-danger">
+                        <?php echo $passwordConfirm_error; ?>
+                    </small>
+                </div>
+    
                 <div id="phone-field">
                     <input type="text" id="phone_value" class="form-control" placeholder="Phone Number *"
                         name="phonenumber" onkeyup="phoneCheck()" onclick="normal('phone-field')">
@@ -65,15 +77,25 @@
                         <?php echo $phoneNumber_error; ?>
                     </small>
                 </div>
-
+                <input type="date" id="date" class="form-control" name ="dateofbirth">
+                <small class="text-danger"><?php echo $date_error; ?></small>
+                
+                <input type="text" id="address_value" class="form-control" placeholder= "Address *" name ="address">
+                <small class="text-danger"><?php echo $address_error; ?></small>
+                        
+               
+                <div id="card-field">
+                    <input type="text" id="card_value" placeholder="0000 0000 0000 0000" class="form-control" 
+                        name="creditcard" onkeypress="cardCheck()" onclick="normal('card-field')" maxlength="19"  maxlength="19">
+                    <small class="text-danger">
+                        <?php echo $creditCard_error; ?>
+                    </small>
+                </div>
 
                 <button>SUBMIT</button>
-
             </div>
         </div>
-        </div>
     </form>
-    </div>
 </body>
 <script src="views/js/main.js"></script>
 

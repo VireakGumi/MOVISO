@@ -2,9 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
-body {
+body{
     margin-top: 2%;
+    font-family: sans-serif;
 }
 
 .background {
@@ -29,7 +29,7 @@ form {
     background-color: rgba(192, 185, 185, 0.623);
     justify-content: space-evenly;
     width: 70%;
-    height: 80vh;
+    height: 90vh;
     margin: auto;
 }
 
@@ -453,11 +453,11 @@ button:hover {
     gap: 20px;
     padding: 5px 20px;
 }
-small{
+/* small{
     margin-top: 0.5%;
     margin-bottom: 5%;
     font-weight: bolder;
-}
+} */
 .seat{
     background-color: rgb(168, 166, 166);
 }
