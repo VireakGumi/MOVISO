@@ -65,20 +65,3 @@ function getSearch($letter)
     $state->execute();
     return $state->fetchAll(PDO::FETCH_ASSOC);
 }
-
-function newShow(string $title, string $price, string $genre, date $released, string $duration, string $country, string $production, string $img, string $trailer, string $description)
-{
-    global $connection;
-    $statement= $connection->prepare("INSERT INTO movies (movie_title, description, genre, duration, released, country, production, trailer, img, price) VALUES ($title, $description, $genre, $duration, $released, $country, $production, $trailer, $img, $price)");
-}
-
-function venues(string $name, string $address)
-{
-    global $connection;
-    $statement= $connection->prepare("INSERT INTO venues (name, address) VALUES ($name, $address)");
-    $result= $statement->fetchAll();
-
-    $number=count($result)-1;
-    $venueId= $result[$number];
-    return $venueId['venue_id'];
-}
