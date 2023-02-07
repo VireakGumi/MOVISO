@@ -9,6 +9,7 @@ $router = [
     "/login" => 'controllers/login/controller.login.page.php',
     "/logout" => 'controllers/logout/controller.logout.page.php',
     "/register" => 'controllers/register/controller.register.customer.php',
+    "/movie" => 'controllers/register/controller.add.movie.php',
     "/detail" => 'controllers/detail/controller.detailpage.php'
     
 ];
