@@ -49,13 +49,12 @@ function getCustomer()
     return $statement->fetchAll();
 }
 
-function getMoives()
+function getMoives() 
 {
     global $connection;
     $statement = $connection->prepare("SELECT * FROM movies");
     $statement->execute();
-    return $statement->fetchAll();
-    ;
+    return $statement->fetchAll();;
 }
 
 function getSearch($letter)
