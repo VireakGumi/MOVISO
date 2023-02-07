@@ -1,5 +1,30 @@
 
 <?php
+$users = getUser();
+$isFound=false;
+$isFoundEmail=false;
+
+if (isset($_POST["password"]) && ($_POST["email"]))
+{
+    foreach ($users as $user):
+        
+        if (!empty($_POST["password"]) && !empty($_POST["email"]))
+        {
+            if($user["password"] !==$_POST["password"])
+            {
+              $isFound=true;
+
+            }if (($user["email"] !== $_POST["email"])){
+                $isFound=true;
+            }
+            if($user["email"] == $_POST["email"]){
+                $isFoundEmail=true;
+            }
+        }    
+    endforeach;
+}
+
+
 
 function validate_userName($userName){
     return ctype_alnum($userName) && ctype_alpha($userName[0]);
@@ -12,65 +37,76 @@ function validate_company($company){
 }
 
 function validate_email($email){
-    return filter_var($email, FILTER_VALIDATE_EMAIL);
+ 
+        return filter_var($email, FILTER_VALIDATE_EMAIL); 
 }
 
 function validate_password($password){
     return strlen($password)>=8 && strlen($password)<=16;
 }
+function validate_passwordConfirm($passwordConfirm){
+    return strlen($passwordConfirm)>=8 && strlen($passwordConfirm)<=16;
+}
 
 function validate_creditCard($creditCard){
-    return strlen($creditCard) == 16 ;
+    return strlen($creditCard) == 19 ;
 } 
 
 function validate_phonenumber($phoneNumber){
     return strlen($phoneNumber)>16;
 }
 
+
 $userName_error = "";
 $company_error = "";
 $email_error = "";
+$email_incorrect = "";  
 $password_error = "";
+$passwordConfirm_error = "";
+$password_incorrect = "";
 $date_error = "";
 $creditCard_error = "";
 $phoneNumber_error = "";
-$location_error="";
+$address_error="";
 
 
 $company="";
 $userName = "";
 $email = "";
 $password="";
+$passwordConfirm="";
 $date="";
 $creditCard="";
 $phoneNumber="";
-$location="";
+$address="";
 
 $company_valid = false;
 $userName_valid = false;
 $email_valid = false;
 $password_valid = false;
+$passwordConfirm_valid = false;
 $date_valid = false;
 $creditCard_valid = false;
 $phoneNumber_valid = false;
-$location_valid=false;
+$address_valid=false;
 
-function getData($key){
+function getDataKey($key){
     if (isset($_POST[$key])){
         $value = $_POST[$key];
         return $value;
     }
 }
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $userName= getData('username');
-    $email= getData('email');
-    $password= getData('password');
-    $date= getData('dateofbirth');
-    $creditCard= getData('creditcard');
-    $phoneNumber= getData('phonenumber');
-    $company= getData('company');
-    $location= getData('location');
+    $userName= getDataKey('username'); 
+    $email= getDataKey('email'); 
+    $password= getDataKey('password');  
+    $date= getDataKey('dateofbirth'); 
+    $creditCard= getDataKey('creditcard'); 
+    $phoneNumber= getDataKey('phonenumber'); 
+    $passwordConfirm= getDataKey('confirmpassword');   
+    $address= getDataKey('address'); 
 
     if (empty($userName)){
         $userName_error="Please enter a user name";
@@ -87,24 +123,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{
         $company_valid=true;
     };
-    
-    if (empty($location)){
-        $location_error="Please enter a location";
-    }elseif((validate_location($location))){
-        $location_error="Location must be at least more than or equal 16";
-    }else{
-        $location_valid=true;
-    };
-    
 
     if(empty($email)){
         $email_error="Please enter an email.";
-    }elseif (!validate_email($email)) {
-        $email_error = "email must contain '@'.";
+    }elseif($isFoundEmail){
+        $email_error = "Email must be not exits.";
+    }elseif ((!validate_email($email))) {
+        $email_error = "Email must contain '@'.";
     }else{
         $email_valid=true;
     };
-
+    
+    if($isFound){
+        $email_incorrect="Incorrect email.";
+    }
+   
 
     if(empty($password)){
         $password_error = "Please write your password here.";
@@ -113,6 +146,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{
         $password_valid=true;
     };
+    
+    if(empty($passwordConfirm)){
+        $passwordConfirm_error = "Please write your password to confirm here.";
+    } elseif(!(validate_password($passwordConfirm))){
+        $passwordConfirm_error = "password incorrect";
+    }else{
+        $passwordConfirm_valid=true;
+    };
+
+    if($isFound){
+        $password_incorrect="Incorrect password.";
+    }
 
     if (empty($date)){
         $date_error = "Please write a date of birth.";
@@ -120,10 +165,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $date_valid=true;
     };
     
-    if (empty($location)){
-        $location_error="Please enter a location.";
+    if (empty($address)){
+        $address_error="Please enter a location.";
     }else{
-        $location_valid=true;
+        $address_valid=true;
     };
     
 
@@ -135,9 +180,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $creditCard_valid=true;
     };
 
+
     if (empty($phoneNumber)){
         $phoneNumber_error = "Please write your phonenumber.";
-
     }elseif(validate_phonenumber($phoneNumber)){
         $phoneNumber_error = "Phone number must be at least more than or equal 16.";
     }else{
@@ -145,7 +190,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     };
 
 }
+if ($isFound=false){
+    require ("../../views/login/view.login.form.php");
 
-// require("../../views/register/seller.register.view.php");
+}
 
 ?>
