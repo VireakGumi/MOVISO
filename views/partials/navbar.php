@@ -5,6 +5,7 @@ require_once('views/partials/header.php');
 
 $users = getUser();
 $isFound=false;
+$isFound1=false;
 
 if (isset($_COOKIE["Password"]) && isset($_COOKIE["Email"]))
 {
@@ -20,8 +21,20 @@ if (isset($_COOKIE["Password"]) && isset($_COOKIE["Email"]))
     endforeach;
 
 }
-?>
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ( $userName_valid && $email_valid && $password_valid && $address_valid && $date_valid && $phoneNumber_valid){
+        if($_POST["password"]==$_POST["confirmpassword"]){
+        $passwordEncryp=password_hash($_POST["password"],PASSWORD_BCRYPT);
+        $userId = createUser($_POST["username"],$_POST["email"],$passwordEncryp,$_POST["phonenumber"]);
+        createCustomer($userId);
+        setcookie("Username",$_POST["username"], time() + (86400 * 30), "/");
+        $isFound=true;
 
+        }
+    }
+  
+}
+?>
 
 
 <nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100 top-0" aria-label="Secondary navigation"
@@ -45,6 +58,8 @@ if (isset($_COOKIE["Password"]) && isset($_COOKIE["Email"]))
             <?php
                     
                     if ($isFound){
+                        
+                        if (!empty($_COOKIE['UserId']) and empty($_COOKIE['Username'])){
                         foreach($users as $user){
                                 if($_COOKIE['UserId'] == $user['user_id']){
                                     ?>
@@ -55,20 +70,33 @@ if (isset($_COOKIE["Password"]) && isset($_COOKIE["Email"]))
                                     }
                                 }
                                 ?><a href="/logout" class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1">LOGOUT</a><br><?php
+                        }
+                        if ($_COOKIE['Role'] == 0){
+                            ?>
+                            <a href="/"class=" <?= urls("##") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">SELLER</a>
+                            <?php
+                        }
+                        if(isset($_COOKIE['Username'])){
+                                ?>
+                                <a href="##" class="border-bottom border-4 nav-link mx-3 px-0 pb-1 hover "><?=$_COOKIE['Username'] ?></a>
+                                <?php
+                            ?>
+                                <a href="/logout" class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1">LOGOUT</a><br><?php
+                        }
+                        
+    
                     }
-        
+                    
                     else{
                         ?>
                         <a href="/login"
-                            class=" <?= urls("/login") ? 'border-bottom border-4 border-danger ' : 'hover ' ?> border-bottom border-4 nav-link mx-3 px-0 pb-1">LOGIN
-                        
+                            class=" <?= urls("/login") ? 'border-bottom border-4 border-danger ' : 'hover ' ?> border-bottom border-4 nav-link mx-3 px-0 pb-1">LOGIN</a>
                             <a href="/register"
                                 class=" <?= urls("/register") ? 'border-bottom border-4 border-danger ' : 'hover ' ?> border-bottom border-4 nav-link px-0 pb-1 mx-3"
                                 aria-disabled="true">REGISTER</a>
                 <?php
                     }
                     ?>
-                
             </div>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
