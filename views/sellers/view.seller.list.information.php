@@ -1,13 +1,6 @@
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>View Records</title>
-    <link rel="stylesheet" href="../../views/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
+<?php
+require_once('views/partials/navbar.php');
+?>
     <div class="container mt-3">
         <div class="table-add-record d-flex justify-content-between mb-2">
 
@@ -57,6 +50,8 @@
             ?>
         </table>
     </div>
-</body>
 
-</html>
+    <?php
+    require_once('views/partials/footer.php');
+
+    ?>
