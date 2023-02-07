@@ -99,5 +99,6 @@ function newVenue($name, $address){
 
     $number= count($result)-1;
     $venueId=$result[$number];
+    
     return $venueId['venue_id'];
 }
