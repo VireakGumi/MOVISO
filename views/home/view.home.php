@@ -1,8 +1,6 @@
 <?php
 
 require_once('views/partials/navbar.php');
-
-
 ?>
 
 <header class=" masthead text-white text-center pb-5">
