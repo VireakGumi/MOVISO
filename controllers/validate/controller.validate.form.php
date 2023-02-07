@@ -32,7 +32,6 @@ function validate_userName($userName){
 
 }
 
-
 function validate_company($company){
     return strlen($company)<10;
 }
@@ -49,12 +48,15 @@ function validate_password($password){
 function validate_creditCard($creditCard){
     return strlen($creditCard) == 16 ;
 } 
+function validate_numberTicket($numberTicket){
+    return strlen($numberTicket) == 50 ;
+} 
 
 function validate_phonenumber($phoneNumber){
     return strlen($phoneNumber)>16;
 }
 
-
+$numberTicket_error = "";
 $userName_error = "";
 $company_error = "";
 $email_error = "";
@@ -75,6 +77,7 @@ $date="";
 $creditCard="";
 $phoneNumber="";
 $location="";
+$numberTicket="";
 
 $company_valid = false;
 $userName_valid = false;
@@ -84,6 +87,7 @@ $date_valid = false;
 $creditCard_valid = false;
 $phoneNumber_valid = false;
 $location_valid=false;
+$numberTicket_valid=false;
 
 function getDataKey($key){
     if (isset($_POST[$key])){
@@ -102,6 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phoneNumber= getDataKey('phonenumber'); 
     $company= getDataKey('company'); 
     $location= getDataKey('location'); 
+    $numberTicket = getDatakey('numberticket');
 
     if (empty($userName)){
         $userName_error="Please enter a user name";
@@ -176,10 +181,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $phoneNumber_valid=true;
     };
 
+    if (empty($numberTicket)){
+        $numberTicket_error = "Please write your number of Ticket.";
+    }elseif(validate_phonenumber($numberTicket)){
+        $numberTicket_error = "Phone number must be at least more than or equal 16.";
+    }else{
+        $numberTicket_error=true;
+    };
+
 }
 if ($isFound=false){
     require ("../../views/login/view.login.form.php");
-
 }
 
 ?>
