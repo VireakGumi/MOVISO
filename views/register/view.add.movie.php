@@ -1,5 +1,5 @@
 <?php require("views/partials/header.php"); ?>
-<img src="../../assets/istockphoto-915697084-170667a.jpg" alt="" class="background">
+<img src="../../assets/istockphoto-915697084-170667a.jpg" alt="" class="bg">
 <form action="/" method="post" class="list_movie">
     <!-- <img src="../../assets/moviso-logo1.png" class="logo_on_form" alt="" width="40%"> -->
     <h2 class="text-center contain-movie ">UPLOAD MOVIE  </h2>
@@ -7,126 +7,116 @@
             <div class="movie-left">
                 <div class="movies">
                         <div id="title-field">
-                            <input type="text" id="title_value" class="form-control" placeholder="Movie title *" name="title"
+                            Movie Title<input type="text" id="title_value" class="form-control" name="title"
                                 onkeyup="movieTitle()" onclick="normal('title-field')">
                             <span id="icons">
                                 <i class="fa fa-check-circle"></i>
                                 <i class="fa fa-exclamation-circle"></i>
                             </span>
-                            <!-- <small class="text-danger">
-                                <?php echo $title_error; ?>
-                            </small> -->
+                            <!-- <small class="text-danger">darath</small> -->
+
                         </div>
                         <div id="price-field">
-                            <input type="text" id="price_value" class="form-control" placeholder="Price *" name="price"
+                            Price<input type="text" id="price_value" class="form-control"  name="price"
                                 onkeyup="moviePrice()" onclick="normal('price-field')">
                             <span id="icons">
                                 <i class="fa fa-check-circle"></i>
                                 <i class="fa fa-exclamation-circle"></i>
                             </span>
-                            <!-- <small class="text-danger">
-                                <?php echo $price_error; ?>
-                            </small> -->
+                            <!-- <small class="text-danger">darath</small> -->
+
                         </div>
                 </div>
 
                 <div class="movies">
                     <div id="genre-field">
-                        <input type="text" id="genre_value" class="form-control" placeholder="Genre *" name="genre"
+                        Genre<input type="text" id="genre_value" class="form-control"  name="genre"
                             onkeyup="movieGenre()" onclick="normal('genre-field')">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">
-                            <?php echo $genre_error; ?>
-                        </small> -->
+                        <!-- <small class="text-danger">darath</small> -->
+
                     </div>
                     <div id="duration-field">
-                        <input type="text" id="price_value" class="form-control" placeholder="Duration *" name="duration"
+                        Duration<input type="text" id="duration_value" class="form-control" name="duration"
                             onkeyup="movieDuration()" onclick="normal('duration-field')">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">
-                            <?php echo $duration_error; ?>
-                        </small> -->
+                        <!-- <small class="text-danger">darath</small> -->
+
                     </div>
                 </div>
 
                 <div class="movies">
                     <div id="released-field">
-                        <input type="text" id="released_value" class="form-control" placeholder="Released *" name="released"
+                        Released<input type="date" id="released_value" class="form-control" name="released"
                             onkeyup="movieReleased()" onclick="normal('released-field')">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">
-                            <?php echo $released_error; ?>
-                        </small> -->
+                        <!-- <small class="text-danger">darath</small> -->
+
                     </div>
                     <div id="country-field">
-                        <input type="text" id="country_value" class="form-control" placeholder="Country *" name="country"
+                        Country<input type="text" id="country_value" class="form-control"  name="country"
                             onkeyup="movieCountry()" onclick="normal('country-field')">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">
-                            <?php echo $country_error; ?>
-                        </small> -->
+                        <!-- <small class="text-danger">darath</small> -->
+
                     </div>
                 </div>
 
                 <div class="movies">
-                    <div id="date-field">
-                        <input type="date" id="date_value" class="form-control" placeholder="Date *" name="date"
+                   <div id="date-field">
+                        Date Time<input type="datetime-local" id="date_value" class="form-control"  name="date"
                             onkeyup="movieDate()" onclick="normal('date-field')">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">
-                            <?php echo $date_error; ?>
-                        </small> -->
+                        <!-- <small class="text-danger">darath</small> -->
+
                     </div>
                     <div id="time-field">
-                        <input type="time" id="time_value" class="form-control" placeholder="Time *" name="time"
+                         Number Ticket<input type="number" id="time_value" class="form-control"  name="time"
                             onkeyup="movieTime()" onclick="normal('time-field')">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">
-                            <?php echo $country_error; ?>
-                        </small> -->
+                        <!-- <small class="text-danger">darath</small> -->
+
                     </div>
                 </div>
 
                 <div class="movies">
                     <div id="cinemaname-field">
-                        <input type="text" id="cinema_name_value" class="form-control" placeholder="Cinema name *" name="cinemaname"
+                        Cinema Name<input type="text" id="cinema_name_value" class="form-control"  name="cinemaname"
                             onkeyup="cinemaName()" onclick="normal('cinemaname-field')">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">
-                            <?php echo $date_error; ?>
-                        </small> -->
+                        <!-- <small class="text-danger">darath</small> -->
+
                     </div>
                     <div id="production-field">
-                        <input type="text" id="production_value" class="form-control" placeholder="Production *" name="production"
+                        Production<input type="text" id="production_value" class="form-control"  name="production"
                             onkeyup="movieProduction()" onclick="normal('production-field')">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">
-                            <?php echo $production_error; ?>
-                        </small> -->
+                    <!-- <small class="text-danger">darath</small> -->
+
                     </div>
                 </div>
  
@@ -136,15 +126,14 @@
                 
 
                 <div id="trailer-field">
-                    <input type="text" id="trailer_value" class="form-control" placeholder="Link trailer *"
+                    Link Trailer<input type="text" id="trailer_value" class="form-control" placeholder="Link trailer *"
                         name="trailer" onkeyup="movieTrailer()" onclick="normal('trailer-field')">
                     <span id="icons">
                         <i class="fa fa-check-circle"></i>
                         <i class="fa fa-exclamation-circle"></i>
                     </span>
-                    <!-- <small class="text-danger">
-                        <?php echo $trailer_error; ?>
-                    </small> -->
+                    <!-- <small class="text-danger">darath</small> -->
+                        
                 </div>
 
                 
@@ -157,17 +146,17 @@
                         <span id="imageName"></span>
                     </label>
                 </div>
+                <!-- <small class="text-danger">darath</small> -->
                 <div id="description-field">
-                    <textarea name="description" id="description_value" class="form-control" cols="30" rows="4" 
+                    Description<textarea name="description" id="description_value" class="form-control" cols="30" rows="4" 
                      onkeyup="moviewDescription()" onclick="normal('description-field')" placeholder="Descriptions...."></textarea>
             
                     <span id="icons">
                         <i class="fa fa-check-circle"></i>
                         <i class="fa fa-exclamation-circle"></i>
                     </span>
-                    <!-- <small class="text-danger">
-                        <?php echo $description_error; ?>
-                    </small> -->
+                    <!-- <small class="text-danger">darath</small> -->
+
                 </div>
             </div>
 

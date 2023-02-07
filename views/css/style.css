@@ -474,18 +474,33 @@ small{
     margin-left: 15%;
 }
 /* -----------------------------------------------------Form add movie----------------------------- */
+.bg{
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 125vh;
+    -webkit-filter: blur(1px);
+    filter: blur(0.1px);
+
+}
 .list_movie{
-    
+    margin-top: 5%;
     display: flex;
     flex-direction: column;
     width: 90%;
-    height: 90vh;
-    background-color: rgba(211, 195, 195, 0.554);
+    height: 100vh;
+    background-color: rgba(185, 180, 180, 0.685);
     border-radius: 20px;
+    
+    padding-top: 5%;
+   
 
 }
 .contain-movie{
-    margin-top: 5%;
+    /* margin-top: 10%; */
     font-weight: bold;
     color: rgb(143, 6, 6);
     font-size: 45px;
@@ -496,9 +511,8 @@ small{
     flex-direction: row;
 }
 .movie-left{
-
     width: 70%;
-    margin-top: 3%;
+    margin-top: 2%;
     padding-left: 5%;
     padding-right: 5%;
     
@@ -508,7 +522,10 @@ small{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom:0.5%;
+    /* padding-bottom:0.5%; */
+}
+.movies{
+    margin-top: -1%;
 }
 .movies input{
     width: 280px;
@@ -516,7 +533,7 @@ small{
 }
 
 .movie-right{
-    margin-top: 3%;
+    margin-top: 1%;
 
     width: 50%;
     margin-right: 5%;
@@ -532,24 +549,25 @@ form .movies{
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 1%;
+
 }
 .movie-btn{
     display: flex;
     flex-direction: row;
-    
     margin-right: 5%;
-    /* background-color: #750013; */
     justify-content: end;
-    margin-bottom: 5%;
+
 }
 .movie-btn :nth-child(1){
+    margin-top: -1.5%;
+    margin-bottom: 9.5%;
     margin-right: -25%;
     padding-left: 3%;
     
 }
 .movie-btn :nth-child(2){
-
+    margin-top: -1.5%;
+    margin-bottom: 9.5%;
     padding-left: 2%;
     
 }
@@ -561,11 +579,10 @@ form .movies{
 form .img {
     text-align: center;
     padding: 3%;
-
     margin-top: 10px;
     width: 100%;
     border-radius: 5px;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     background-color: rgb(240, 248, 255);
   }
 .img #image {
