@@ -67,3 +67,15 @@ function getSearch($letter)
     return $state->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function createTicket($movieId,$customerId) : bool
+{
+    global $connection;
+
+    $statement = $connection->prepare("insert into tickets (movie_id,customer_id) values (:movieid,:customerid)");
+    $statement->execute([
+        ':movieid' => $movieId,
+        ':customerid'=> $customerId,
+    ]);
+
+    return $statement->rowCount() > 0;
+}

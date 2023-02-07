@@ -473,3 +473,21 @@ small{
 .time{
     margin-left: 15%;
 }
+/* =================buyTicket=================== */
+.card-ticket{
+    background-color: rgba(192, 185, 185, 0.813);
+    border-radius: 10px;
+    padding: 40px;
+}
+div input{
+    background-color: rgba(232, 226, 226, 0.669);
+    border:none;
+    border-radius:1px ;
+}
+.text-sm{
+    color: black;
+}
+.b{
+    border-left: solid 2px gray;
+    margin-bottom: 10px;
+}
