@@ -1,14 +1,14 @@
 <?php
 require_once('views/partials/navbar.php');
 ?>
-    <div class="container mt-3">
+    <div class="container text-white" style="margin-top: 100px;">
         <div class="table-add-record d-flex justify-content-between mb-2">
 
             <h4>All Movies</h4>
             <button>Add New</button>
         </div>
 
-        <table class="table table-secondary  table-hover">
+        <table class="table bg-white table-hover">
             <thead class="" width="">
                 <tr>
                     <th class="text-center">ID</th>
