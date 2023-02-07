@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         }
                         if ($_COOKIE['Role'] == 0){
                             ?>
-                            <a href="/"class=" <?= urls("##") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">SELLER</a>
+                            <a href="/seller"class=" <?= urls("/seller") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">SELLER</a>
                             <?php
                         }
                         if(isset($_COOKIE['Username'])){

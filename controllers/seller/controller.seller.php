@@ -8,5 +8,5 @@ if(!empty($movieId)){
 }
 
 
-require 'views/seller/view.seller.php';
+require 'views/sellers/view.seller.list.information.php';
 ?>
