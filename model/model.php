@@ -40,6 +40,26 @@ function getUser()
     return $statement->fetchAll();
 
 }
+function getUserFromID($id)
+{
+    global $connection;
+    $statement = $connection->prepare("select * from users where user_id = :id");
+    $statement->execute([
+        ':id' => $id,
+    ]);
+    return $statement->fetch();
+
+}
+function getMovieFromID($id)
+{
+    global $connection;
+    $statement = $connection->prepare("select * from users where user_id = :id");
+    $statement->execute([
+        ':id' => $id,
+    ]);
+    return $statement->fetch();
+
+}
 
 function getCustomer()
 {
