@@ -12,7 +12,7 @@ function createCustomer($userId) : bool
 }
 
 
-function createUser($userName, $email, $address,$creditCard, $date,  $password, $phoneNumber, bool $role = TRUE) : bool
+function createUser(string $userName, string $email, string $address,string $creditCard, string $date, string $password, int $phoneNumber, bool $role = TRUE) : bool
 {
     global $connection;
     $statement = $connection->prepare("insert into users (user_name,email,address,credit_card_number,date_of_birth,password,phone_number,role) values (:username,:email,:address,:creditcard,:date,:password,:phonenumber,:role)");
