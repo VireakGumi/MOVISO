@@ -15,11 +15,10 @@ function validate_dateMovie($dateMovie, $todayDate)
 }
 function validate_cardNumber($cardNumber, $userCardNumber)
 {
-    return $cardNumber == $userCardNumber;
+    return $cardNumber != $userCardNumber;
 }
 function validate_quanityTicket($quanityTicket, $numberTicket)
 {
-    $numberTicket -= $quanityTicket;
     return $quanityTicket < $numberTicket;
 
 }
