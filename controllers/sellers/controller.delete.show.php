@@ -6,5 +6,5 @@ isset($_POST["id"])? $id= $_POST["id"] : null;
 if ($id!==null )
 {
     delete($id);
-    header("Location: ../../index.php");
+    header("Location: ../../views/sellers/vview.seller.list.information.php");
 }
