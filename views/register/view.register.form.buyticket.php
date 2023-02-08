@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../views/css/style.css">
 </head>
 
-<div class="container-fluid px-1 py-5 mx-auto">
+<div class="container-fluid mx-auto">
     <img src="../../assets/cinema.png" alt="" class="background">
         <div class="row d-flex justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-9 col-sm-11" >
@@ -37,9 +37,11 @@
                                     <img class="" src="../../assets/ticketcard.png" width='40'>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <p class="text-ticket text-sm mb-0">Expiry date</p>
-                                <input type="text" name="exp" placeholder="MM/YY" >
+                            <p class="text-ticket text-sm mb-0">Quantity</p>
+                            <div class="form-group d-flex">
+                                <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                                    <input id="form1"  name="quantity" value="1" type="number" maxlength="3" class="from-control"/>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <p class="text-ticket text-sm mb-0 mt-3">CVV/CVC</p>
