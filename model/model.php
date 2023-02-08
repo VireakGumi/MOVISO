@@ -103,3 +103,12 @@ function createTicket(int $movieId,int $customerId,string $gate,int $row,int $se
 
     return $statement->rowCount() > 0;
 }
+
+function updateNumberTicket($number, $id){
+    global $connection;
+    $sate = $connection->prepare("UPDATE movies SET number_ticket = :num WHERE movieid = :id");
+    $sate->execute([    
+        ':num' => $number,
+        ':id' => $id
+    ]);
+}
