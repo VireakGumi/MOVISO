@@ -69,6 +69,7 @@ function getSearch($letter)
 
 function createTicket(int $movieId,int $customerId,string $gate,int $row,int $seat) : bool
 {
+    
     global $connection;
 
     $statement = $connection->prepare("insert into tickets (movie_id, customer_id, gate, row, seat) values (:movieid, :customerid, :gate, :row, :seat)");
