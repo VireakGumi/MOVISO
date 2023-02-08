@@ -21,7 +21,7 @@ function emailCheck() {
 function passwordCheck() {
     var password = document.getElementById('password_value').value;
     var coditionPassword = /^[A-Za-z0-9]{8,16}$/;
-    if (coditionPassword.test(password )) {
+    if (coditionPassword.test(password)) {
         document.querySelector('#password-field').classList = "success";
     } else {
         document.querySelector('#password-field').classList = "fail";
@@ -63,4 +63,30 @@ function showHint(str) {
 }
 
 
+$('#confirm').click(function () {
+    cuteAlert({
+        type: "question",
+        title: "Ticket",
+        message: "Are you sure you want to confirm",
+        confirmText: "Confirm",
+        cancelText: "Cancel"
+    }).then((e) => {
+        if (e == ("confirm")) {
+            cuteToast({
+                type: "success",
+                title: "Confirmed",
+                message: "You succes to buy the ticket ",
+                timer: 3000
+            })
+            $.ajax({
+                url: "test.php",    
+                method: "POST",   
+                data: { moives_id: movies_id, },
+                success: function (result) {
+                    $("#test").html(result);
+                }
 
+            })
+        }
+    })
+})
