@@ -67,3 +67,19 @@ function getSearch($letter)
     return $state->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function createTicket(int $movieId,int $customerId,string $gate,int $row,int $seat) : bool
+{
+    
+    global $connection;
+
+    $statement = $connection->prepare("insert into tickets (movie_id, customer_id, gate, row, seat) values (:movieid, :customerid, :gate, :row, :seat)");
+    $statement->execute([
+        ':movieid' => $movieId,
+        ':customerid'=> $customerId,
+        ':gate'=> $gate,
+        ':row'=> $row,
+        ':seat'=> $seat,
+    ]);
+
+    return $statement->rowCount() > 0;
+}
