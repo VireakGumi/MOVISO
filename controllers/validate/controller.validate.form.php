@@ -64,7 +64,23 @@ $password_incorrect = "";
 $date_error = "";
 $creditCard_error = "";
 $phoneNumber_error = "";
-$location_error="";
+$address_error="";
+
+
+
+$title_error=false;
+$price_error=false;
+$genre_error=false;
+$duration_error=false;
+$released_error=false;
+$country_error=false;
+$dateTime_error=false;
+$production_error=false;
+$numberTicket_error=false;
+$cinemaName_error=false;
+$linkTrailer_error=false;
+$image_error=false;
+$description_error=false;
 
 
 $company="";
@@ -74,16 +90,48 @@ $password="";
 $date="";
 $creditCard="";
 $phoneNumber="";
-$location="";
+$address="";
+
+$title="";
+$price="";
+$genre="";
+$duration="";
+$released="";
+$country="";
+$dateTime="";
+$production="";
+$numberTicket="";
+$cinemaName="";
+$linkTrailer="";
+$image="";
+$description="";
+
+
+
+$title_valid=false;
+$price_valid=false;
+$genre_valid=false;
+$duration_valid=false;
+$released_valid=false;
+$country_valid=false;
+$dateTime_valid=false;
+$production_valid=false;
+$numberTicket_valid=false;
+$cinemaName_valid=false;
+$linkTrailer_valid=false;
+$image_valid=false;
+$description_valid=false;
+
+
 
 $company_valid = false;
 $userName_valid = false;
 $email_valid = false;
 $password_valid = false;
-$date_valid = false;
+$dateTime_valid = false;
 $creditCard_valid = false;
 $phoneNumber_valid = false;
-$location_valid=false;
+$address_valid=false;
 
 function getDataKey($key){
     if (isset($_POST[$key])){
@@ -101,7 +149,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $creditCard= getDataKey('creditcard'); 
     $phoneNumber= getDataKey('phonenumber'); 
     $company= getDataKey('company'); 
-    $location= getDataKey('location'); 
+    $address= getDataKey('address');  
+    
+    $title= getDataKey('title');
+    $price= getDataKey('price');
+    $genre= getDataKey('genre');
+    $duration= getDataKey('duration');
+    $released= getDataKey('released');
+    $country= getDataKey('country');
+    $dateTime= getDataKey('datetime');
+    $production= getDataKey('production');
+    $numberTicket= getDataKey('numberticket');
+    $linkTrailer= getDataKey('linktrailer');
+    $image= getDataKey('image');
+    $description= getDataKey('description');
+    $cinemaName= getDataKey('cinemaname');
+
+
 
     if (empty($userName)){
         $userName_error="Please enter a user name";
@@ -152,10 +216,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $date_valid=true;
     };
     
-    if (empty($location)){
-        $location_error="Please enter a location.";
+    if (empty($address)){
+        $address_error="Please enter a location.";
     }else{
-        $location_valid=true;
+        $address_valid=true;
     };
     
 
@@ -176,7 +240,86 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $phoneNumber_valid=true;
     };
 
+
+    if(empty($title)){
+        $title_error="Please enter a title.";
+    }else{
+        $title_valid=true;
+    };
+
+    if(empty($price)){
+        $price_error="Please enter a price.";
+    }else{
+        $price_valid=true;
+    }
+
+    if(empty($genre)){
+        $genre_error="Please enter a genre.";
+    }else{
+        $genre_error=true;
+    };
+
+    if(empty($duration)){
+        $duration_error="Please enter a duration.";
+    }else{
+        $duration_valid=true;
+    };
+
+    if(empty($released)){
+        $released_error="Please enter a released.";
+    }else{
+        $released_valid=true;
+    };
+    
+    if(empty($country)){
+        $country_error="Please enter a country.";
+    }else{
+        $country_valid=true;
+    };
+    
+    if(empty($dateTime)){
+        $dateTime_error="Please enter a country.";
+    }else{
+        $dateTime_valid=true;
+    };
+
+    if(empty($numberTicket)){
+        $numberTicket_error="Please enter a Number Ticket.";
+    }else{
+        $numberTicket_valid=true;
+    };
+
+    if(empty($cinemaName)){
+        $cinemaName_error="Please enter a Ciname Name.";
+    }else{
+        $cinemaName_valid=true;
+    };
+
+    if(empty($production)){
+        $production_error="Please enter a production.";
+    }else{
+        $production_valid=true;
+    };
+
+    if(empty($linkTrailer)){
+        $linkTrailer_error="Please enter a link trailer.";
+    }else{
+        $linkTrailer_valid=true;
+    };
+
+    if(empty($image)){
+        $image_error="Please enter a image.";
+    }else{
+        $image_va=true;
+    };
+
+    if(empty($description)){
+        $description_error="Please enter a description.";
+    }else{
+        $description_valid=true;
+    };
 }
+
 if ($isFound=false){
     require ("../../views/login/view.login.form.php");
 

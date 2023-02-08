@@ -1,7 +1,7 @@
 <?php require("views/partials/header.php"); ?>
 <img src="../../assets/istockphoto-915697084-170667a.jpg" alt="" class="bg">
-<form action="/" method="post" class="list_movie">
-    <!-- <img src="../../assets/moviso-logo1.png" class="logo_on_form" alt="" width="40%"> -->
+<form action="#" method="post" class="list_movie">
+
     <h2 class="text-center contain-movie ">UPLOAD MOVIE  </h2>
         <div class="form-movie">
             <div class="movie-left">
@@ -13,9 +13,10 @@
                                 <i class="fa fa-check-circle"></i>
                                 <i class="fa fa-exclamation-circle"></i>
                             </span>
-                            <!-- <small class="text-danger">darath</small> -->
+                            <small class="text-danger"><?= !empty($title_error)? $title_error : "<p>.</p>"?></small>
 
                         </div>
+                        
                         <div id="price-field">
                             Price<input type="text" id="price_value" class="form-control"  name="price"
                                 onkeyup="moviePrice()" onclick="normal('price-field')">
@@ -23,7 +24,7 @@
                                 <i class="fa fa-check-circle"></i>
                                 <i class="fa fa-exclamation-circle"></i>
                             </span>
-                            <!-- <small class="text-danger">darath</small> -->
+                            <small class="text-danger"><?= !empty($price_error)? $price_error : "<p>.</p>"?></small>
 
                         </div>
                 </div>
@@ -36,8 +37,8 @@
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">darath</small> -->
-
+                        <small class="text-danger"><?= !empty($genre_error)? $genre_error : "<p>.</p>"?></small>
+                        
                     </div>
                     <div id="duration-field">
                         Duration<input type="text" id="duration_value" class="form-control" name="duration"
@@ -46,7 +47,7 @@
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">darath</small> -->
+                        <small class="text-danger"><?= !empty($duration_error)? $duration_error : "<p>.</p>"?></small>
 
                     </div>
                 </div>
@@ -59,7 +60,7 @@
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">darath</small> -->
+                        <small class="text-danger"><?= !empty($duration_error)? $duration_error : "<p>.</p>"?></small>
 
                     </div>
                     <div id="country-field">
@@ -69,30 +70,30 @@
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">darath</small> -->
+                        <small class="text-danger"><?= !empty($country_error)? $country_error : "<p>.</p>"?></small>
 
                     </div>
                 </div>
 
                 <div class="movies">
                    <div id="date-field">
-                        Date Time<input type="datetime-local" id="date_value" class="form-control"  name="date"
+                        Date Time<input type="datetime-local" id="date_value" class="form-control"  name="datetime"
                             onkeyup="movieDate()" onclick="normal('date-field')">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">darath</small> -->
+                        <small class="text-danger"><?= !empty($datetime_error)? $datetime_error : "<p>.</p>"?></small>
 
                     </div>
-                    <div id="time-field">
-                         Number Ticket<input type="number" id="time_value" class="form-control"  name="time"
-                            onkeyup="movieTime()" onclick="normal('time-field')">
+                    <div id="numberticket-field">
+                         Number Ticket<input type="number" id="numberticket_value" class="form-control"  name="numberticket"
+                            onkeyup="movieTime()" onclick="normal('numberticket-field')">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">darath</small> -->
+                        <small class="text-danger"><?= !empty($numberTicket_error)? $numberTicket_error : "<p>.</p>"?></small>
 
                     </div>
                 </div>
@@ -105,7 +106,8 @@
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <!-- <small class="text-danger">darath</small> -->
+                        <small class="text-danger"><?= !empty($cinemaName_error)? $cinemaName_error : "<p>.</p>"?></small>
+
 
                     </div>
                     <div id="production-field">
@@ -115,7 +117,8 @@
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                    <!-- <small class="text-danger">darath</small> -->
+                        <small class="text-danger"><?= !empty($production_error)? $production_error : "<p>.</p>"?></small>
+
 
                     </div>
                 </div>
@@ -123,30 +126,43 @@
             </div>
             
             <div class="movie-right">
-                
+            
+                    <div id="address-field">
+                        Address<input type="text" id="address_value" class="form-control" name="address"
+                            onkeyup="movieAddress()" onclick="normal('address-field')">
+                        <span id="icons">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                        </span>
+                        <small class="text-danger"><?= !empty($address_error)? $address_error : "<p>.</p>"?></small>
 
-                <div id="trailer-field">
-                    Link Trailer<input type="text" id="trailer_value" class="form-control" placeholder="Link trailer *"
-                        name="trailer" onkeyup="movieTrailer()" onclick="normal('trailer-field')">
-                    <span id="icons">
-                        <i class="fa fa-check-circle"></i>
-                        <i class="fa fa-exclamation-circle"></i>
-                    </span>
-                    <!-- <small class="text-danger">darath</small> -->
-                        
-                </div>
+                    </div>
+                    <div id="trailer-field">
+                        Link Trailer<input type="text" id="trailer_value" class="form-control" placeholder="Link trailer *"
+                            name="linktrailer" onkeyup="movieTrailer()" onclick="normal('trailer-field')">
+                        <span id="icons">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                        </span>
+                        <small class="text-danger"><?= !empty($linkTrailer_error)? $linkTrailer_error : "<p>.</p>"?></small>
+    
+                            
+                    </div>
+               
+
 
                 
                 <div class="img">
                     <label for="inputImg" id="image">
                         Select Image <br/>
                         <i class="material-icons">add_a_photo</i>
-                        <input id="inputImg" type="file" accept=""/>
+                        <input id="inputImg" type="file" accept="" name="image"/>
                         <br/>
                         <span id="imageName"></span>
                     </label>
                 </div>
-                <!-- <small class="text-danger">darath</small> -->
+                <small class="text-danger"><?= !empty($image_error)? $image_error : "<p>.</p>"?></small>
+
                 <div id="description-field">
                     Description<textarea name="description" id="description_value" class="form-control" cols="30" rows="4" 
                      onkeyup="moviewDescription()" onclick="normal('description-field')" placeholder="Descriptions...."></textarea>
@@ -155,7 +171,8 @@
                         <i class="fa fa-check-circle"></i>
                         <i class="fa fa-exclamation-circle"></i>
                     </span>
-                    <!-- <small class="text-danger">darath</small> -->
+                    <small class="text-danger"><?= !empty($description_error)? $description_error : "<p>.</p>"?></small>
+
 
                 </div>
             </div>
