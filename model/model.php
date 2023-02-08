@@ -70,14 +70,16 @@ function getSearch($letter)
     return $state->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function createShow(string $title, int $price, string $genre, string $duration, date $released, string $country, string $production, string $img, string $trailer, string $description)
+function createShow(string $title, int $number_ticket, datetime $date_time, int $price, string $genre, string $duration, date $released, string $country, string $production, string $img, string $trailer, string $description)
 {
     global $connection;
-    $statement=$connection->prepare("INSERT into movies (movie_title, description, genre, duration, released, country, production, trailer, img, price) VALUES (:title, :description, :genre, :duration, :released, :country, :production, :img, :trailer, :pricee)"); 
+    $statement=$connection->prepare("INSERT into movies (movie_title, number_ticket, date_time, description, genre, duration, released, country, production, trailer, img, price) VALUES (:title, :number_ticket, :date_time, :description, :genre, :duration, :released, :country, :production, :img, :trailer, :price)"); 
     $statement->execute(
         [
             ':title' => $title,
             ':description' => $description,
+            ':number_ticket' => $number_ticket,
+            ':date_time'=> $date_time,
             ':genre' => $genre,
             ':duration' => $duration,
             ':released' => $released,
@@ -88,4 +90,20 @@ function createShow(string $title, int $price, string $genre, string $duration, 
             ':price' => $price,
         ]
     );
+}
+
+function newVenue($name, $address){
+    $statement=$connection->prepare("INSERT INTO venue (name, address) VALUES (:name, :address)");
+    $statement->execute(
+        [
+            ':name' => $name,
+            ':address' => $address,
+        ]
+        );
+    $statement=$connection->prepare("SELECT * FROM venue");
+    $result=$statement->fetcAll();
+
+    $number= count($result)-1;
+    $venueId=$result[$number];
+    return $venueId['venue_id'];
 }
