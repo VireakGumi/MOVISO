@@ -139,6 +139,12 @@ function getDataKey($key){
         return $value;
     }
 }
+function getImage($key){
+    if (isset($_FILES[$key])){
+        $file = $_FILES[$key];
+        return $file;
+    }
+}
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -161,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $production= getDataKey('production');
     $numberTicket= getDataKey('numberticket');
     $linkTrailer= getDataKey('linktrailer');
-    $image= getDataKey('image');
+    $image= getImage('image')["name"];
     $description= getDataKey('description');
     $cinemaName= getDataKey('cinemaname');
 
@@ -217,7 +223,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     };
     
     if (empty($address)){
-        $address_error="Please enter a location.";
+        $address_error="Please enter a Address.";
     }else{
         $address_valid=true;
     };
@@ -256,7 +262,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(empty($genre)){
         $genre_error="Please enter a genre.";
     }else{
-        $genre_error=true;
+        $genre_valid=true;
     };
 
     if(empty($duration)){
@@ -310,7 +316,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(empty($image)){
         $image_error="Please enter a image.";
     }else{
-        $image_va=true;
+        $image_valid=true;
     };
 
     if(empty($description)){

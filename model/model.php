@@ -70,34 +70,34 @@ function getSearch($letter)
     return $state->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function createShow(string $title, int $number_ticket, datetime $date_time, int $price, string $genre, string $duration, date $released, string $country, string $production, string $img, string $trailer, string $description)
+function createShow($venueId,$title,$numberTicket,  $dateTime,  $description, $genre,  $duration, $released,  $country,  $production,$trailer,  $image,  $price)
 {
     global $connection;
-    $statement=$connection->prepare("INSERT into movies (movie_title, number_ticket, date_time, description, genre, duration, released, country, production, trailer, img, price) VALUES (:title, :number_ticket, :date_time, :description, :genre, :duration, :released, :country, :production, :img, :trailer, :price)"); 
-    $statement->execute(
-        [
+    $statement=$connection->prepare("insert into movies (venue_id, movie_title, number_ticket, date_time, descriptions, genre, duration, released, country, production, trailer, img, price) values (:venueid,:title, :number_ticket, :date_time, :descriptions, :genre, :duration, :released, :country, :production, :img, :trailer, :price)"); 
+    $statement->execute([
+        
+            ':venueid'=>$venueId,
             ':title' => $title,
             ':description' => $description,
-            ':number_ticket' => $number_ticket,
-            ':date_time'=> $date_time,
+            ':number_ticket' => $numberTicket,
+            ':date_time'=> $dateTime,
             ':genre' => $genre,
             ':duration' => $duration,
             ':released' => $released,
             ':country' => $country,
             ':production' => $production,
-            ':img' => $img,
+            ':img' => $image,
             ':trailer' => $trailer,
             ':price' => $price,
-        ]
-    );
+        ]);
 }
 
 function newVenue($name, $address){
-    $statement=$connection->prepare("INSERT INTO venue (name, address) VALUES (:name, :address)");
+    $statement=$connection->prepare("insert into venue (cinema_name, cinema_address) values (:names, :addres)");
     $statement->execute(
         [
-            ':name' => $name,
-            ':address' => $address,
+            ':names' => $name,
+            ':addres' => $address,
         ]
         );
     $statement=$connection->prepare("SELECT * FROM venue");

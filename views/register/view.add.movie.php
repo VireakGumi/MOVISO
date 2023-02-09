@@ -1,8 +1,8 @@
 <?php require("views/partials/header.php"); ?>
 <img src="../../assets/istockphoto-915697084-170667a.jpg" alt="" class="bg">
-<form action="#" method="post" class="list_movie">
+<form method="POST" action="" enctype="multipart/form-data" class="list_movie">
 
-    <h2 class="text-center contain-movie ">UPLOAD MOVIE  </h2>
+    <h2 class="text-center contain-movie ">UPLOAD MOVIE </h2>
         <div class="form-movie">
             <div class="movie-left">
                 <div class="movies">
@@ -156,7 +156,7 @@
                     <label for="inputImg" id="image">
                         Select Image <br/>
                         <i class="material-icons">add_a_photo</i>
-                        <input id="inputImg" type="file" accept="" name="image"/>
+                        <input  id="inputImg"  type="file" name="image">
                         <br/>
                         <span id="imageName"></span>
                     </label>
@@ -176,7 +176,7 @@
 
                 </div>
             </div>
-
+                
         </div>
         <div class="movie-btn">
             <button class="btn"><a href="/">back</a></button>
