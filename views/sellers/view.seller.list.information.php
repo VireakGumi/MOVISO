@@ -29,7 +29,7 @@ require_once('views/partials/navbar.php');
                     <td class="text-center"><?php echo $movie["movies_id"];?></td>
                     <td class="text-center"><?php echo $movie["movie_title"];?></td>
                     <td class="text-center"><?php echo $movie["genre"];?></td>
-                    <td class="text-center"><?php echo "$" . $movie["price"];?></td>
+                    <td class="text-center"><?php echo "$" . $movie["prices"];?></td>
                     <td class="text-center"><?php echo $movie["released"];?></td>
                     <td class="text-center"><?php echo $movie["duration"];?></td>
                     <td class="text-center">
