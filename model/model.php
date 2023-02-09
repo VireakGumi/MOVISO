@@ -12,15 +12,18 @@ function createCustomer($userId) : bool
 }
 
 
-function createUser(string $userName, string $email, string $password, int $phoneNumber, bool $role = TRUE) : bool
+function createUser(string $userName, string $email, string $address,string $creditCard, string $date, string $password, int $phoneNumber, bool $role = TRUE) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into users (user_name,email,password,phone_number,role) values (:username,:email,:password,:phonenumber,:role)");
+    $statement = $connection->prepare("insert into users (user_name,email,address,credit_card_number,date_of_birth,password,phone_number,role) values (:username,:email,:address,:creditcard,:date,:password,:phonenumber,:role)");
     $statement->execute([
-        'username' => $userName,
+        ':username' => $userName,
         ':email' => $email,
+        ':address' => $address,
+        ':creditcard' => $creditCard,
+        ':date' => $date,
         ':password' => $password,
-        ':phonenumber' => $phoneNumber,
+        ':phonenumber' => $phoneNumber, 
         ':role' => $role,
     ]);
     $statement = $connection->query("SELECT * FROM users");
@@ -49,13 +52,13 @@ function getCustomer()
     return $statement->fetchAll();
 }
 
-function getMoives()
+function getMoives() 
 {
     global $connection;
     $statement = $connection->prepare("SELECT * FROM movies");
     $statement->execute();
     return $statement->fetchAll();
-    ;
+    
 }
 
 function getSearch($letter)

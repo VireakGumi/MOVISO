@@ -1,6 +1,5 @@
 
 <?php
-
 $users = getUser();
 $isFound=false;
 $isFoundEmail=false;
@@ -45,9 +44,12 @@ function validate_email($email){
 function validate_password($password){
     return strlen($password)>=8 && strlen($password)<=16;
 }
+function validate_passwordConfirm($passwordConfirm){
+    return strlen($passwordConfirm)>=8 && strlen($passwordConfirm)<=16;
+}
 
 function validate_creditCard($creditCard){
-    return strlen($creditCard) == 16 ;
+    return strlen($creditCard) == 19 ;
 } 
 
 function validate_phonenumber($phoneNumber){
@@ -60,30 +62,33 @@ $company_error = "";
 $email_error = "";
 $email_incorrect = "";  
 $password_error = "";
+$passwordConfirm_error = "";
 $password_incorrect = "";
 $date_error = "";
 $creditCard_error = "";
 $phoneNumber_error = "";
-$location_error="";
+$address_error="";
 
 
 $company="";
 $userName = "";
 $email = "";
 $password="";
+$passwordConfirm="";
 $date="";
 $creditCard="";
 $phoneNumber="";
-$location="";
+$address="";
 
 $company_valid = false;
 $userName_valid = false;
 $email_valid = false;
 $password_valid = false;
+$passwordConfirm_valid = false;
 $date_valid = false;
 $creditCard_valid = false;
 $phoneNumber_valid = false;
-$location_valid=false;
+$address_valid=false;
 
 function getDataKey($key){
     if (isset($_POST[$key])){
@@ -100,8 +105,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $date= getDataKey('dateofbirth'); 
     $creditCard= getDataKey('creditcard'); 
     $phoneNumber= getDataKey('phonenumber'); 
-    $company= getDataKey('company'); 
-    $location= getDataKey('location'); 
+    $passwordConfirm= getDataKey('confirmpassword');   
+    $address= getDataKey('address'); 
 
     if (empty($userName)){
         $userName_error="Please enter a user name";
@@ -141,6 +146,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{
         $password_valid=true;
     };
+    
+    if(empty($passwordConfirm)){
+        $passwordConfirm_error = "Please write your password to confirm here.";
+    } elseif(!(validate_password($passwordConfirm))){
+        $passwordConfirm_error = "password incorrect";
+    }else{
+        $passwordConfirm_valid=true;
+    };
 
     if($isFound){
         $password_incorrect="Incorrect password.";
@@ -152,10 +165,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $date_valid=true;
     };
     
-    if (empty($location)){
-        $location_error="Please enter a location.";
+    if (empty($address)){
+        $address_error="Please enter a location.";
     }else{
-        $location_valid=true;
+        $address_valid=true;
     };
     
 
