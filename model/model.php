@@ -73,26 +73,30 @@ function getSearch($letter)
 function createShow($venueId,$title,$numberTicket,  $dateTime,  $description, $genre,  $duration, $released,  $country,  $production,$trailer,  $image,  $price)
 {
     global $connection;
-    $statement=$connection->prepare("insert into movies (venue_id, movie_title, number_ticket, date_time, descriptions, genre, duration, released, country, production, trailer, img, price) values (:venueid,:title, :number_ticket, :date_time, :descriptions, :genre, :duration, :released, :country, :production, :img, :trailer, :price)"); 
+    $statement=$connection->prepare("insert into movies (venue_id , movie_title, number_ticket, date_time, descriptions, genre, duration, released, country, production, trailer, img, prices) values (:venueid,:title, :numberticket, :datetime, :descriptions, :genre, :duration, :released, :country, :production, :trailer, :img, :price)"); 
     $statement->execute([
         
-            ':venueid'=>$venueId,
+            ':venueid' =>$venueId,
             ':title' => $title,
-            ':description' => $description,
-            ':number_ticket' => $numberTicket,
-            ':date_time'=> $dateTime,
+            ':numberticket' => $numberTicket,
+            ':datetime' => $dateTime,
+            ':descriptions' => $description,
             ':genre' => $genre,
             ':duration' => $duration,
             ':released' => $released,
             ':country' => $country,
             ':production' => $production,
-            ':img' => $image,
             ':trailer' => $trailer,
+            ':img' => $image,
             ':price' => $price,
         ]);
+        return $statement->rowCount() > 0;
 }
 
 function newVenue($name, $address){
+
+    global $connection;
+
     $statement=$connection->prepare("insert into venue (cinema_name, cinema_address) values (:names, :addres)");
     $statement->execute(
         [
@@ -100,10 +104,11 @@ function newVenue($name, $address){
             ':addres' => $address,
         ]
         );
-    $statement=$connection->prepare("SELECT * FROM venue");
-    $result=$statement->fetcAll();
-
-    $number= count($result)-1;
-    $venueId=$result[$number];
-    return $venueId['venue_id'];
+        $statement = $connection->query("SELECT * FROM movies");
+        $result = $statement->fetchAll();
+    
+        $number = count($result) - 1;
+        $movie = $result[$number];
+       
+        return $movie['venue_id'];
 }
