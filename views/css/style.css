@@ -216,12 +216,33 @@ span {
     top:13px;
     visibility: hidden;
 }
-/* input{
-    padding: 10px;
-    top:12px;
-    visibility: hidden;
+.container_1{
     display: flex;
-} */
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container_2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container_3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container_4{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#date-field, #password-field, #confirmpass-field, #user-field, 
+#phone-field, #email-field,#address-field,#card-field {
+    width: 48%;
+}
+
 
 /* -------------------------page list show----------------- */
 .choose {
@@ -453,11 +474,7 @@ button:hover {
     gap: 20px;
     padding: 5px 20px;
 }
-/* small{
-    margin-top: 0.5%;
-    margin-bottom: 5%;
-    font-weight: bolder;
-} */
+
 .seat{
     background-color: rgb(168, 166, 166);
 }

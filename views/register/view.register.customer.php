@@ -15,20 +15,33 @@
             </div>
         </div>
         <div class="form_right">
-            <div class="container ">
+            <div class="container">
                 <h2 class="text-center">REGISTER</h2>
-
-                <div id="user-field">
-                    <input type="text" id="user_value" class="form-control" placeholder="User Name *" name="username"
-                        onkeyup="userNameCheck()" onclick="normal('user-field')">
-                    <span id="icons">
-                        <i class="fa fa-check-circle"></i>
-                        <i class="fa fa-exclamation-circle"></i>
-                    </span>
-                    <small class="text-danger">
-                        <?php echo $userName_error; ?>
-                    </small>
+                <div class="container_1">
+                    <div id="user-field">
+                        <input type="text" id="user_value" class="form-control" placeholder="User Name *" name="username"
+                            onkeyup="userNameCheck()" onclick="normal('user-field')">
+                        <span id="icons">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                        </span>
+                        <small class="text-danger">
+                            <?= !empty($userName_error)? $userName_error: "<p>.</p>" ?>
+                        </small>
+                    </div>
+                    <div id="phone-field">
+                        <input type="text" id="phone_value" class="form-control" placeholder="Phone Number *"
+                            name="phonenumber" onkeyup="phoneCheck()" onclick="normal('phone-field')">
+                        <span id="icons">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                        </span>
+                        <small class="text-danger">
+                            <?= !empty($phoneNumber_error)? $phoneNumber_error: "<p>.</p>"?>
+                        </small>
+                    </div>
                 </div>
+            <div class="container_2">
 
                 <div id="email-field">
                     <input type="email" id="email_value" class="form-control" placeholder="Email *" name="email"
@@ -38,10 +51,15 @@
                         <i class="fa fa-exclamation-circle"></i>
                     </span>
                     <small class="text-danger">
-                        <?php echo $email_error; ?>
+                        <?= !empty($email_error)? $email_error : "<p>.</p>" ?>
                     </small>
                 </div>
-
+                <div id="address-field">
+                    <input type="text" id="address_value" class="form-control" placeholder= "Address *" name ="address">
+                    <small class="text-danger"><?= !empty($address_error)? $address_error : "<p>.</p>" ?></small>
+                </div>               
+            </div>
+            <div class="container_3">
                 <div id="password-field">
                     <input type="password" id="password_value" class="form-control" placeholder="Password *"
                         name="password" onkeyup="passwordCheck()" onclick="normal('password-field')">
@@ -50,10 +68,9 @@
                         <i class="fa fa-exclamation-circle"></i>
                     </span>
                     <small class="text-danger">
-                        <?php echo $password_error; ?>
+                        <?= !empty($password_error)? $password_error : "<p>.</p>" ?>
                     </small>
                 </div>
-
                 <div id="confirmpass-field">
                     <input type="password" id="confirmpass_value" class="form-control" placeholder="Confirm Password *"
                         name="confirmpassword" onkeyup="confirmpassCheck()" onclick="normal('confirmpass-field')">
@@ -62,38 +79,25 @@
                         <i class="fa fa-exclamation-circle"></i>
                     </span>
                     <small class="text-danger">
-                        <?php echo $passwordConfirm_error; ?>
+                        <?= !empty($passwordConfirm_error)? $passwordConfirm_error : "<p>.</p>"?>
                     </small>
                 </div>
-    
-                <div id="phone-field">
-                    <input type="text" id="phone_value" class="form-control" placeholder="Phone Number *"
-                        name="phonenumber" onkeyup="phoneCheck()" onclick="normal('phone-field')">
-                    <span id="icons">
-                        <i class="fa fa-check-circle"></i>
-                        <i class="fa fa-exclamation-circle"></i>
-                    </span>
-                    <small class="text-danger">
-                        <?php echo $phoneNumber_error; ?>
-                    </small>
+     
+            </div>
+            <div class="container_4">
+                <div id="date-field">
+                    <input type="date" id="date" class="form-control" name ="dateofbirth">
+                    <small class="text-danger"><?= !empty($date_error)? $date_error : "<p>.</p>"  ?></small>
                 </div>
-                <input type="date" id="date" class="form-control" name ="dateofbirth">
-                <small class="text-danger"><?php echo $date_error; ?></small>
-                
-                <input type="text" id="address_value" class="form-control" placeholder= "Address *" name ="address">
-                <small class="text-danger"><?php echo $address_error; ?></small>
-                        
-               
                 <div id="card-field">
                     <input type="text" id="card_value" placeholder="0000 0000 0000 0000" class="form-control" 
                         name="creditcard" onkeypress="cardCheck()" onclick="normal('card-field')" maxlength="19"  maxlength="19">
                     <small class="text-danger">
-                        <?php echo $creditCard_error; ?>
+                        <?= !empty($creditCard_error)? $creditCard_error : "<p>.</p>" ?>
                     </small>
                 </div>
-
-                <button>SUBMIT</button>
             </div>
+                <button>SUBMIT</button>
         </div>
     </form>
 </body>
