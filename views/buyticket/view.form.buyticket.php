@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuyTicket</title>
-    <link rel="stylesheet" href="../../views/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../views/css/style.css">
-</head>
+<?php require("views/partials/header.php"); ?>
 
 <div class="container-fluid mx-auto">
     <img src="../../assets/cinema.png" alt="" class="background">
@@ -26,9 +17,12 @@
                             </div>
                             
                             <div class="form-group d-flex mt-2">
-                                <div>
+                                <div id="card-field">
                                     <p class="text-ticket text-sm mb-0">Card Number*</p>
-                                    <input type="text" name="card-num" placeholder="0000 0000 0000 0000" width="55" class="width-card">
+                                    <input type="text" name="card-num" id="card_value" placeholder="0000 0000 0000 0000" width="55" class="width-card" onkeypress="cardCheck()" onclick="normal('card-field')"  maxlength="19">
+                                    <small class="text-danger">
+                                        <?php echo $cardNumber_error; ?>
+                                    </small>
                                 </div>
                                 <div class="mt-4">
                                     <p class="ms-4">/</p>
@@ -38,6 +32,9 @@
                                 </div>
                             </div>
                             <p class="text-ticket text-sm mb-0 mt-2">Quantity*</p>
+                            <small class="text-danger">
+                                <?php echo $quantityTicket_error; ?>
+                            </small>
                             <div class="form-group d-flex">
                                 <div class="col-md-3 col-lg-3 col-xl-2 d-flex width-card">
                                     <input id="form1"  name="quantity" value="1" type="number" maxlength="3" class="from-control width-card"/>

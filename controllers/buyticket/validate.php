@@ -17,9 +17,9 @@ function validate_cardNumber($cardNumber, $userCardNumber)
 {
     return $cardNumber != $userCardNumber;
 }
-function validate_quanityTicket($quanityTicket, $numberTicket)
+function validate_quanityTicket($qauntityTicket, $numberTicket)
 {
-    return $quanityTicket < $numberTicket;
+    return $qauntityTicket < $numberTicket;
 
 }
 
@@ -31,31 +31,31 @@ function getDataKey($key)
     }
 }
 
-$quanityTicket_error = "";
+$quantityTicket_error = "";
 $dateMovie_error = "";
 $cardNumber_error = "";
 
-$quanityTicket = 0;
+$qauntityTicket = 0;
 $dateMovie = "";
 $cardNumber = "";
 
-$quanityTicket_valid = false;
+$quantityTicket_valid = false;
 $dateMovie_valid = false;
 $cardNumber_valid = false;
 
 $isValid = false;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $quanityTicket = getDatakey('qaunityticket');
+    $qauntityTicket = getDatakey('qaunityticket');
     $dateMovie = getDatakey('dateMovie');
     $cardNumber = getDatakey('cardNumber');
 
-    if (empty($quanityTicket)) {
-        $quanityTicket_error = "Please complete your quanity of Ticket.";
-    } elseif (validate_quanityTicket($quanityTicket, $user["numberTicket"])) {
-        $quanityTicket_error = "Ticket is sold out.";
+    if (empty($qauntityTicket)) {
+        $quantityTicket_error = "Please complete your quanity of Ticket.";
+    } elseif (validate_quanityTicket($qauntityTicket, $user["numberTicket"])) {
+        $quantityTicket_error = "Ticket is sold out.";
     } else {
-        $quanityTicket_error = true;
+        $quantityTicket_error = true;
     }
     ;
     if (empty($dateMovie)) {

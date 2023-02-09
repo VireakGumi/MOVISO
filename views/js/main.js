@@ -46,6 +46,39 @@ function normal(key) {
         keyValues.classList = "normal";
     }
 }
+function cardCheck() {
+    let card = document.getElementById('card_value').value;
+    let conditionCard =/^[0-9-" "]{19}$/;
+    if (conditionCard.test(card)) {
+        document.querySelector('#card-field').classList = "success";
+    } else {
+        document.querySelector('#card-field').classList = "fail";
+    }   
+}
+
+var cardNum = document.getElementById('card_value');
+    cardNum.onkeydown = function (e) {
+    if (this.value == this.lastValue) return;
+    var caretPosition = this.selectionStart;
+    var sanitizedValue = this.value.replace(/[^0-9]/gi, '');
+    var parts = [];
+    
+    for (var i = 0, len = sanitizedValue.length; i < len; i += 4) {
+        parts.push(sanitizedValue.substring(i, i + 4));
+    }
+    
+    for (var i = caretPosition - 1; i >= 0; i--) {
+        var c = this.value[i];
+        if (c < '0' || c > '9') {
+            caretPosition--;
+        }
+    }
+    caretPosition += Math.floor(caretPosition / 4);
+    
+    this.value = this.lastValue = parts.join(' ');
+    this.selectionStart = this.selectionEnd = caretPosition;
+    }
+
 function showHint(str) {
     if (str.length == 0) {
         document.getElementById("product").innerHTML = "";
@@ -61,7 +94,6 @@ function showHint(str) {
         xmlhttp.send();
     }
 }
-
 
 $('#confirm').click(function () {
     cuteAlert({
