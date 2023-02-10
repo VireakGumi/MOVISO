@@ -21,7 +21,7 @@ if (isset($_POST["password"]) && ($_POST["email"]))
                 setcookie("Password",$_POST["password"], time() + (86400 * 30), "/");
                 setcookie("Email",$user["email"], time() + (86400 * 30), "/");
                 setcookie("UserId",$user["user_id"], time() + (86400 * 30), "/");
-                setcookie("Role",$user["role"], time() + (86400 * 30),);
+                setcookie("Roles",$user["role"], time() + (86400 * 30),);
 
 
                 $isFound=true;  
