@@ -4,12 +4,11 @@ $url = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 $seller = '404.php';
 
-if (isset($_COOKIE['Roles']))
+if (isset($_COOKIE['Roles']) && $_COOKIE['Roles'] == 0)
 {
-    if($_COOKIE['Roles'] == 0){
-        $seller = 'controllers/sellers/listpage/controller.seller.php';
-    }
+    $seller = 'controllers/sellers/listpage/controller.seller.php';
 }
+
 $router = [
     "/" => 'controllers/home/controller.home.php',
     "/explore" => 'controllers/customers/listshow/controller.listshow.page.php',
