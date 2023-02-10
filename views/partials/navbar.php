@@ -48,6 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     aria-current="page">HOME</a>
                 <a href="/explore"
                     class=" <?= urls("/explore") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">EXPLORE</a>
+                <a href="/movie"
+                    class=" <?= urls("/movie") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">Add movie</a>
                 <!-- <a href="/trailer"
                     class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">TRAILER</a> -->
             </div>

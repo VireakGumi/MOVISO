@@ -70,3 +70,45 @@ function getSearch($letter)
     return $state->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function createShow($venueId,$title,$numberTicket,  $dateTime,  $description, $genre,  $duration, $released,  $country,  $production,$trailer,  $image,  $price)
+{
+    global $connection;
+    $statement=$connection->prepare("insert into movies (venue_id , movie_title, number_ticket, date_time, descriptions, genre, duration, released, country, production, trailer, img, prices) values (:venueid,:title, :numberticket, :datetime, :descriptions, :genre, :duration, :released, :country, :production, :trailer, :img, :price)"); 
+    $statement->execute([
+        
+            ':venueid' =>$venueId,
+            ':title' => $title,
+            ':numberticket' => $numberTicket,
+            ':datetime' => $dateTime,
+            ':descriptions' => $description,
+            ':genre' => $genre,
+            ':duration' => $duration,
+            ':released' => $released,
+            ':country' => $country,
+            ':production' => $production,
+            ':trailer' => $trailer,
+            ':img' => $image,
+            ':price' => $price,
+        ]);
+        return $statement->rowCount() > 0;
+}
+
+function newVenue($name, $address){
+
+    global $connection;
+
+    $statement=$connection->prepare("insert into venue (cinema_name, cinema_address) values (:names, :addres)");
+    $statement->execute(
+        [
+            ':names' => $name,
+            ':addres' => $address,
+        ]
+        );
+        $statement = $connection->query("SELECT * FROM movies");
+        $result = $statement->fetchAll();
+    
+        $number = count($result) - 1;
+        $movie = $result[$number];
+       
+        return $movie['venue_id'];
+}

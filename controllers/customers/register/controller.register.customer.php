@@ -23,4 +23,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
 }
-require("views/register/view.register.customer.php");
+require("views/customers/register/view.register.customer.php");
