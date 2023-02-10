@@ -2,15 +2,26 @@
 
 $url = parse_url($_SERVER['REQUEST_URI'])['path'];
 
+$seller = 'views/erorrs/404.php';
+
+if (isset($_COOKIE['Role']) && $_COOKIE['Role'] == 0)
+{
+    $seller = 'controllers/sellers/listpage/controller.seller.php';
+}
+
 $router = [
     "/" => 'controllers/home/controller.home.php',
-    "/explore" => 'controllers/listshow/controller.listshow.page.php',
+    "/explore" => 'controllers/customers/listshow/controller.listshow.page.php',
     "/trailer" => 'controllers/trailer/trailer.php',
     "/login" => 'controllers/login/controller.login.page.php',
     "/logout" => 'controllers/logout/controller.logout.page.php',
-    "/register" => 'controllers/register/controller.register.customer.php',
-    "/detail" => 'controllers/detail/controller.detailpage.php',
-    "/seller" => 'controllers/seller/controller.seller.php'
+    "/register" => 'controllers/customers/register/controller.register.customer.php',
+    "/detail" => 'controllers/customers/detail/controller.detailpage.php',
+    "/seller" => $seller,
+    "/movie" => 'controllers/sellers/newshow/controller.add.movie.php',
+    "/delete" => 'controllers/sellers/listpage/controller.delete.show.php'
+    
+    
 ];
 
 // function abort($code = 404)  {

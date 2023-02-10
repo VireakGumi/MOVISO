@@ -6,5 +6,5 @@ require "database/database.php";
 $movies = getMoives();
 
 
-require 'views/sellers/view.seller.list.information.php';
+require 'views/sellers/listpage/view.seller.list.information.php';
 ?>

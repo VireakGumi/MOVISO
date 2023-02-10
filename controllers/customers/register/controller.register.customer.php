@@ -23,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             setcookie("Email",$user["email"], time() + (86400 * 30), "/");
             setcookie("UserId",$user["user_id"], time() + (86400 * 30), "/");
             setcookie("Role",$user["role"], time() + (86400 * 30),);
-
             $isFound=true;
         }
     }
@@ -32,4 +31,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     }
     
 }
-require("views/register/view.register.customer.php");
+require("views/customers/register/view.register.customer.php");
