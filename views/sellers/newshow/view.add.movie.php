@@ -147,7 +147,7 @@
 
         <div class="movie-right">
 
-            <div id="address-field">
+            <div id="address-form">
                 Address<input type="text" id="address_value" class="form-control" name="address"
                     onkeyup="movieAddress()" onclick="normal('address-field')">
                 <span id="icons">
