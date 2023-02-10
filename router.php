@@ -2,9 +2,9 @@
 
 $url = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-$seller = '404.php';
+$seller = 'views/erorrs/404.php';
 
-if (isset($_COOKIE['Roles']) && $_COOKIE['Roles'] == 0)
+if (isset($_COOKIE['Role']) && $_COOKIE['Role'] == 0)
 {
     $seller = 'controllers/sellers/listpage/controller.seller.php';
 }
