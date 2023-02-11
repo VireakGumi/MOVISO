@@ -23,8 +23,10 @@
       }
       $description = $_POST["description"];
       $id = $_POST["id"];
+
         updateMovie($id, $title, $genre, $price, $released, $duration, $numberTicket, $dateTime, $description, $country, $production, $trailer, $img);        
         updateVenue($id,$name,$address);
         header("Location:/");
       
   }
+  require_once "../../views/sellers/view.edit.show.php";

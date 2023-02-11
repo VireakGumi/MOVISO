@@ -67,39 +67,111 @@ function getSearch($letter)
     return $state->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function updateMovie($id,$title,$numberTicket,$dateTime,$description,$genre,$price,$released,$duration,$country,$production,$trailer,$img)
+// function updateMovie($id,$title,$numberTicket,$dateTime,$description,$genre,$price,$released,$duration,$country,$production,$trailer,$img)
+// {
+//     global $connection;
+//     $query = "UPDATE movies 
+//     SET movie_title=:title, number_ticket = :numberTicket, date_time = :datetime, description = :description, genre=:genre, price=:price, released=:released, duration=:duration, country = :country, production=:production, trailer = :trailer, img = :img 
+//     WHERE movies_id = :id";
+//     $state = $connection->prepare($query);
+//     $state->execute([
+//         ':title' => $title,
+//         ':number_ticket' => $numberTicket,
+//         ':date_time' => $dateTime,
+//         ':description' => $description,
+//         ':genre' => $genre,
+//         ':price' => $price,
+//         ':released' => $released,
+//         ':duration' => $duration,
+//         ':country' => $country,
+//         ':production' => $production,
+//         ':trailer' => $trailer,
+//         ':img' => $img
+
+//     ]);
+//     return $state->rowCount() > 0;
+// }
+// function updateVenue($id,$name,$address)
+// {
+//     global $connection;
+//     $query = "UPDATE venue SET name=:name, address=:address WHERE venue_id =:id";
+//     $state = $connection->prepare($query);
+//     $state->execute([
+//         'name' => $name,
+//         'address' => $address,
+//         'id' => $id
+//     ]);
+//     return $state->rowCount() > 0;
+// }
+
+function getMoiveById($id)
 {
     global $connection;
-    $query = "UPDATE movies 
-    SET movie_title=:title, number_ticket = :numberTicket, date_time = :datetime, description = :description, genre=:genre, price=:price, released=:released, duration=:duration, country = :country, production=:production, trailer = :trailer, img = :img 
-    WHERE movies_id = :id";
-    $state = $connection->prepare($query);
-    $state->execute([
+    $query = "SELECT * FROM movies WHERE movies_id = :id";
+    $statement = $connection->prepare($query);
+    $statement->execute([
+        ':id' => $id,
+    ]); 
+    return $statement->fetch();
+}
+
+function getVenueById($id){
+global $connection;
+    $query = "SELECT * FROM venue WHERE venue_id = :id";
+    $statement = $connection->prepare($query);
+    $statement->execute([
+        ':id' => $id,
+    ]);
+    return $statement->fetch();
+}
+
+function editMovie($id, $title, $genre,$price,$released,$duration){
+    global $connection;
+    $statement = $connection->prepare("UPDATE movies SET movie_title = :title, genre = :genre, price = :price, released = :released WHERE movies_id= :id");
+    $statement->execute([
         ':title' => $title,
-        ':number_ticket' => $numberTicket,
-        ':date_time' => $dateTime,
-        ':description' => $description,
         ':genre' => $genre,
         ':price' => $price,
         ':released' => $released,
+        ':id' => $id
+        ]);
+        return $statement->rowCount() > 0;
+}
+
+function updateMovie($id, $title, $genre, $price, $released, $duration, $numberTicket, $dateTime, $description, $country, $production, $trailer, $img)
+{
+    global $connection;
+    $query = "UPDATE movies SET movie_title=:title, price =:price, genre =:genre, duration =:duration, 
+    released =:released, country =:country, number_ticket =:number_ticket,  production =:production,
+     trailer =:trailer, date_time =:datetime, img =:image, description =:description WHERE movies_id =:id";
+    $statement = $connection->prepare($query);
+    $statement->execute(array(
+        ':id' => $id,
+        ':title' => $title,
+        ':price' => $price,
+        ':genre' => $genre,
         ':duration' => $duration,
+        ':released' => $released,
         ':country' => $country,
+        ':datetime' => $dateTime,
+        ':number_ticket' => $numberTicket,
         ':production' => $production,
         ':trailer' => $trailer,
-        ':img' => $img
-
-    ]);
-    return $state->rowCount() > 0;
+        ':image' => $img,
+        ':description' => $description,
+        
+    ));
+    return $statement->rowCount() > 0;
 }
 function updateVenue($id,$name,$address)
 {
     global $connection;
     $query = "UPDATE venue SET name=:name, address=:address WHERE venue_id =:id";
-    $state = $connection->prepare($query);
-    $state->execute([
-        'name' => $name,
-        'address' => $address,
-        'id' => $id
+    $statement = $connection->prepare($query);
+    $statement->execute([
+        ':name' => $name,
+        ':address' => $address,
+        ':id' => $id,
     ]);
-    return $state->rowCount() > 0;
+    return $statement->rowCount() > 0;
 }
