@@ -31,7 +31,6 @@ function validate_userName($userName){
 
 }
 
-
 function validate_company($company){
     return strlen($company)<10;
 }
@@ -50,6 +49,9 @@ function validate_passwordConfirm($passwordConfirm){
 
 function validate_creditCard($creditCard){
     return strlen($creditCard) == 19 ;
+} 
+function validate_numberTicket($numberTicket){
+    return strlen($numberTicket) == 50 ;
 } 
 
 function validate_phonenumber($phoneNumber){
@@ -80,6 +82,7 @@ $creditCard="";
 $phoneNumber="";
 $address="";
 
+
 $company_valid = false;
 $userName_valid = false;
 $email_valid = false;
@@ -88,6 +91,7 @@ $date_valid = false;
 $creditCard_valid = false;
 $phoneNumber_valid = false;
 $address_valid=false;
+
 
 function getDataKey($key){
     if (isset($_POST[$key])){
@@ -112,6 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phoneNumber= getDataKey('phonenumber'); 
     $company= getDataKey('company'); 
     $address= getDataKey('address'); 
+
 
     if (empty($userName)){
         $userName_error="Please enter a user name";
@@ -276,7 +281,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if ($isFound=false){
     require ("../../views/login/view.login.form.php");
-
 }
 
 ?>

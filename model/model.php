@@ -43,6 +43,26 @@ function getUser()
     return $statement->fetchAll();
 
 }
+function getUserFromID($id)
+{
+    global $connection;
+    $statement = $connection->prepare("select * from users where user_id = :id");
+    $statement->execute([
+        ':id' => $id,
+    ]);
+    return $statement->fetch();
+
+}
+function getMovieFromID($id)
+{
+    global $connection;
+    $statement = $connection->prepare("select * from users where user_id = :id");
+    $statement->execute([
+        ':id' => $id,
+    ]);
+    return $statement->fetch();
+
+}
 
 function getCustomer()
 {
@@ -120,4 +140,29 @@ function newVenue($name, $address){
         $movie = $result[$number];
        
         return $movie['venue_id'];
+}
+function createTicket(int $movieId,int $customerId,string $gate,int $row,int $seat) : bool
+{
+    
+    global $connection;
+
+    $statement = $connection->prepare("insert into tickets (movie_id, customer_id, gate, row, seat) values (:movieid, :customerid, :gate, :row, :seat)");
+    $statement->execute([
+        ':movieid' => $movieId,
+        ':customerid'=> $customerId,
+        ':gate'=> $gate,
+        ':row'=> $row,
+        ':seat'=> $seat,
+    ]);
+
+    return $statement->rowCount() > 0;
+}
+
+function updateNumberTicket($number, $id){
+    global $connection;
+    $sate = $connection->prepare("UPDATE movies SET number_ticket = :num WHERE movieid = :id");
+    $sate->execute([    
+        ':num' => $number,
+        ':id' => $id
+    ]);
 }
