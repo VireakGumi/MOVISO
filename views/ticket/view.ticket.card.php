@@ -1,29 +1,31 @@
+
 <?php
+// require("views/partials/header.php");
 foreach($tickets as $ticket){
-    $movies = getmovie();
+    $movie = getMoveiByID($ticket['movies_id']);
+    $dateTime = explode(' ', $movie['date_time']);;
+    $date = $dateTime[0];
+    $time = $dateTime[1];
    ?>
     <div class="container d-flex mt-5">
         <div class="big_card_right bg-danger ps-2 pt-2 pb-2">
             <div class="sub_card_right bg-white p-3 d-flex">
                 <div class="ms-2">
-                    <img src="../../assets/moviso-logo.png" alt="" class="w-50 mt2">
+                    <img src="../../assets/moviso-logo.png" alt="" class="w-50 mt2" width="100px">
                     <div class="about_show mt-5 w-75">
-                        <h5 class="fw-bold">TICKET PRICE: <?= $movie['price']?></h5>
-                        <h5 class="fw-bold">DATE: <?= date("Y-m-d" , $movie['date_time'])?></h5>
-                        <h5 class="fw-bold">TIME: <?= date("h:i" , $movie['date_time'])?></h5>
+                        <h5 class="fw-bold">TICKET PRICE: <?= $movie['prices']?></h5>
+                        <h5 class="fw-bold">DATE: <?= $date ?></h5>
+                        <h5 class="fw-bold">TIME: <?= $time ?></h5>
                     </div>
                     <div class="place_of_seat d-flex mt-5">
                         <div class="gate">
-                            <h5 class="fw-bold"><?=$movies['gate']?></h5>
-                            <h2 class="ms-2 fw-bold">A</h2>
+                            <h5 class="fw-bold"><?=$ticket['gate']?></h5>
                         </div>
                         <div class="row ms-5">
-                            <h5 class="fw-bold"><?=$movies['row']?></h5>
-                            <h2 class="fw-bold">03</h2>
+                            <h5 class="fw-bold"><?=$ticket['row']?></h5>
                         </div>
                         <div class="seat">
-                            <h5 class="fw-bold"><?=$movies['seat']?></h5>
-                            <h2 class="fw-bold">16</h2>
+                            <h5 class="fw-bold"><?=$ticket['seat']?></h5>
                         </div>
                     </div>
                 </div>

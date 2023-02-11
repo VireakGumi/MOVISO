@@ -1,6 +1,6 @@
 <?php
 session_start();
-$userId= $_COOKIE['UserId'];
-$tickets= getTicketBy ($userId('user_id'));
+$userId = isset($_COOKIE['UserId'])? $_COOKIE['UserId'] : null;
+$tickets= getTicketByID($userId);
 
-require '../../views/view.ticket.card.php';
+require 'views/ticket/view.ticket.card.php';
