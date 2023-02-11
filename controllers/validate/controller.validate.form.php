@@ -1,6 +1,5 @@
 
 <?php
-
 $users = getUser();
 $isFound=false;
 $isFoundEmail=false;
@@ -45,9 +44,12 @@ function validate_email($email){
 function validate_password($password){
     return strlen($password)>=8 && strlen($password)<=16;
 }
+function validate_passwordConfirm($passwordConfirm){
+    return strlen($passwordConfirm)>=8 && strlen($passwordConfirm)<=16;
+}
 
 function validate_creditCard($creditCard){
-    return strlen($creditCard) == 16 ;
+    return strlen($creditCard) == 19 ;
 } 
 
 function validate_phonenumber($phoneNumber){
@@ -60,21 +62,23 @@ $company_error = "";
 $email_error = "";
 $email_incorrect = "";  
 $password_error = "";
+$passwordConfirm_error = "";
 $password_incorrect = "";
 $date_error = "";
 $creditCard_error = "";
 $phoneNumber_error = "";
-$location_error="";
+$address_error="";
 
 
 $company="";
 $userName = "";
 $email = "";
 $password="";
+$passwordConfirm="";
 $date="";
 $creditCard="";
 $phoneNumber="";
-$location="";
+$address="";
 
 $company_valid = false;
 $userName_valid = false;
@@ -83,12 +87,18 @@ $password_valid = false;
 $date_valid = false;
 $creditCard_valid = false;
 $phoneNumber_valid = false;
-$location_valid=false;
+$address_valid=false;
 
 function getDataKey($key){
     if (isset($_POST[$key])){
         $value = $_POST[$key];
         return $value;
+    }
+}
+function getImage($key){
+    if (isset($_FILES[$key])){
+        $file = $_FILES[$key];
+        return $file;
     }
 }
 
@@ -101,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $creditCard= getDataKey('creditcard'); 
     $phoneNumber= getDataKey('phonenumber'); 
     $company= getDataKey('company'); 
-    $location= getDataKey('location'); 
+    $address= getDataKey('address'); 
 
     if (empty($userName)){
         $userName_error="Please enter a user name";
@@ -141,6 +151,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{
         $password_valid=true;
     };
+    
+    if(empty($passwordConfirm)){
+        $passwordConfirm_error = "Please write your password to confirm here.";
+    } elseif(!(validate_password($passwordConfirm))){
+        $passwordConfirm_error = "password incorrect";
+    }else{
+        $passwordConfirm_valid=true;
+    };
 
     if($isFound){
         $password_incorrect="Incorrect password.";
@@ -152,10 +170,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $date_valid=true;
     };
     
-    if (empty($location)){
-        $location_error="Please enter a location.";
+    if (empty($address)){
+        $address_error="Please enter a address.";
     }else{
-        $location_valid=true;
+        $address_valid=true;
     };
     
 
@@ -176,7 +194,86 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $phoneNumber_valid=true;
     };
 
+
+    if(empty($title)){
+        $title_error="Please enter a title.";
+    }else{
+        $title_valid=true;
+    };
+
+    if(empty($price)){
+        $price_error="Please enter a price.";
+    }else{
+        $price_valid=true;
+    }
+
+    if(empty($genre)){
+        $genre_error="Please enter a genre.";
+    }else{
+        $genre_valid=true;
+    };
+
+    if(empty($duration)){
+        $duration_error="Please enter a duration.";
+    }else{
+        $duration_valid=true;
+    };
+
+    if(empty($released)){
+        $released_error="Please enter a released.";
+    }else{
+        $released_valid=true;
+    };
+    
+    if(empty($country)){
+        $country_error="Please enter a country.";
+    }else{
+        $country_valid=true;
+    };
+    
+    if(empty($dateTime)){
+        $dateTime_error="Please enter a country.";
+    }else{
+        $dateTime_valid=true;
+    };
+
+    if(empty($numberTicket)){
+        $numberTicket_error="Please enter a Number Ticket.";
+    }else{
+        $numberTicket_valid=true;
+    };
+
+    if(empty($cinemaName)){
+        $cinemaName_error="Please enter a Ciname Name.";
+    }else{
+        $cinemaName_valid=true;
+    };
+
+    if(empty($production)){
+        $production_error="Please enter a production.";
+    }else{
+        $production_valid=true;
+    };
+
+    if(empty($linkTrailer)){
+        $linkTrailer_error="Please enter a link trailer.";
+    }else{
+        $linkTrailer_valid=true;
+    };
+
+    if(empty($image)){
+        $image_error="Please enter a image.";
+    }else{
+        $image_valid=true;
+    };
+
+    if(empty($description)){
+        $description_error="Please enter a description.";
+    }else{
+        $description_valid=true;
+    };
 }
+
 if ($isFound=false){
     require ("../../views/login/view.login.form.php");
 

@@ -1,9 +1,8 @@
 <?php 
-  require "../../database/database.php";
-  require "../../model/model.php";
+
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $title = $_POST["title"];
-      $price = $_POST["price"];
+      $price = $_POST["prices"];
       $genre = $_POST["genre"];  
       $duration = $_POST["duration"];
       $released = $_POST["released"];
@@ -17,7 +16,7 @@
       $old = $_POST["oldImage"];
       $img = $_FILES['image']['name'];
       if($img!="") {
-        move_uploaded_file($_FILES['image']['tmp_name'],'../../assets/'.$img);
+        move_uploaded_file($_FILES['image']['tmp_name'],'assets/'.$img);
       } else {
         $img = $old;
       }
@@ -29,4 +28,4 @@
         header("Location:/");
       
   }
-  require_once "../../views/sellers/view.edit.show.php";
+  require_once "views/sellers/view.edit.show.php";
