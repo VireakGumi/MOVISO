@@ -7,7 +7,7 @@ $seller = 'views/erorrs/404.php';
 if (isset($_COOKIE['Role']) && $_COOKIE['Role'] == 0)
 {
     $seller = 'controllers/sellers/listpage/controller.seller.php';
-}
+};
 
 $router = [
     "/" => 'controllers/home/controller.home.php',
