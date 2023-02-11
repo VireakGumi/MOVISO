@@ -234,6 +234,7 @@ span {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background: #750013;
 }
 
 .container_4{
