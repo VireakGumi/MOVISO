@@ -96,6 +96,12 @@ function getDataKey($key){
         return $value;
     }
 }
+function getImage($key){
+    if (isset($_FILES[$key])){
+        $file = $_FILES[$key];
+        return $file;
+    }
+}
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -105,8 +111,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $date= getDataKey('dateofbirth'); 
     $creditCard= getDataKey('creditcard'); 
     $phoneNumber= getDataKey('phonenumber'); 
-    $passwordConfirm= getDataKey('confirmpassword');   
-    $address= getDataKey('address'); 
+    $company= getDataKey('company'); 
+    $location= getDataKey('location'); 
 
     if (empty($userName)){
         $userName_error="Please enter a user name";
@@ -165,8 +171,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $date_valid=true;
     };
     
-    if (empty($address)){
-        $address_error="Please enter a location.";
+    if (empty($location)){
+        $location_error="Please enter a location.";
     }else{
         $address_valid=true;
     };
@@ -189,7 +195,86 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $phoneNumber_valid=true;
     };
 
+
+    if(empty($title)){
+        $title_error="Please enter a title.";
+    }else{
+        $title_valid=true;
+    };
+
+    if(empty($price)){
+        $price_error="Please enter a price.";
+    }else{
+        $price_valid=true;
+    }
+
+    if(empty($genre)){
+        $genre_error="Please enter a genre.";
+    }else{
+        $genre_valid=true;
+    };
+
+    if(empty($duration)){
+        $duration_error="Please enter a duration.";
+    }else{
+        $duration_valid=true;
+    };
+
+    if(empty($released)){
+        $released_error="Please enter a released.";
+    }else{
+        $released_valid=true;
+    };
+    
+    if(empty($country)){
+        $country_error="Please enter a country.";
+    }else{
+        $country_valid=true;
+    };
+    
+    if(empty($dateTime)){
+        $dateTime_error="Please enter a country.";
+    }else{
+        $dateTime_valid=true;
+    };
+
+    if(empty($numberTicket)){
+        $numberTicket_error="Please enter a Number Ticket.";
+    }else{
+        $numberTicket_valid=true;
+    };
+
+    if(empty($cinemaName)){
+        $cinemaName_error="Please enter a Ciname Name.";
+    }else{
+        $cinemaName_valid=true;
+    };
+
+    if(empty($production)){
+        $production_error="Please enter a production.";
+    }else{
+        $production_valid=true;
+    };
+
+    if(empty($linkTrailer)){
+        $linkTrailer_error="Please enter a link trailer.";
+    }else{
+        $linkTrailer_valid=true;
+    };
+
+    if(empty($image)){
+        $image_error="Please enter a image.";
+    }else{
+        $image_valid=true;
+    };
+
+    if(empty($description)){
+        $description_error="Please enter a description.";
+    }else{
+        $description_valid=true;
+    };
 }
+
 if ($isFound=false){
     require ("../../views/login/view.login.form.php");
 

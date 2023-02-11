@@ -1,3 +1,15 @@
+
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+  .fadeOut(1000)
+  .next()
+  .fadeIn(1000)
+  .end()
+  .appendTo('#slideshow');
+}, 6000);
+
 function userNameCheck() {
     let userName = document.getElementById('user_value').value;
     let conditionUsername = /^[A-Z]{1}[a-z-A-Za" "]{2,}$/;
