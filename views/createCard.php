@@ -34,7 +34,7 @@ foreach ($movies as $movie) {
                                 <?= $movie["released"] ?>
                             </div>
                             <div class=" prices text-dark">
-                                <span class="text-danger">$</span><?= $movie["prices"]?>
+                                <span class="text-danger">$</span><?= $movie["price"]?>
 
                             </div>
 
