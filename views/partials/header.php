@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moviso</title>
     <link rel="stylesheet" href="views/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../views/css/style.min.css">
+    <link rel="stylesheet" href="../../views/css/style.css">
     <script src="views/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
