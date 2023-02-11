@@ -1,18 +1,13 @@
 <?php
-session_start();
-require '../../database/database.php';
+require 'database/database.php';
+$movieId = isset($_GET["id"])? $_GET["id"]: '';
 
-$movieId = isset($_SESSION["movie_id"])? $_SESSION["movie_id"]: '';
-// require '../../model/model.movies.php';
 function getData($table,$id){
     global $connection;
-    $statement = $connection->prepare("SELECT * FROM $table WHERE movies_id = $id" );
+    $statement = $connection->prepare("SELECT * FROM $table WHERE movies_id = $id");
     $statement->execute();
-    $result = $statement->fetch();
-    return $result;
+    return $statement->fetch();
 }
-
-
 function checkData($value){
     $isTrue = 0;
     if (!empty($value)){
