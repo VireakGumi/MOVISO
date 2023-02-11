@@ -84,6 +84,7 @@ $company_valid = false;
 $userName_valid = false;
 $email_valid = false;
 $password_valid = false;
+$passwordConfirm_valid = false;
 $date_valid = false;
 $creditCard_valid = false;
 $phoneNumber_valid = false;
@@ -111,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $creditCard= getDataKey('creditcard'); 
     $phoneNumber= getDataKey('phonenumber'); 
     $company= getDataKey('company'); 
-    $address= getDataKey('address'); 
+    $location= getDataKey('location'); 
 
     if (empty($userName)){
         $userName_error="Please enter a user name";
@@ -170,8 +171,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $date_valid=true;
     };
     
-    if (empty($address)){
-        $address_error="Please enter a address.";
+    if (empty($location)){
+        $location_error="Please enter a location.";
     }else{
         $address_valid=true;
     };

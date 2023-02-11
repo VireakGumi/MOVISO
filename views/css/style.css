@@ -28,8 +28,8 @@ form {
     flex-direction: row;
     background-color: rgba(192, 185, 185, 0.623);
     justify-content: space-evenly;
-    width: 90%;
-    height: 90vh;
+    width: 70%;
+    height: 80vh;
     margin: auto;
 }
 button a {
@@ -538,7 +538,11 @@ small p{
     gap: 20px;
     padding: 5px 20px;
 }
-
+small{
+    margin-top: 0.5%;
+    margin-bottom: 5%;
+    font-weight: bolder;
+}
 .seat{
     background-color: rgb(168, 166, 166);
 }
@@ -554,3 +558,10 @@ small p{
 .time{
     margin-left: 15%;
 }
+    /* /* -----------------------seller edite-------------- */
+
+    .container .table-add-record button{
+        width: 9%;
+        padding: 3px;
+        border-radius: 3px;
+    }
