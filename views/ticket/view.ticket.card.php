@@ -1,6 +1,8 @@
-
 <?php
-// require("views/partials/header.php");
+require("views/partials/navbar.php");
+?>
+<div class="ticket-container">
+<?php
 foreach($tickets as $ticket){
     $movie = getMoveiByID($ticket['movies_id']);
     $dateTime = explode(' ', $movie['date_time']);;
@@ -11,7 +13,7 @@ foreach($tickets as $ticket){
         <div class="big_card_right bg-danger ps-2 pt-2 pb-2">
             <div class="sub_card_right bg-white p-3 d-flex">
                 <div class="ms-2">
-                    <img src="../../assets/moviso-logo.png" alt="" class="w-50 mt2" width="100px">
+                    <img src="../../assets/moviso-logo.png" alt="" class="w-50 mt2" >
                     <div class="about_show mt-5 w-75">
                         <h5 class="fw-bold">TICKET PRICE: <?= $movie['prices']?></h5>
                         <h5 class="fw-bold">DATE: <?= $date ?></h5>
@@ -19,13 +21,16 @@ foreach($tickets as $ticket){
                     </div>
                     <div class="place_of_seat d-flex mt-5">
                         <div class="gate">
-                            <h5 class="fw-bold"><?=$ticket['gate']?></h5>
+                        <h5 class="fw-bold  d-flex">GATE</h5>
+                            <h5 class="ms-3"><?=$ticket['gate']?></h5>
                         </div>
                         <div class="row ms-5">
-                            <h5 class="fw-bold"><?=$ticket['row']?></h5>
+                        <h5 class="fw-bold d-flex">ROW</h5>
+                            <h5 class="ms-3"><?=$ticket['row']?></h5>
                         </div>
-                        <div class="seat">
-                            <h5 class="fw-bold"><?=$ticket['seat']?></h5>
+                        <div class="seat bg-body">
+                            <h5 class="fw-bold d-flex">SEAT</h5>
+                            <h5 class="ms-3"><?=$ticket['seat']?></h5>
                         </div>
                     </div>
                 </div>
@@ -44,3 +49,7 @@ foreach($tickets as $ticket){
     </div>
     <?php
 }
+?>
+</div>
+<?php
+require("views/partials/footer.php");
