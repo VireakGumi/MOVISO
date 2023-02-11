@@ -24,15 +24,15 @@ $router = [
     
 ];
 
-// function abort($code = 404)  {
-//     http_response_code($code);
-//     require "view/{$code}.php";
-//     die();
-// };
+function abort($code = 404)  {
+    http_response_code($code);
+    require "views/erorrs/{$code}.php";
+    die();
+};
 
 if(array_key_exists($url, $router)){
     require $router[$url];
 }
-// else{
-//     abort();
-// };
+else{
+    abort();
+};
