@@ -1,6 +1,10 @@
 <?php
-require 'database/database.php';
-require('controllers/home/home.php');
+require_once('database/database.php');
+require ('model/model.php');
+require_once('func.php');
+require_once('router.php');
 
-// require('controllers/detail/controller_detail_page.php');
+
+
+
 ?>
