@@ -1,5 +1,6 @@
 
 <?php
+
 $users = getUser();
 $isFound=false;
 $isFoundEmail=false;
@@ -43,12 +44,14 @@ function validate_email($email){
 function validate_password($password){
     return strlen($password)>=8 && strlen($password)<=16;
 }
+
 function validate_passwordConfirm($passwordConfirm){
     return strlen($passwordConfirm)>=8 && strlen($passwordConfirm)<=16;
 }
 
+
 function validate_creditCard($creditCard){
-    return strlen($creditCard) == 19 ;
+    return strlen($creditCard) == 16 ;
 } 
 function validate_numberTicket($numberTicket){
     return strlen($numberTicket) == 50 ;
@@ -64,12 +67,29 @@ $company_error = "";
 $email_error = "";
 $email_incorrect = "";  
 $password_error = "";
-$passwordConfirm_error = "";
 $password_incorrect = "";
+$passwordConfirm_error = "";
+
 $date_error = "";
 $creditCard_error = "";
 $phoneNumber_error = "";
 $address_error="";
+
+
+
+$title_error=false;
+$price_error=false;
+$genre_error=false;
+$duration_error=false;
+$released_error=false;
+$country_error=false;
+$dateTime_error=false;
+$production_error=false;
+$numberTicket_error=false;
+$cinemaName_error=false;
+$linkTrailer_error=false;
+$image_error=false;
+$description_error=false;
 
 
 $company="";
@@ -77,17 +97,51 @@ $userName = "";
 $email = "";
 $password="";
 $passwordConfirm="";
+
 $date="";
 $creditCard="";
 $phoneNumber="";
 $address="";
+
+$title="";
+$price="";
+$genre="";
+$duration="";
+$released="";
+$country="";
+$dateTime="";
+$production="";
+$numberTicket="";
+$cinemaName="";
+$linkTrailer="";
+$image="";
+$description="";
+
+
+
+$title_valid=false;
+$price_valid=false;
+$genre_valid=false;
+$duration_valid=false;
+$released_valid=false;
+$country_valid=false;
+$dateTime_valid=false;
+$production_valid=false;
+$numberTicket_valid=false;
+$cinemaName_valid=false;
+$linkTrailer_valid=false;
+$image_valid=false;
+$description_valid=false;
+
 
 
 $company_valid = false;
 $userName_valid = false;
 $email_valid = false;
 $password_valid = false;
-$date_valid = false;
+$passwordConfirm_valid = false;
+
+$dateTime_valid = false;
 $creditCard_valid = false;
 $phoneNumber_valid = false;
 $address_valid=false;
@@ -99,12 +153,7 @@ function getDataKey($key){
         return $value;
     }
 }
-function getImage($key){
-    if (isset($_FILES[$key])){
-        $file = $_FILES[$key];
-        return $file;
-    }
-}
+
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -115,7 +164,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $creditCard= getDataKey('creditcard'); 
     $phoneNumber= getDataKey('phonenumber'); 
     $company= getDataKey('company'); 
-    $address= getDataKey('address'); 
+    $address= getDataKey('address');  
+    $passwordConfirm= getDataKey('confirmpassword');   
+
+    
+    $title= getDataKey('title');
+    $price= getDataKey('price');
+    $genre= getDataKey('genre');
+    $duration= getDataKey('duration');
+    $released= getDataKey('released');
+    $country= getDataKey('country');
+    $dateTime= getDataKey('datetime');
+    $production= getDataKey('production');
+    $numberTicket= getDataKey('numberticket');
+    $linkTrailer= getDataKey('linktrailer');
+    
+    $description= getDataKey('description');
+    $cinemaName= getDataKey('cinemaname');
+
+
 
 
     if (empty($userName)){
@@ -156,15 +223,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else{
         $password_valid=true;
     };
-    
+
+
     if(empty($passwordConfirm)){
-        $passwordConfirm_error = "Please write your password to confirm here.";
+        $passwordConfirm_error = "Please confirm password here.";
     } elseif(!(validate_password($passwordConfirm))){
         $passwordConfirm_error = "password incorrect";
     }else{
         $passwordConfirm_valid=true;
     };
-
     if($isFound){
         $password_incorrect="Incorrect password.";
     }
@@ -176,7 +243,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     };
     
     if (empty($address)){
-        $address_error="Please enter a address.";
+        $address_error="Please enter a Address.";
     }else{
         $address_valid=true;
     };
@@ -266,7 +333,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $linkTrailer_valid=true;
     };
 
-    if(empty($image)){
+    if(empty($_FILES["image"]["name"])){
         $image_error="Please enter a image.";
     }else{
         $image_valid=true;
@@ -284,3 +351,4 @@ if ($isFound=false){
 }
 
 ?>
+ 

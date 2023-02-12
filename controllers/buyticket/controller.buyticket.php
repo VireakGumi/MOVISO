@@ -12,6 +12,6 @@ if ($isValid) {
     createTicket($movie['movies_id'], $user['user_id'], 'B', 3, 4);
     $quanityTicket -= $numberTicket;
     updateNumberTicket($numberTicket, $movie['movies_id']);
-    header("location: /detail");
+    header("location:/home");
 }
 require_once('views/buyticket/view.form.buyticket.php');
