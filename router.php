@@ -19,8 +19,8 @@ $router = [
     "/detail" => 'controllers/customers/detail/controller.detailpage.php',
     "/seller" => $seller,
     "/movie" => 'controllers/sellers/newshow/controller.add.movie.php',
-    "/delete" => 'controllers/sellers/listpage/controller.delete.show.php'
-    
+    "/delete" => 'controllers/sellers/listpage/controller.delete.show.php',
+    "/buyticket" => 'controllers/buyticket/controller.buyticket.php'
     
 ];
 
