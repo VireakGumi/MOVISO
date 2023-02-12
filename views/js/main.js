@@ -1,3 +1,30 @@
+$('#confirm').click(function () {
+    cuteAlert({
+        type: "question",
+        title: "Ticket",
+        message: "Are you sure you want to confirm",
+        confirmText: "Confirm",
+        cancelText: "Cancel"
+    }).then((e) => {
+        if (e == ("confirm")) {
+            cuteToast({
+                type: "success",
+                title: "Confirmed",
+                message: "You succes to buy the ticket ",
+                timer: 3000
+            })
+            $.ajax({
+                url: "test.php",
+                method: "POST",
+                data: { moives_id: movies_id, },
+                success: function (result) {
+                    $("#test").html(result);
+                }
+
+            })
+        }
+    })
+})
 function userNameCheck() {
     let userName = document.getElementById('user_value').value;
     let conditionUsername = /^[A-Z]{1}[a-z-A-Za" "]{2,}$/;
@@ -21,7 +48,7 @@ function emailCheck() {
 function passwordCheck() {
     let password = document.getElementById('password_value').value;
     let conditionPassword = /^[A-Za-z0-9]{8,16}$/;
-    if (conditionPassword.test(password )) {
+    if (conditionPassword.test(password)) {
         document.querySelector('#password-field').classList = "success";
     } else {
         document.querySelector('#password-field').classList = "fail";
@@ -50,12 +77,12 @@ function phoneCheck() {
 
 function cardCheck() {
     let card = document.getElementById('card_value').value;
-    let conditionCard =/^[0-9-" "]{19}$/;
+    let conditionCard = /^[0-9-" "]{19}$/;
     if (conditionCard.test(card)) {
         document.querySelector('#card-field').classList = "success";
     } else {
         document.querySelector('#card-field').classList = "fail";
-    }   
+    }
 }
 
 var cardNum = document.getElementById('card_value');
@@ -64,11 +91,11 @@ cardNum.onkeyup = function (e) {
     var caretPosition = this.selectionStart;
     var sanitizedValue = this.value.replace(/[^0-9]/gi, '');
     var parts = [];
-    
+
     for (var i = 0, len = sanitizedValue.length; i < len; i += 4) {
         parts.push(sanitizedValue.substring(i, i + 4));
     }
-    
+
     for (var i = caretPosition - 1; i >= 0; i--) {
         var c = this.value[i];
         if (c < '0' || c > '9') {
@@ -76,25 +103,25 @@ cardNum.onkeyup = function (e) {
         }
     }
     caretPosition += Math.floor(caretPosition / 4);
-    
+
     this.value = this.lastValue = parts.join(' ');
     this.selectionStart = this.selectionEnd = caretPosition;
 }
 
 function dateCheck() {
     let todayDate = new Date();
-    let month = todayDate.getMonth() + 1 ;
+    let month = todayDate.getMonth() + 1;
     let maxyear = todayDate.getUTCFullYear() - 12;
     let minyear = todayDate.getUTCFullYear() - 100;
     let date = todayDate.getDate();
 
-    if (month < 10){
+    if (month < 10) {
         month = "0" + month;
     }
-    if(date < 10){
+    if (date < 10) {
         date = "0" + date;
     }
-    
+
     let maxDate = maxyear + "-" + month + "-" + date
 
     let minDate = minyear + "-" + month + "-" + date
@@ -103,7 +130,7 @@ function dateCheck() {
 
     document.getElementById("date").setAttribute("min", minDate);
 }
-
+dateCheck()
 function normal(key) {
     let keys = "#" + key;
     let keyValues = document.querySelector(keys);
@@ -129,30 +156,4 @@ function showHint(str) {
     }
 }
 
-$('#confirm').click(function () {
-    cuteAlert({
-        type: "question",
-        title: "Ticket",
-        message: "Are you sure you want to confirm",
-        confirmText: "Confirm",
-        cancelText: "Cancel"
-    }).then((e) => {
-        if (e == ("confirm")) {
-            cuteToast({
-                type: "success",
-                title: "Confirmed",
-                message: "You succes to buy the ticket ",
-                timer: 3000
-            })
-            $.ajax({
-                url: "test.php",    
-                method: "POST",   
-                data: { moives_id: movies_id, },
-                success: function (result) {
-                    $("#test").html(result);
-                }
 
-            })
-        }
-    })
-})

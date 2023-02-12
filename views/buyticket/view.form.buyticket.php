@@ -62,3 +62,54 @@
             </div>
         </div>
 </div>
+<script>
+    var cardNum = document.getElementById('card_value');
+    cardNum.onkeyup = function (e) {
+        if (this.value == this.lastValue) return;
+        var caretPosition = this.selectionStart;
+        var sanitizedValue = this.value.replace(/[^0-9]/gi, '');
+        var parts = [];
+
+        for (var i = 0, len = sanitizedValue.length; i < len; i += 4) {
+            parts.push(sanitizedValue.substring(i, i + 4));
+        }
+
+        for (var i = caretPosition - 1; i >= 0; i--) {
+            var c = this.value[i];
+            if (c < '0' || c > '9') {
+                caretPosition--;
+            }
+        }
+        caretPosition += Math.floor(caretPosition / 4);
+
+        this.value = this.lastValue = parts.join(' ');
+        this.selectionStart = this.selectionEnd = caretPosition;
+    }
+    $('#confirm').click(function () {
+    cuteAlert({
+        type: "question",
+        title: "Ticket",
+        message: "Are you sure you want to confirm",
+        confirmText: "Confirm",
+        cancelText: "Cancel"
+    }).then((e) => {
+        if (e == ("confirm")) {
+            cuteToast({
+                type: "success",
+                title: "Confirmed",
+                message: "You succes to buy the ticket ",
+                timer: 3000
+            })
+            $.ajax({
+                url: "test.php",
+                method: "POST",
+                data: { moives_id: movies_id, },
+                success: function (result) {
+                    $("#test").html(result);
+                }
+
+            })
+        }
+    })
+})
+</script>
