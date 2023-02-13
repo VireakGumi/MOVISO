@@ -90,7 +90,6 @@
 
                     </div>
                 </div>
-
                 <div class="movies">
                     <div id="date-field">
                         Date Time<input type="datetime-local" id="date_value" class="form-control" name="datetime"
@@ -141,15 +140,10 @@
                         </span>
                         <small
                             class="text-danger"><?= !empty($production_error)? $production_error : "<p>.</p>"?></small>
-
-
                     </div>
                 </div>
-
             </div>
-
             <div class="movie-right">
-
                 <div id="addres-field">
                     Address<input type="text" id="address_value" class="form-control" name="address"
                         onkeyup="movieAddress()" onclick="normal('address-field')"
@@ -159,7 +153,6 @@
                         <i class="fa fa-exclamation-circle"></i>
                     </span>
                     <small class="text-danger"><?= !empty($address_error)? $address_error : "<p>.</p>"?></small>
-
                 </div>
                 <div id="trailer-field">
                     Link Trailer<input type="text" id="trailer_value" class="form-control" placeholder="Link trailer *"
@@ -170,8 +163,6 @@
                         <i class="fa fa-exclamation-circle"></i>
                     </span>
                     <small class="text-danger"><?= !empty($trailer_error)? $trailer_error : "<p>.</p>"?></small>
-
-
                 </div>
                 <div class="img">
                     <label for="inputImg" id="image">
@@ -180,36 +171,26 @@
                         <input id="inputImg" type="file" name="image">
                         <!-- <input type="file" name="image" id="inputImg"/>  -->
                         <input type="hidden" name="oldImage" value="<?= isset($_GET["id"])? $movie["img"]:null?>">
-
                         <br />
-
-
-
                     </label>
                 </div>
                 <small class="text-danger"><?= !empty($img_error)? $img_error : "<p>.</p>"?></small>
-
                 <div id="description-field">
                     Description<textarea name="description" id="description_value" class="form-control" cols="30"
                         rows="4" onkeyup="moviewDescription()" onclick="normal('description-field')"
                         placeholder="Descriptions...."
                         value=""><?= isset($_GET["id"])? $movie["description"]:''?></textarea>
-
                     <span id="icons">
                         <i class="fa fa-check-circle"></i>
                         <i class="fa fa-exclamation-circle"></i>
                     </span>
                     <small class="text-danger"><?= !empty($description_error)? $description_error : "<p></p>"?></small>
-
-
                 </div>
             </div>
-
         </div>
         <div class="movie-btn">
             <button class="btn"><a href="/">back</a></button>
             <button class="btn text-center">Add now</button>
-
         </div>
     </div>
 </form>
