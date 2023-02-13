@@ -1,9 +1,10 @@
-<?php require("views/partials/header.php"); ?>
+<?php require("views/partials/header.php");
+require_once('controllers/buyticket/validate.php'); ?>
 
-<div class="container-fluid mx-auto">
+<div class="container-fluid mx-auto w-100">
     <img src="../../assets/cinema.png" alt="" class="background">
-    <div class="row d-flex justify-content-center">
-        <form action="/buyticket" method="post" class="col-xl-7 col-lg-8 col-md-9 col-sm-11">
+    <form action="/buyticket" method="post" class="row d-flex justify-content-center w-100">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-sm-11">
             <div class="card-ticket border-0">
                 <div class="d-flex justify-content-center mt-2">
                     <img class="" src="../../assets/moviso-logo1.png" class="" width=150 height="50">
@@ -11,40 +12,46 @@
                 <h3 class="mt-2 credit-card">Credit Card Checkout</h3>
                 <div class="row">
                     <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
-
-                    <div class="col-sm-7 border-line pb-4 px-5">
+                    <div class="col-sm-7 border-line pb-2 px-5">
                         <div class="form-group">
                             <p class="text-ticket text-sm mb-0">Name on the card*</p>
                             <input type="text" name="name" placeholder="Name" class="width-card">
                         </div>
+                        <small class="text-danger">
 
-                        <div class="form-group d-flex mt-2">
+                            <?= $cardName_error ?>
+
+                        </small>
+                        <div class="form-group d-flex mt-2 ">
                             <div id="card-field">
                                 <p class="text-ticket text-sm mb-0">Card Number*</p>
                                 <input type="text" name="card-num" id="card_value" placeholder="0000 0000 0000 0000"
                                     width="55" class="width-card" onkeypress="cardCheck()"
                                     onclick="normal('card-field')" maxlength="19">
-                                <small class="text-danger">
-                                    <?php echo $cardNumber_error; ?>
-                                </small>
+
                             </div>
                             <div class="mt-4">
-                                <p class="ms-4">/</p>
+                                <p class="ms-5">/</p>
                             </div>
                             <div class="mt-3">
                                 <img class="" src="../../assets/ticketcard.png" width='55'>
                             </div>
                         </div>
+                        <small class="text-danger w-100">
+                            <?= $cardNumber_error ?>
+                        </small>
+                        <p class="text-ticket text-sm mb-0 mt-2">Quantity*</p>
+
                         <div class="form-group d-flex">
-                            <div class="col-md-3 col-lg-3 col-xl-2 width-card">
-                                <p class="text-ticket text-sm mb-0 mt-2">Quantity*</p>
-                                <input id="form1" ​ min="1" name="quantity" value="1" type="number" maxlength="3"
+                            <div class="col-md-3 col-lg-3 col-xl-2 d-flex width-card">
+                                <input id="form1" name="quantity" value="1" type="number" maxlength="3"
                                     class="from-control width-card" />
-                                <small class="text-danger">
-                                    <?php echo $quantityTicket_error; ?>
-                                </small>
                             </div>
                         </div>
+                        <small class="text-danger">
+
+                            <?= $quantityTicket_error ?>
+                        </small>
                         <button type="submit" class="width-card mt-4 ms-0">Choose sit</button>
                         <div class="form-group mb-0">
                             <div class="custom-control custom-checkbox custom-control-inline">
@@ -65,9 +72,13 @@
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
 </div>
+
 </div>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 <script>
     var cardNum = document.getElementById('card_value');
     cardNum.onkeyup = function (e) {
@@ -105,15 +116,6 @@
                     title: "Confirmed",
                     message: "You succes to buy the ticket ",
                     timer: 3000
-                })
-                $.ajax({
-                    url: "test.php",
-                    method: "POST",
-                    data: { moives_id: movies_id, },
-                    success: function (result) {
-                        $("#test").html(result);
-                    }
-
                 })
             }
         })
