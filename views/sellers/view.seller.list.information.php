@@ -1,14 +1,32 @@
+<<<<<<< HEAD
 <?php
 require_once('views/partials/navbar.php');
 ?>
     <div class="container text-white" style="margin-top: 100px;">
+=======
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>View Records</title>
+    <link rel="stylesheet" href="../../views/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-3">
+>>>>>>> d9107cfd9cbc61fe4d60aaf35154ce28b5fdc0e2
         <div class="table-add-record d-flex justify-content-between mb-2">
 
             <h4>All Movies</h4>
             <button>Add New</button>
         </div>
 
+<<<<<<< HEAD
         <table class="table bg-white table-hover">
+=======
+        <table class="table table-secondary  table-hover">
+>>>>>>> d9107cfd9cbc61fe4d60aaf35154ce28b5fdc0e2
             <thead class="" width="">
                 <tr>
                     <th class="text-center">ID</th>
@@ -50,8 +68,15 @@ require_once('views/partials/navbar.php');
             ?>
         </table>
     </div>
+<<<<<<< HEAD
 
     <?php
     require_once('views/partials/footer.php');
 
     ?>
+=======
+</body>
+
+</html>
+
+>>>>>>> d9107cfd9cbc61fe4d60aaf35154ce28b5fdc0e2
