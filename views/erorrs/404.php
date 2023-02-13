@@ -11,7 +11,7 @@
         <h1>OMG! 404 PAGE</h1>
         <hr>
         <h3 class="mb-5">WE ARE SORRY. BUT THE PAGE YOU REQUESTED WAS NOT FOUND</h3>
-        <a href="../../controllers/home/controller.home.php" class="p-3 mt-5 bg-danger rounded text-dark">BACK TO HOME</a>
+        <a href="controllers/home/controller.home.php" class="p-3 mt-5 bg-danger rounded text-dark">BACK TO HOME</a>
     </div>
 </body>
 </html>
