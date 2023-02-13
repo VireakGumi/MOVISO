@@ -32,7 +32,6 @@ function validate_userName($userName){
 
 }
 
-
 function validate_company($company){
     return strlen($company)<10;
 }
@@ -53,6 +52,9 @@ function validate_passwordConfirm($passwordConfirm){
 
 function validate_creditCard($creditCard){
     return strlen($creditCard) == 16 ;
+} 
+function validate_numberTicket($numberTicket){
+    return strlen($numberTicket) == 50 ;
 } 
 
 function validate_phonenumber($phoneNumber){
@@ -138,11 +140,16 @@ $userName_valid = false;
 $email_valid = false;
 $password_valid = false;
 $passwordConfirm_valid = false;
+<<<<<<< HEAD
+$date_valid = false;
+=======
 
 $dateTime_valid = false;
+>>>>>>> d9107cfd9cbc61fe4d60aaf35154ce28b5fdc0e2
 $creditCard_valid = false;
 $phoneNumber_valid = false;
 $address_valid=false;
+
 
 function getDataKey($key){
     if (isset($_POST[$key])){
@@ -161,6 +168,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $creditCard= getDataKey('creditcard'); 
     $phoneNumber= getDataKey('phonenumber'); 
     $company= getDataKey('company'); 
+<<<<<<< HEAD
+    $location= getDataKey('location'); 
+=======
     $address= getDataKey('address');  
     $passwordConfirm= getDataKey('confirmpassword');   
 
@@ -180,6 +190,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cinemaName= getDataKey('cinemaname');
 
 
+
+>>>>>>> d9107cfd9cbc61fe4d60aaf35154ce28b5fdc0e2
 
     if (empty($userName)){
         $userName_error="Please enter a user name";
@@ -238,8 +250,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $date_valid=true;
     };
     
+<<<<<<< HEAD
+    if (empty($location)){
+        $location_error="Please enter a location.";
+=======
     if (empty($address)){
         $address_error="Please enter a Address.";
+>>>>>>> d9107cfd9cbc61fe4d60aaf35154ce28b5fdc0e2
     }else{
         $address_valid=true;
     };
@@ -344,7 +361,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if ($isFound=false){
     require ("../../views/login/view.login.form.php");
-
 }
 
 ?>
