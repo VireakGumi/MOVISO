@@ -56,7 +56,7 @@ function getUserFromID($id)
 function getMovieFromID($id)
 {
     global $connection;
-    $statement = $connection->prepare("select * from users where user_id = :id");
+    $statement = $connection->prepare("select * from movies where movies_id = :id");
     $statement->execute([
         ':id' => $id,
     ]);
@@ -141,15 +141,15 @@ function newVenue($name, $address){
        
         return $movie['venue_id'];
 }
-function createTicket(int $movieId,int $customerId,string $gate,int $row,int $seat) : bool
+function createTicket(int $movieId,int $userId,string $gate,int $row,int $seat) : bool
 {
     
     global $connection;
 
-    $statement = $connection->prepare("insert into tickets (movie_id, customer_id, gate, row, seat) values (:movieid, :customerid, :gate, :row, :seat)");
+    $statement = $connection->prepare("insert into tickets (movies_id, user_id, gate, row, seat) values (:movieid, :user_id, :gate, :row, :seat)");
     $statement->execute([
         ':movieid' => $movieId,
-        ':customerid'=> $customerId,
+        ':user_id'=> $userId,
         ':gate'=> $gate,
         ':row'=> $row,
         ':seat'=> $seat,
@@ -160,7 +160,7 @@ function createTicket(int $movieId,int $customerId,string $gate,int $row,int $se
 
 function updateNumberTicket($number, $id){
     global $connection;
-    $sate = $connection->prepare("UPDATE movies SET number_ticket = :num WHERE movieid = :id");
+    $sate = $connection->prepare("UPDATE movies SET number_ticket = :num WHERE movies_id = :id");
     $sate->execute([    
         ':num' => $number,
         ':id' => $id

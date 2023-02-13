@@ -2,7 +2,7 @@
 session_start();
 
 $userid = isset($_COOKIE['UserId']) ? $_COOKIE['UserId'] : '';
-$movie_id = isset($_GET['id']) ? $_GET['id'] : '';
+$movie_id = isset($_POST['id']) ? $_POST['id'] : '';
 
 $user = getUserFromID($userid);
 $movie = getMovieFromID($movie_id);
@@ -43,16 +43,16 @@ $quantityTicket_valid = false;
 $dateMovie_valid = false;
 $cardNumber_valid = false;
 
-$isValid = false;
+$isValid = true;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $qauntityTicket = getDatakey('qaunityticket');
+    $qauntityTicket = getDatakey('$quanityTicket');
     $dateMovie = getDatakey('dateMovie');
     $cardNumber = getDatakey('cardNumber');
 
     if (empty($qauntityTicket)) {
         $quantityTicket_error = "Please complete your quanity of Ticket.";
-    } elseif (validate_quanityTicket($qauntityTicket, $user["numberTicket"])) {
+    } elseif (validate_quanityTicket($qauntityTicket, $movie["number_ticket"])) {
         $quantityTicket_error = "Ticket is sold out.";
     } else {
         $quantityTicket_error = true;

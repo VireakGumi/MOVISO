@@ -8,7 +8,6 @@ if (isset($_COOKIE['Role']) && $_COOKIE['Role'] == 0)
 {
     $seller = 'controllers/sellers/listpage/controller.seller.php';
 }
-
 $router = [
     "/" => 'controllers/home/controller.home.php',
     "/explore" => 'controllers/customers/listshow/controller.listshow.page.php',
@@ -20,19 +19,10 @@ $router = [
     "/seller" => $seller,
     "/movie" => 'controllers/sellers/newshow/controller.add.movie.php',
     "/delete" => 'controllers/sellers/listpage/controller.delete.show.php',
-    "/buyticket" => 'controllers/buyticket/controller.buyticket.php'
-    
+    "/buyticket" => 'controllers/buyticket/controller.buyticket.php',
+    "/booking" => 'views/buyticket/view.form.buyticket.php',
 ];
-
-// function abort($code = 404)  {
-//     http_response_code($code);
-//     require "view/{$code}.php";
-//     die();
-// };
 
 if(array_key_exists($url, $router)){
     require $router[$url];
 }
-// else{
-//     abort();
-// };
