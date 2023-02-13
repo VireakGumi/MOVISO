@@ -1,11 +1,12 @@
 <?php
+    require_once('controllers/validate/controller.validate.form.php');
     $id = isset($_GET["id"])? $_GET["id"]:null;
     $movie = getMoiveById($id);
     $vanue=  getVenueById($movie['venue_id']);
-    ?>
+?>
 <?php require("views/partials/header.php"); ?>
 <img src="../../assets/istockphoto-915697084-170667a.jpg" alt="" class="background">
-<form action="/edit" method="POST" enctype="multipart/form-data" class="list_movie">
+<form action="/update" method="POST" enctype="multipart/form-data" class="list_movie">
     <div class="d-flex flex-column">
         <h2 class="text-center contain-movie ">UPLOAD MOVIE </h2>
         <div class="form-movie d-flex">
@@ -14,6 +15,8 @@
                     <div id="title-field">
                         <input type="hidden" class="form-control" name="id"
                             value="<?= isset($_GET["id"]) ? $movie["movies_id"] :null;?>">
+                        <input type="hidden" class="form-control" name="venueId"
+                            value="<?= isset($_GET["id"]) ? $movie["venue_id"] :null;?>">
                         Movie Title<input type="text" id="title_value" class="form-control" name="title"
                             onkeyup="movieTitle()" onclick="normal('title-field')"
                             value="<?= isset($_GET["id"])? $movie["movie_title"]:null?>">
@@ -26,7 +29,7 @@
                     </div>
 
                     <div id="price-field">
-                        Price<input type="text" id="price_value" class="form-control" name="prices"
+                        Price<input type="text" id="price_value" class="form-control" name="price"
                             onkeyup="moviePrice()" onclick="normal('price-field')"
                             value="<?= isset($_GET["id"])? $movie["prices"]:null?>">
                         <span id="icons">
@@ -67,7 +70,7 @@
                     <div id="released-field">
                         Released<input type="date" id="released_value" class="form-control" name="released"
                             onkeyup="movieReleased()" onclick="normal('released-field')"
-                            value="<?= $movie["released"];?>">
+                            value="<?= isset($_GET["id"])? $movie["released"]:''?>">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
@@ -116,14 +119,15 @@
 
                 <div class="movies">
                     <div id="cinemaname-field">
-                        Cinema Name<input type="text" id="cinema_name_value" class="form-control" name="name"
+                        Cinema Name<input type="text" id="cinema_name_value" class="form-control" name="cinemaname"
                             onkeyup="cinemaName()" onclick="normal('name-fild')"
                             value="<?= isset($_GET["id"])? $vanue["name"]:null?>">
                         <span id="icons">
                             <i class="fa fa-check-circle"></i>
                             <i class="fa fa-exclamation-circle"></i>
                         </span>
-                        <small class="text-danger"><?= !empty($name_error)? $name_error : "<p>.</p>"?></small>
+                        <small
+                            class="text-danger"><?= !empty($cinemaName_error)? $cinemaName_error : "<p>.</p>"?></small>
 
 
                     </div>
@@ -146,7 +150,7 @@
 
             <div class="movie-right">
 
-                <div id="address-field">
+                <div id="addres-field">
                     Address<input type="text" id="address_value" class="form-control" name="address"
                         onkeyup="movieAddress()" onclick="normal('address-field')"
                         value="<?= isset($_GET["id"])? $vanue["address"]:null?>">
@@ -159,7 +163,7 @@
                 </div>
                 <div id="trailer-field">
                     Link Trailer<input type="text" id="trailer_value" class="form-control" placeholder="Link trailer *"
-                        name="trailer" onkeyup="movieTrailer()" onclick="normal('trailer-field')"
+                        name="linktrailer" onkeyup="movieTrailer()" onclick="normal('trailer-field')"
                         value="<?= isset($_GET["id"])? $movie["trailer"]:null?>">
                     <span id="icons">
                         <i class="fa fa-check-circle"></i>
@@ -178,7 +182,7 @@
                         <input type="hidden" name="oldImage" value="<?= isset($_GET["id"])? $movie["img"]:null?>">
 
                         <br />
-                        
+
 
 
                     </label>
@@ -202,7 +206,7 @@
             </div>
 
         </div>
-        <div class="movie-btn bg-white">
+        <div class="movie-btn">
             <button class="btn"><a href="/">back</a></button>
             <button class="btn text-center">Add now</button>
 

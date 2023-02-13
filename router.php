@@ -2,12 +2,12 @@
 
 $url = parse_url($_SERVER['REQUEST_URI'])['path'];
 
-$seller = 'views/erorrs/404.php';
+// $seller = 'views/erorrs/404.php';
 
-if (isset($_COOKIE['Role']) && $_COOKIE['Role'] == 0)
-{
+// if (isset($_COOKIE['Role']) && $_COOKIE['Role'] == 0)
+// {
     $seller = 'controllers/sellers/listpage/controller.seller.php';
-};
+// };
 
 $router = [
     "/" => 'controllers/home/controller.home.php',
@@ -20,7 +20,9 @@ $router = [
     "/seller" => $seller,
     "/movie" => 'controllers/sellers/newshow/controller.add.movie.php',
     "/delete" => 'controllers/sellers/listpage/controller.delete.show.php',
-    "/edit" => 'controllers/sellers/listpage/controller.edit.show.php'
+    "/update" => 'controllers/sellers/listpage/controller.edit.show.php',
+    "/edit" => 'views/sellers/view.edit.show.php',
+    
     
     
 ];
