@@ -4,8 +4,8 @@ require_once('controllers/buyticket/validate.php');
 $userid = isset($_COOKIE['UserId']) ? $_COOKIE['UserId'] : '';
 $movie_id = isset($_POST['id']) ? $_POST['id'] : null;
 
-$user = getUserFromID($userid);
-$movie = getMovieFromID($movie_id);
+$user = getUserByID($userid);
+$movie = getMoiveById($movie_id);
 $quanityTicket = $_POST['quantity'];
 $numberTicket = $movie['number_ticket'];
 
@@ -18,4 +18,3 @@ if ($isValid) {
 else{
     header("location:/booking?id=". $movie_id);
 }
-// require_once('views/buyticket/view.form.buyticket.php');

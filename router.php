@@ -22,6 +22,9 @@ $router = [
     "/delete" => 'controllers/sellers/listpage/controller.delete.show.php',
     "/buyticket" => 'controllers/buyticket/controller.buyticket.php',
     "/booking" => 'views/buyticket/view.form.buyticket.php',
+    "/update" => 'controllers/sellers/listpage/controller.edit.show.php',
+    "/edit" => 'views/sellers/listpage/view.edit.show.php',
+    
 ];
 
 function abort($code = 404)  {

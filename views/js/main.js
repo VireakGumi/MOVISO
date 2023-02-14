@@ -35,7 +35,7 @@ setInterval(function() {
   .fadeIn(1000)
   .end()
   .appendTo('#slideshow');
-}, 6000);
+}, 4000);
 
 function userNameCheck() {
     let userName = document.getElementById('user_value').value;
