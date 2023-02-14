@@ -47,6 +47,7 @@
 
 </body>
 <script src="views/js/main.js"></script>
+<script src="views/js/cute-alert.js"></script>
 
 
 </html>

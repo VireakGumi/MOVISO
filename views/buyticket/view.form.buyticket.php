@@ -94,6 +94,7 @@
         this.selectionStart = this.selectionEnd = caretPosition;
     }
     $('#confirm').click(function () {
+        // alert('helloe');
     cuteAlert({
         type: "question",
         title: "Ticket",
