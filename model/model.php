@@ -68,6 +68,14 @@ function getMoives()
     $statement->execute();
     return $statement->fetchAll();
 }
+function getMoivesForSeller() 
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM movies ORDER BY movies_id DESC");
+    $statement->execute();
+    return $statement->fetchAll();
+    
+}
 
 function getSearch($letter)
 {
