@@ -140,6 +140,7 @@ $userName_valid = false;
 $email_valid = false;
 $password_valid = false;
 $passwordConfirm_valid = false;
+$date_valid = false;
 
 $dateTime_valid = false;
 $creditCard_valid = false;

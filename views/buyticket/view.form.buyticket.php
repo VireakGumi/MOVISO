@@ -1,5 +1,16 @@
-<?php require("views/partials/header.php");
+<?php 
+// require("views/partials/header.php");
 require_once('controllers/buyticket/validate.php'); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="views/css/bootstrap.min.css">
+    <link rel="stylesheet" href="views/css/style.css">
+    <title>Document</title>
+</head>
 
 <div class="container-fluid mx-auto w-100">
     <img src="../../assets/cinema.png" alt="" class="background">

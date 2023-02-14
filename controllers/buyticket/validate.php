@@ -10,7 +10,7 @@ $movie = getMovieFromID($movie_id);
 $isFound = false;
 $isFoundEmail = false;
 $todayDate = date('Y-m-d');
-$dateMovie = explode(' ', $movie['date_time']);
+// $dateMovie = explode(' ', $movie['date_time']);
 
 function validate_dateMovie($dateTime, $todayDate)
 {
