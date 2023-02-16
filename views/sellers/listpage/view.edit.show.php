@@ -3,6 +3,7 @@
     $id = isset($_GET["id"])? $_GET["id"]:null;
     $movie = getMoiveById($id);
     $vanue=  getVenueById($movie['venue_id']);
+
 ?>
 <?php require("views/partials/header.php"); ?>
 <img src="../../assets/istockphoto-915697084-170667a.jpg" alt="" class="background">
