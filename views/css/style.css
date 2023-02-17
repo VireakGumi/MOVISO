@@ -31,12 +31,15 @@ form {
     width: 70%;
     height: 80vh;
     margin: auto;
+    flex-shrink: 0;
 }
 button a {
     text-decoration: none;
     color: white;
 }
-
+small{
+    font-size: 13px;
+}
 .form_left {
     text-align: center;
     width: 70%;

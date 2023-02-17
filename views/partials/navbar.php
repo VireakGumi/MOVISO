@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     }
                     if (isset($_COOKIE['Username'])) {
                         ?>
-                        <a href="##" class="border-bottom border-4 nav-link mx-3 px-0 pb-1 hover ">
+                        <a href="##" class="border-bottom border-4 nav-link mx-3 px-0 pb-1 hover text-white  ">
                             <?= $_COOKIE['Username'] ?>
                         </a>
                         <?php
