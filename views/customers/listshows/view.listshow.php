@@ -4,32 +4,14 @@
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
-.navbar a {
-    text-decoration: none;
-}
 
+<style>
 .nav-tabs>li.active>a,
 .nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover {
     border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    background-color: rgb(143, 6, 6) !important;
-    color: white !important;
-}
-
-.nav-tabs>li>a:hover {
-    border: none;
-    background-color: rgb(143, 6, 6) !important;
-}
-
-.nav>li>a:focus,
-.nav>li>a:hover {
-    color: white !important;
 }
 </style>
-
 
 <div class="list">
     <div class="d-flex ms-5">

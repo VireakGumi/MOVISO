@@ -722,3 +722,26 @@ form .img input[type=file] {
 .movies:nth-child(1), .movies:nth-child(2) ,.movies:nth-child(3), .movies:nth-child(4) ,.movies:nth-child(5){
     margin-bottom: 1%;
 }
+.navbar a {
+    text-decoration: none;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: rgb(143, 6, 6) !important;
+    color: white !important;
+}
+
+.nav-tabs>li>a:hover {
+    border: none;
+    background-color: rgb(143, 6, 6) !important;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+    color: white !important;
+}
