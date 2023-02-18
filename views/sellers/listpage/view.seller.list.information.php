@@ -5,7 +5,7 @@ require_once('views/partials/navbar.php');
         <div class="table-add-record d-flex justify-content-between mb-2">
 
             <h4>All Movies</h4>
-            <a href="/movie">Add New</a>
+            <a class="button" href="/movie">Add New</a>
         </div>
 
         <table class="table bg-white table-hover">

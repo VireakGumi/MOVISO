@@ -42,16 +42,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a class="navbar-brand mx-4" href="/"><img src="../../assets/logo/moviso-logo2.png" alt="" width="85px"></a>
         <div class="collapse navbar-collapse px-4 d-flex justify-content-lg-between flex-lg-row align-items-md-start flex-md-column align-items-sm-start flex-sm-column"
             id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <div class="navbar-nav d-flex justify-content-start">
                 <a href="/"
-                    class="<?= urls("/") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link px-0 pb-1 mx-3"
+                    class="<?= urls("/") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link px-0 pb-1 mx-3  text-decoration-none"
                     aria-current="page">HOME</a>
                 <a href="/explore"
-                    class=" <?= urls("/explore") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">EXPLORE</a>
+                    class=" <?= urls("/explore") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1 text-decoration-none">EXPLORE</a>
                 <a href="/trailer"
-                    class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">TRAILER</a>
+                    class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1 text-decoration-none">TRAILER</a>
             </div>
-            <div class="navbar-nav">
+            <div class=" d-flex justify-content-end ">
 
 
 
@@ -65,29 +65,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 ?>
 
 
-                                <a href="##" class="border-bottom border-4 nav-link mx-3 px-0 pb-1 hover ">
+                                <a href="##" class="border-bottom border-4 nav-link mx-3 px-0 pb-1 hover text-white text-decoration-none">
                                     <?= $user['user_name']; ?>
                                 </a>
                                 <?php
                             }
                         }
-                        ?><a href="/logout" class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1">LOGOUT</a><br>
+                        ?><a href="/logout" class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1 text-white text-decoration-none">LOGOUT</a><br>
                         <?php
                     }
                     if ($_COOKIE['Role'] == 0) {
                         ?>
                         <a href="/seller"
-                            class=" <?= urls("/seller") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">SELLER</a>
+                            class=" <?= urls("/seller") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1 text-white text-decoration-none">SELLER</a>
                         <?php
                     }
                     if (isset($_COOKIE['Username'])) {
                         ?>
-                        <a href="##" class="border-bottom border-4 nav-link mx-3 px-0 pb-1 hover ">
+                        <a href="##" class="border-bottom border-4 nav-link mx-3 px-0 pb-1 hover text-white  ">
                             <?= $_COOKIE['Username'] ?>
                         </a>
                         <?php
                         ?>
-                        <a href="/logout" class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1">LOGOUT</a><br>
+                        <a href="/logout" class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1 text-white text-decoration-none">LOGOUT</a><br>
                         <?php
                     }
 
@@ -95,9 +95,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 } else {
                     ?>
                     <a href="/login"
-                        class=" <?= urls("/login") ? 'border-bottom border-4 border-danger ' : 'hover ' ?> border-bottom border-4 nav-link mx-3 px-0 pb-1">LOGIN</a>
+                        class=" <?= urls("/login") ? 'border-bottom border-4 border-danger ' : 'hover ' ?> border-bottom border-4 nav-link mx-3 px-0 pb-1 text-white text-decoration-none">LOGIN</a>
                     <a href="/register"
-                        class=" <?= urls("/register") ? 'border-bottom border-4 border-danger ' : 'hover ' ?> border-bottom border-4 nav-link px-0 pb-1 mx-3"
+                        class=" <?= urls("/register") ? 'border-bottom border-4 border-danger ' : 'hover ' ?> border-bottom border-4 nav-link px-0 pb-1 mx-3 text-white text-decoration-none"
                         aria-disabled="true">REGISTER</a>
                     <?php
                 }
@@ -110,3 +110,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </button>
     </div>
 </nav>
+<style>
+    #bold a{
+        font-size: 16px;
+        display: flex;
+    align-items: center ;
+        
+    }
+</style>
