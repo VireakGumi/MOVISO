@@ -3,7 +3,7 @@ require "database/database.php";
 
 
 
-$movies = getMoives();
+$movies = getMoivesForSeller();
 
 
 require 'views/sellers/listpage/view.seller.list.information.php';

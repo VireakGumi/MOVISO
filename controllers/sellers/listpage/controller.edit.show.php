@@ -21,8 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       $description = $_POST["description"];
       if($img!="") {
         move_uploaded_file($_FILES['image']['tmp_name'],'assets/'.$img);
-      }else {
+      }else if($old != "") {
         $img = $old;
+        $image_valid = true;
       }
       if($title_valid && $genre_valid && $duration_valid && $released_valid && $dateTime_valid &&  $numberTicket_valid && $address_valid && $numberTicket_valid && $image_valid && $description_valid && $price_valid &&  $country_valid && $cinemaName_valid && $production_valid && $linkTrailer_valid && $dateTime_valid){
           updateMovie($id, $title, $genre, $price, $released, $duration, $numberTicket, $dateTime, $description, $country, $production, $trailer, $img);        

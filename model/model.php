@@ -68,6 +68,14 @@ function getMoives()
     $statement->execute();
     return $statement->fetchAll();
 }
+function getMoivesForSeller() 
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM movies ORDER BY movies_id DESC");
+    $statement->execute();
+    return $statement->fetchAll();
+    
+}
 
 function getSearch($letter)
 {
@@ -114,7 +122,7 @@ function createShow($venueId,$title,$numberTicket,  $dateTime,  $description, $g
 function getMoiveById($id)
 {
     global $connection;
-    $query = "SELECT * FROM movies WHERE movies_id = :id AND number_ticket > 0";
+    $query = "SELECT * FROM movies WHERE movies_id = :id";
     $statement = $connection->prepare($query);
     $statement->execute([
         ':id' => $id,
@@ -214,3 +222,10 @@ function updateNumberTicket($number, $id){
         ':id' => $id
     ]);
 }
+
+function sectionMovies($type){
+    global $connection;
+    $query = "SELECT * FROM movies WHERE genre LIKE '%{$type}%'" ;
+    $statement = $connection->query($query);
+    return $statement->fetchAll();
+ }
