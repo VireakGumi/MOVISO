@@ -247,3 +247,12 @@ function getMoveiByID($id){
     ]);  
     return $sate->fetch();
 }
+function getTicketByMovieID($id){
+    global $connection;
+    $query = "SELECT * FROM tickets WHERE movies_id = :id";
+    $sate = $connection->prepare($query);
+    $sate->execute([
+        ':id' => $id
+    ]);  
+    return $sate->fetchAll();
+}

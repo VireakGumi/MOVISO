@@ -1,3 +1,5 @@
+
+
 $('#confirm').click(function (event) {
     cuteAlert({
         type: "question",

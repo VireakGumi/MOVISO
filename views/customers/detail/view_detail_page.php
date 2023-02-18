@@ -1,6 +1,6 @@
 <?php
 require_once('views/partials/navbar.php');
-$isvalid = 0;
+$isvalid = 1;
 if (isset($_COOKIE['Email']) && $_COOKIE['Password'] && isset($_COOKIE['UserId'])) {
     $isvalid = 1;
 }
