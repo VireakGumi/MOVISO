@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100 top-0" aria-label="Secondary navigation"
     style="background-color: #620212; color: white; z-index: 1000;">
     <div class="container-fluid">
-        <a class="navbar-brand mx-4" href="/"><img src="../../assets/moviso-logo2.png" alt="" width="85px"></a>
+        <a class="navbar-brand mx-4" href="/"><img src="../../assets/logo/moviso-logo2.png" alt="" width="85px"></a>
         <div class="collapse navbar-collapse px-4 d-flex justify-content-lg-between flex-lg-row align-items-md-start flex-md-column align-items-sm-start flex-sm-column"
             id="navbarNavAltMarkup">
             <div class="navbar-nav">
@@ -48,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     aria-current="page">HOME</a>
                 <a href="/explore"
                     class=" <?= urls("/explore") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">EXPLORE</a>
-                <!-- <a href="/trailer"
-                    class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">TRAILER</a> -->
+                <a href="/trailer"
+                    class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1">TRAILER</a>
             </div>
             <div class="navbar-nav">
 

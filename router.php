@@ -12,7 +12,7 @@ if (isset($_COOKIE['Role']) && $_COOKIE['Role'] == 0)
 $router = [
     "/" => 'controllers/home/controller.home.php',
     "/explore" => 'controllers/customers/listshow/controller.listshow.page.php',
-    "/trailer" => 'controllers/trailer/trailer.php',
+    "/trailer" => 'views/trailer/trailer.php',
     "/login" => 'controllers/login/controller.login.page.php',
     "/logout" => 'controllers/logout/controller.logout.page.php',
     "/register" => 'controllers/customers/register/controller.register.customer.php',
@@ -20,7 +20,12 @@ $router = [
     "/seller" => $seller,
     "/movie" => 'controllers/sellers/newshow/controller.add.movie.php',
     "/delete" => 'controllers/sellers/listpage/controller.delete.show.php',
-    "/buyticket" => 'controllers/buyticket/controller.buyticket.php'
+    "/buyticket" => 'controllers/buyticket/controller.buyticket.php',
+    "/booking" => 'views/buyticket/view.form.buyticket.php',
+    "/update" => 'controllers/sellers/listpage/controller.edit.show.php',
+    "/edit" => 'views/sellers/listpage/view.edit.show.php',
+    "/search" => "controllers/search/search.controller.php",
+
     
 ];
 

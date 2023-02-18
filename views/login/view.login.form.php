@@ -1,10 +1,10 @@
 <?php require("views/partials/header.php"); ?>
 
-<img src="../../assets/bg-login-form.png" alt="" class="background">
+<img src="../../assets/background/bg-login-form.png" alt="" class="background">
 
 <form action="" method="post">
     <div class="form_left d-flex flex-column justify-content-center align-items-center">
-        <img src="../../assets/moviso-logo1.png " class="logo_on_form magin" alt="" width="90%">
+        <img src="../../assets/logo/moviso-logo1.png " class="logo_on_form magin" alt="" width="90%">
         <p>We build MOVISO website in purpose to increase the convenience for customers in booking
             movie tickets. With MOVISO you can booking tickets quickly and choose a seat which you prefer.</p>
     </div>

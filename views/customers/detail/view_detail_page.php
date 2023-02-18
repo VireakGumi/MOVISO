@@ -1,5 +1,9 @@
 <?php
 require_once('views/partials/navbar.php');
+$isvalid = 0;
+if (isset($_COOKIE['Email']) && $_COOKIE['Password'] && isset($_COOKIE['UserId'])) {
+    $isvalid = 1;
+}
 ?>
 <div class="container text-white" style="margin-top:100px;">
     <div class="container_1 m-5 ms-0 d-flex justify-content-evenly w-100">
@@ -39,8 +43,9 @@ require_once('views/partials/navbar.php');
                 </a>
             </div>
             <div class="me-5 mt-5">
-                <a href="/buyticket?id=<?= $_GET['id']?>">Ticket</a>
-
+                <button id="next">Ticket</button>
+                <input type="hidden" value="<?= $isvalid ?>" id="check">
+                <input type="hidden" value="<?= $_GET['id'] ?>" id="id">
             </div>
         </div>
     </div>
@@ -51,9 +56,9 @@ require_once('views/partials/navbar.php');
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
         <div class="vote mt-3">
-            <img src="../../assets/like.png" alt="">
+            <img src="../../assets/logo/like.png" alt="">
             <label class="ms-3" for="">0</label>
-            <img class="ms-5" src="../../assets/unlike.png" alt="">
+            <img class="ms-5" src="../../assets/logo/unlike.png" alt="">
             <label class="ms-3" for="">0</label>
         </div>
     </div>
@@ -75,7 +80,7 @@ require_once('views/partials/navbar.php');
         <div class="card_showtime w-100 rounded mt-3 p-3 mb-5">
             <div class="card_header d-flex justify-content-around">
                 <div class="logo_theatre d-flex m-3">
-                    <img src="../../assets/moviso-logo-removebg-preview.png" alt="" class="card_logo">
+                    <img src="../../assets/logo/moviso-logo-removebg-preview.png" alt="" class="card_logo">
                     <h6 class="mt-4 ms-5">MAJOR CINEPLEX AEON MALL PHNOM PENH</h6>
                 </div>
                 <h6 class="m-4">2D</h6>
@@ -88,7 +93,7 @@ require_once('views/partials/navbar.php');
         <div class="card_showtime w-100 rounded mt-3 p-3 mb-5">
             <div class="card_header d-flex justify-content-around">
                 <div class="logo_theatre d-flex m-3">
-                    <img src="../../assets/moviso-logo-removebg-preview.png" alt="" class="card_logo">
+                    <img src="../../assets/logo/moviso-logo-removebg-preview.png" alt="" class="card_logo">
                     <h6 class="mt-4 ms-5">MAJOR CINEPLEX AEON MEAN CHEY</h6>
                 </div>
                 <h6 class="m-4">2D</h6>
@@ -101,7 +106,7 @@ require_once('views/partials/navbar.php');
         <div class="card_showtime w-100 rounded mt-3 p-3 mb-5">
             <div class="card_header d-flex justify-content-around">
                 <div class="logo_theatre d-flex m-3">
-                    <img src="../../assets/moviso-logo-removebg-preview.png" alt="" class="card_logo">
+                    <img src="../../assets/logo/moviso-logo-removebg-preview.png" alt="" class="card_logo">
                     <h6 class="mt-4 ms-5">MAJOR CINEPLEX AEON SEN SOK</h6>
                 </div>
                 <h6 class="m-4">2D</h6>
@@ -113,6 +118,23 @@ require_once('views/partials/navbar.php');
         </div>
     </div>
 </div>
+<script>
+    $('#next').click(function (event) {
+        event.preventDefault();
+        let isvalid = Number($('#check').val())
+        if (isvalid) {
+            window.location.href = "/booking?id=" + $('#id').val();
+        } else {
+            cuteToast({
+                type: "warning",
+                title: "Don't register yet.",
+                message: "You don't have permission to go to buy",
+                timer: 5000
+            })
+        }
+    }
+    )
+</script>
 <?php
 require_once('views/partials/footer.php');
 ?>

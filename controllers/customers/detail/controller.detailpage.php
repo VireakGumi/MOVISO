@@ -33,7 +33,7 @@ $country=checkData($movies['country'])? $movies['country']: '';
 
 $production=checkData($movies['production'])? $movies['production']: '';
 
-$img=checkData($movies['img'])? "../../assets/" .$movies['img']: '';
+$img=checkData($movies['img'])? "../../assets/upload/" .$movies['img']: '';
 
 $trailer=checkData($movies['trailer'])?  $movies['trailer']:'';
 

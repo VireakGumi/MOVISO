@@ -57,26 +57,23 @@ const cuteAlert = ({
     const template = `
     <div class="alert-wrapper">
       <div class="alert-frame">
-        ${
-          img === undefined
-            ? '<div class="alert-header ' + type + '-bg">'
-            : '<div class="alert-header-base">'
-        }
-          <span class="alert-close ${
-            closeStyle === 'circle'
-              ? 'alert-close-circle'
-              : 'alert-close-default'
-          }">X</span>
-          ${
-            img === undefined
-              ? '<img class="alert-img" src="' +
-                src +
-                "/img/" +
-                type +
-                ".svg" +
-                '" />'
-              : '<div class="custom-img-wrapper">' + img + "</div>"
-          }
+        ${img === undefined
+        ? '<div class="alert-header ' + type + '-bg">'
+        : '<div class="alert-header-base">'
+      }
+          <span class="alert-close ${closeStyle === 'circle'
+        ? 'alert-close-circle'
+        : 'alert-close-default'
+      }">X</span>
+          ${img === undefined
+        ? '<img class="alert-img" src="' +
+        "../../assets/cute/" +
+        type +
+        ".svg" +
+        '" />'
+        : '<div class="custom-img-wrapper">' + img + "</div>"
+      }
+
         </div>
         <div class="alert-body">
           <span class="alert-title">${title}</span>
@@ -85,7 +82,7 @@ const cuteAlert = ({
         </div>
       </div>
     </div>
-    `;
+    `;      
 
     body.insertAdjacentHTML('afterend', template);
 
@@ -123,7 +120,7 @@ const cuteAlert = ({
     alertWrapper.addEventListener('click', () => {
       alertWrapper.remove();
       resolve();
-    }); 
+    });
 
     alertFrame.addEventListener('click', e => {
       e.stopPropagation();
@@ -131,13 +128,11 @@ const cuteAlert = ({
   });
 };
 
-const cuteToast = ({ type, title, message, timer = 5000,  vibrate = [], playSound = null }) => {
+const cuteToast = ({ type, title, message, timer = 5000, vibrate = [], playSound = null }) => {
   return new Promise(resolve => {
     const body = document.querySelector('body');
 
     const scripts = document.getElementsByTagName('script');
-
-    let src = '';
 
     for (let script of scripts) {
       if (script.src.includes('cute-alert.js')) {
@@ -162,7 +157,7 @@ const cuteToast = ({ type, title, message, timer = 5000,  vibrate = [], playSoun
       <div>
         <div class="toast-frame">
           <div class="toast-body">
-            <img class="toast-body-img" src="${src}/img/${type}.svg" />'
+            <img class="toast-body-img" src="../../assets/cute/${type}.svg" />'
             <div class="toast-body-content">
               <span class="toast-title">${title}</span>
               <span class="toast-message">${message}</span>
@@ -174,7 +169,6 @@ const cuteToast = ({ type, title, message, timer = 5000,  vibrate = [], playSoun
       </div>
     </div>
     `;
-
     const toasts = document.querySelectorAll('.toast-content');
 
     if (toasts.length) {
@@ -212,15 +206,4 @@ const id = () => {
   return '_' + Math.random().toString(36).substr(2, 9);
 };
 
-if(url){
-  var toastTypes = ["success","error","warning","question"]
-  var src = ["https://svgshare.com/i/jVz.svg","https://svgshare.com/i/jUv.svg","https://svgshare.com/i/jW0.svg","https://svgshare.com/i/jWA.svg","https://svgshare.com/i/jUw.svg"];
-  for (var i = 0; i < document.getElementsByClassName("alert-img").length; i++) {
-    for (var j = 0; j < toastTypes.length; j++) {
-      if (document.getElementsByClassName("alert-img")[i].parentElement.classList.contains(toastTypes[j]+"-bg")) {
-        document.getElementsByClassName("alert-img")[i].src = src[j];
-      }
-    }
-  }
-}
 

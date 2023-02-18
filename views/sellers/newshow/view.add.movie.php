@@ -1,5 +1,5 @@
 <?php require("views/partials/header.php"); ?>
-<img src="../../assets/istockphoto-915697084-170667a.jpg" alt="" class="bg">
+<img src="../../assets/background/istockphoto-915697084-170667a.jpg" alt="" class="bg">
 <form method="POST" action="" enctype="multipart/form-data" class="list_movie">
 
     <h2 class="text-center contain-movie ">UPLOAD MOVIE </h2>

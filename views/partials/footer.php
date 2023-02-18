@@ -5,13 +5,13 @@
         <div class="row page-footer d-flex justify-content-around">
 
             <div class="col-md-3 footer-img-logo">
-                <img src="../../assets/moviso-logo.png" alt="" width="200">
+                <img src="../../assets/logo/moviso-logo.png" alt="" width="200">
                 <p> We hope you have a great time with MOVISO.</p>
                 <div class="icon-image d-flex">
-                    <img src="../../assets/google.png" class="" alt="" width="40">
-                    <img src="../../assets/telegram.png" class="d-flex justify-content-center align-items-center "
+                    <img src="../../assets/logo/google.png" class="" alt="" width="40">
+                    <img src="../../assets/logo/telegram.png" class="d-flex justify-content-center align-items-center "
                         alt="" width="40">
-                    <img src="../../assets/twitter.png" alt="" width="40">
+                    <img src="../../assets/logo/twitter.png" alt="" width="40">
                 </div>
             </div>
 
@@ -46,7 +46,7 @@
 </footer>
 
 </body>
-<script src="views/js/main.js"></script>
+<script src="views/js/main.js"></script> 
 <script src="views/js/cute-alert.js"></script>
 
 
