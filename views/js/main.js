@@ -1,4 +1,46 @@
+const selectSeat = document.querySelector(".select_seat");
+const seats = document.querySelectorAll(".aSeat:not(.occupied)");
+const quantity = document.querySelector("#quantity");
+const total = document.querySelectorAll(".price");
+let price = $('#price').val();
+console.log(price);
 
+let arr = [];
+let aSeat = "../../assets/logo/seat.png";
+let selected = "../../assets/logo/selected.png";
+let rowOfSeat = 0;
+
+$(document).ready(function () {
+    $('.select_seat').click(function (e) {
+        if (e.target.checked) {
+            e.target.parentNode.querySelector('#img').src = selected
+            arr.push(e.target.value);
+        }
+        else {
+            e.target.parentNode.querySelector('#img').src = aSeat;
+            let n = 0;
+            for (let b of arr) {
+                if (b == e.target.value) {
+                    arr.splice(n, 1);
+                }
+                n++;
+            }
+        }
+        $('#seat').val(arr);
+        quantity.value = arr.length;
+        $('#showPrice').html(quantity.value * price);
+
+    })
+})
+function show(element){
+    document.querySelector(element).style.display = "block";
+    document.querySelector('#container').className = "container row";
+}
+function hide(element){
+
+    document.querySelector(element).style.display = "none";
+    document.querySelector('#container').className = "container";
+}
 
 $('#confirm').click(function (event) {
     cuteAlert({
