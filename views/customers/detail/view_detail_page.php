@@ -44,6 +44,12 @@ require_once('views/partials/navbar.php');
             </div>
         </div>
     </div>
+    <div>
+        <p class=" text-white"><?= $descriptions ?></p>
+                    
+   
+
+    </div>
     <div class="trailer">
         <hr class=" w-100 border border-2">
         <iframe class="w-100 mt-4" width="560" height="500" src=<?= $trailer ?> title="YouTube video player"

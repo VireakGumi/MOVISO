@@ -37,6 +37,8 @@ $img=checkData($movies['img'])? "../../assets/" .$movies['img']: '';
 
 $trailer=checkData($movies['trailer'])?  $movies['trailer']:'';
 
+$descriptions=checkData($movies['descriptions'])?  $movies['descriptions']:'';
+
 require 'views/customers/detail/view_detail_page.php';
 ?>
 
