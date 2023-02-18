@@ -24,6 +24,7 @@ $router = [
     "/booking" => 'views/buyticket/view.form.buyticket.php',
     "/update" => 'controllers/sellers/listpage/controller.edit.show.php',
     "/edit" => 'views/sellers/listpage/view.edit.show.php',
+    "/ticket" => 'controllers/ticket/controller.ticket.page.php'
     
 ];
 

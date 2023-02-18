@@ -88,7 +88,6 @@ function getSearch($letter)
 function delete($id)
 {
     global $connection;
-    echo $id;
     $query = "DELETE FROM movies WHERE movies_id= :id";
     $state = $connection->prepare($query);
     $state->execute([
@@ -229,3 +228,22 @@ function sectionMovies($type){
     $statement = $connection->query($query);
     return $statement->fetchAll();
  }
+
+function getTicketByID($id){
+    global $connection;
+    $query = "SELECT * FROM tickets WHERE user_id = :id";
+    $sate = $connection->prepare($query);
+    $sate->execute([
+        ':id' => $id
+    ]);  
+    return $sate->fetchAll();
+}
+function getMoveiByID($id){
+    global $connection;
+    $query = "SELECT * FROM movies WHERE movies_id = :id";
+    $sate = $connection->prepare($query);
+    $sate->execute([
+        ':id' => $id
+    ]);  
+    return $sate->fetch();
+}

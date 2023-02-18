@@ -35,9 +35,7 @@ foreach ($movies as $movie) {
                             </div>
                             <div class=" prices text-dark">
                                 <span class="text-danger">$</span><?= $movie["prices"]?>
-
                             </div>
-
                         </div>
                 </a>
                 </div>
