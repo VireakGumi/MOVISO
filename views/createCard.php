@@ -46,3 +46,11 @@ foreach ($movies as $movie) {
     $run += 1;
 }
 ?>
+<style>
+    .card__info{
+        font-size: 17px;
+    }
+    .card__info h3{
+        font-size: 31px;
+    }
+</style>

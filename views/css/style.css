@@ -761,6 +761,7 @@ button:nth-child(2) {
     background-repeat: no-repeat;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    bottom: 0;
 }
 
 .heading-text {
