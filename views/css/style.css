@@ -28,8 +28,8 @@ form {
     flex-direction: row;
     background-color: rgba(192, 185, 185, 0.623);
     justify-content: space-evenly;
-    width: 70%;
-    height: 80vh;
+    width: 90%;
+    height: 90vh;
     margin: auto;
 }
 button a {
@@ -56,7 +56,7 @@ button a {
 .container h2{
     font-weight: bold;
     color: rgb(143, 6, 6);
-    margin-top: -2%;
+    margin-top: -3%;
     
 }
 
@@ -565,7 +565,14 @@ small{
 .time{
     margin-left: 15%;
 }
+.button{
+    background-color: #750013;
+    border-radius: 10px;
+    text-decoration: none;
+    padding:20px 30px 20px 30px;
+    font-weight: bold;
 
+}
 /* =================buyTicket=================== */
 .card-ticket{
     background-color: rgba(192, 185, 185, 0.813);
