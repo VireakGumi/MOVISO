@@ -55,8 +55,7 @@ $row = ['F', 'E', 'D', 'C', 'B', 'A'];
                             </div>
                             <div class="form-group">
                                 <p class="text-ticket text-sm mb-0">Seat*</p>
-                                <input type="text" name="seat" placeholder="Row and seat" class="width-card" id='seat'
-                                    name="seats[]">
+                                <input type="text" name="seat" placeholder="Row and seat" class="width-card" id='seat'>
                             </div>
                             <button type="button" class="width-card mt-4 ms-0" onclick="show('#seat_form')">Choose
                                 Seat</button>

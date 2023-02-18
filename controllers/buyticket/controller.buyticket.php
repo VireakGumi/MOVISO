@@ -8,10 +8,16 @@ $user = getUserByID($userid);
 $movie = getMoiveById($movie_id);
 $quanityTicket = $_POST['quantity'];
 $numberTicket = $movie['number_ticket'];
+$seat = $_POST['seats'];
+$arr = explode(',' ,$seat);
 
 if ($isValid) {
-    createTicket($movie['movies_id'], $user['user_id'], 'B', 3, 4);
-    $numberTicket -= $quanityTicket;
-    updateNumberTicket($numberTicket, $movie['movies_id']);
+    foreach ($arr as $value) {
+        $row = $value[0];
+        $seat = $value[1];
+        createTicket($movie['movies_id'], $user['user_id'], 'B', $row, $seat);
+        $numberTicket -= $quanityTicket;
+        updateNumberTicket($numberTicket, $movie['movies_id']);
+    }
     header("location:/");
 }

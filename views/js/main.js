@@ -3,7 +3,6 @@ const seats = document.querySelectorAll(".aSeat:not(.occupied)");
 const quantity = document.querySelector("#quantity");
 const total = document.querySelectorAll(".price");
 let price = $('#price').val();
-console.log(price);
 
 let arr = [];
 let aSeat = "../../assets/logo/seat.png";
@@ -42,6 +41,7 @@ function hide(element){
     document.querySelector('#container').className = "container";
 }
 
+
 $('#confirm').click(function (event) {
     cuteAlert({
         type: "question",
@@ -54,6 +54,8 @@ $('#confirm').click(function (event) {
             let id = $("#id").val();
             let username = $('#username').val();
             let card = $('#card_value').val();
+            let seat = $('#seat').val()
+            let arr = seat.split(',');
             $.ajax({
                 url: 'controllers/buyticket/validate.with.js.php',
                 data: { name: username, card_num: card, id: id },
@@ -67,8 +69,10 @@ $('#confirm').click(function (event) {
                             timer: 3000
                         })
                         $("form").attr('action', '/buyticket');
+                        $("form").method = 'POST';
                         $("form").submit();
                     } else {
+
                         cuteToast({
                             type: "error",
                             title: "Error",
@@ -84,10 +88,6 @@ $('#confirm').click(function (event) {
     event.preventDefault();
 })
 
-function count(element) {
-    let price = $('#price').val();
-    $('#showPrice').html(element.value * price);
-}
 
 $("#slideshow > div:gt(0)").hide();
 
