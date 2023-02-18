@@ -8,6 +8,9 @@ $isFound = false;
 $isFound1 = false;
 $isFound1 = false;
 
+
+
+
 if (isset($_COOKIE["Password"]) && isset($_COOKIE["Email"])) {
     foreach ($users as $user):
 
@@ -20,17 +23,17 @@ if (isset($_COOKIE["Password"]) && isset($_COOKIE["Email"])) {
 
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if ( $userName_valid && $email_valid && $password_valid && $address_valid && $date_valid && $phoneNumber_valid){
-        if($_POST["password"]==$_POST["confirmpassword"]){
-        $passwordEncryp=password_hash($_POST["password"],PASSWORD_BCRYPT);
-        $userId = createUser($_POST["username"],$_POST["email"],$_POST["address"],$_POST["creditcard"],$_POST["dateofbirth"],$passwordEncryp,$_POST["phonenumber"]);
-        createCustomer($userId);
-        
-        $isFound=true;
+    if ($userName_valid && $email_valid && $password_valid && $address_valid && $date_valid && $phoneNumber_valid) {
+        if ($_POST["password"] == $_POST["confirmpassword"]) {
+            $passwordEncryp = password_hash($_POST["password"], PASSWORD_BCRYPT);
+            $userId = createUser($_POST["username"], $_POST["email"], $_POST["address"], $_POST["creditcard"], $_POST["dateofbirth"], $passwordEncryp, $_POST["phonenumber"]);
+            createCustomer($userId);
+
+            $isFound = true;
 
         }
     }
-  
+
 }
 ?>
 
@@ -50,6 +53,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     class=" <?= urls("/explore") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1 text-decoration-none">EXPLORE</a>
                 <a href="/trailer"
                     class=" <?= urls("/trailer") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1 text-decoration-none">TRAILER</a>
+                <?php
+                if (!empty($_COOKIE['UserId'])) {
+                    $ticket = getTicketByID($_COOKIE['UserId']);
+                    if (!empty($ticket)) {
+                        ?>
+                        <a href="/ticket"
+                            class=" <?= urls("/ticket") ? 'active border-bottom border-4 border-danger ' : 'hover ' ?> nav-link mx-3 px-0 pb-1 text-decoration-none">TICKET</a>
+                        <?php
+                    }
+                }
+                ?>
+
             </div>
             <div class=" d-flex justify-content-end ">
 
@@ -65,13 +80,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 ?>
 
 
-                                <a href="##" class="border-bottom border-4 nav-link mx-3 px-0 pb-1 hover text-white text-decoration-none">
+                                <a href="##"
+                                    class="border-bottom border-4 nav-link mx-3 px-0 pb-1 hover text-white text-decoration-none">
                                     <?= $user['user_name']; ?>
                                 </a>
                                 <?php
                             }
                         }
-                        ?><a href="/logout" class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1 text-white text-decoration-none">LOGOUT</a><br>
+                        ?><a href="/logout"
+                            class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1 text-white text-decoration-none">LOGOUT</a><br>
                         <?php
                     }
                     if ($_COOKIE['Role'] == 0) {
@@ -87,7 +104,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </a>
                         <?php
                         ?>
-                        <a href="/logout" class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1 text-white text-decoration-none">LOGOUT</a><br>
+                        <a href="/logout"
+                            class="hover border-bottom border-4 nav-link mx-3 px-0 pb-1 text-white text-decoration-none">LOGOUT</a><br>
                         <?php
                     }
 
@@ -111,10 +129,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </nav>
 <style>
-    #bold a{
+    #bold a {
         font-size: 16px;
         display: flex;
-    align-items: center ;
-        
+        align-items: center;
+
     }
 </style>

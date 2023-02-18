@@ -25,7 +25,7 @@ $router = [
     "/update" => 'controllers/sellers/listpage/controller.edit.show.php',
     "/edit" => 'views/sellers/listpage/view.edit.show.php',
     "/search" => "controllers/search/search.controller.php",
-
+    "/ticket" => 'controllers/ticket/controller.ticket.page.php'
     
 ];
 
