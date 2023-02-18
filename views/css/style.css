@@ -28,8 +28,8 @@ form {
     flex-direction: row;
     background-color: rgba(192, 185, 185, 0.623);
     justify-content: space-evenly;
-    width: 70%;
-    height: 80vh;
+    width: 90%;
+    height: 90vh;
     margin: auto;
     flex-shrink: 0;
 }
@@ -59,7 +59,7 @@ small{
 .container h2{
     font-weight: bold;
     color: rgb(143, 6, 6);
-    margin-top: -2%;
+    margin-top: -3%;
     
 }
 
@@ -307,12 +307,12 @@ button:hover {
 #search input {
     border: none;
     outline: none;
-    /* width: 30%; */
-    padding: 0.7%;
+    padding: 21px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     background-color: #8d8889;
     color: white;
+
 
 }
 #search input, #search .product{
@@ -323,9 +323,10 @@ button:hover {
 }
 #search label {
     background-color: #8d8889;
-    padding: 0.4%;
+    padding: 0.55%;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    margin-left: -1%;
 
 }
 
@@ -568,7 +569,14 @@ small{
 .time{
     margin-left: 15%;
 }
+.button{
+    background-color: #750013;
+    border-radius: 10px;
+    text-decoration: none;
+    padding:20px 30px 20px 30px;
+    font-weight: bold;
 
+}
 /* =================buyTicket=================== */
 .card-ticket{
     background-color: rgba(192, 185, 185, 0.813);

@@ -77,19 +77,19 @@ $address_error="";
 
 
 
-$title_error=false;
-$price_error=false;
-$genre_error=false;
-$duration_error=false;
-$released_error=false;
-$country_error=false;
-$dateTime_error=false;
-$production_error=false;
-$numberTicket_error=false;
-$cinemaName_error=false;
-$linkTrailer_error=false;
-$image_error=false;
-$description_error=false;
+$title_error="";
+$price_error="";
+$genre_error="";
+$duration_error="";
+$released_error="";
+$country_error="";
+$dateTime_error="";
+$production_error="";
+$numberTicket_error="";
+$cinemaName_error="";
+$linkTrailer_error="";
+$image_error="";
+$description_error="";
 
 
 $company="";

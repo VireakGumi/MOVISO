@@ -39,10 +39,16 @@ require_once('views/partials/navbar.php');
                 </a>
             </div>
             <div class="me-5 mt-5">
-                <a href="/booking?id=<?= $_GET['id']?>">Ticket</a>
+                <a class="button" href="/booking?id=<?= $_GET['id']?>">Ticket</a>
 
             </div>
         </div>
+    </div>
+    <div>
+        <p class=" text-white"><?= $descriptions ?></p>
+                    
+   
+
     </div>
     <div class="trailer">
         <hr class=" w-100 border border-2">
