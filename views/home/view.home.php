@@ -1,5 +1,4 @@
 <?php
-
 require_once('views/partials/navbar.php');
 ?>
 
@@ -41,7 +40,6 @@ require_once('views/partials/navbar.php');
         ?>
     </div>
 </section>
-
 <!-- About Section-->
 <section class="page-section bg-dark text-white mb-0" id="about">
     <div class="container">
