@@ -1,6 +1,6 @@
 <?php
 
-require_once('controllers/buyticket/validate.php');
+// require_once('controllers/buyticket/validate.php');
 $userid = isset($_COOKIE['UserId']) ? $_COOKIE['UserId'] : '';
 $movie_id = isset($_POST['id']) ? $_POST['id'] : null;
 

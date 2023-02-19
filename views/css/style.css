@@ -567,11 +567,10 @@ small{
 }
 
 /* =================buyTicket=================== */
-.card-ticket{
-    background-color: rgba(192, 185, 185, 0.813);
+/* .card-ticket{
     border-radius: 10px;
     padding: 10px;
-}
+} */
 div input{
     background-color:white;
     border:none;
@@ -721,4 +720,17 @@ form .img input[type=file] {
   } 
 .movies:nth-child(1), .movies:nth-child(2) ,.movies:nth-child(3), .movies:nth-child(4) ,.movies:nth-child(5){
     margin-bottom: 1%;
+}
+/* =====seat======= */
+.row img{
+    width: 50%;
+}
+.row img:nth-child(3){
+    margin-right: 20px;
+}
+.chair img{
+    width: 50%;
+}
+.form{
+    background: rgba(182, 181, 181, 0.342);
 }
