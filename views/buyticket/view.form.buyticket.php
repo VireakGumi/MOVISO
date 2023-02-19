@@ -29,12 +29,12 @@ $row = ['F', 'E', 'D', 'C', 'B', 'A'];
                         <div class="col-sm-7 border-line pb-2 px-5">
                             <div class="form-group">
                                 <p class="text-ticket text-sm mb-0">Name on the card*</p>
-                                <input type="text" name="name" placeholder="Name" class="width-card" id="userame">
+                                <input type="text" name="name" placeholder="Name" class="width-card" id="username">
                             </div>
                             <div class="form-group d-flex mt-2 ">
                                 <div id="card-field">
                                     <p class="text-ticket text-sm mb-0">Card Number*</p>
-                                    <input type="text" name="card-num" id="card_value" placeholder="0000 0000 0000 0000"
+                                    <input type="text" name="card_num" id="card_value" placeholder="0000 0000 0000 0000"
                                         width="55" class="width-card" maxlength="19">
 
                                 </div>

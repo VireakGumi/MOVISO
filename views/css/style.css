@@ -458,6 +458,10 @@ button a {
     margin-left: -3%
 }
 
+.login{
+    width: 20%;
+}
+
 .customer_or_seller:first-child,
 .form_left p,
 .form_right h1,

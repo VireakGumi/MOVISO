@@ -179,7 +179,7 @@
         </div>
         <div class="movie-btn">
             <button class="btn"><a href="/seller">back</a></button>
-            <button class="btn text-center">Add now</button>
+            <button class="btn text-center">Create</button>
 
         </div>
     </form>

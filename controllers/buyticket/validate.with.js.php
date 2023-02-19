@@ -21,6 +21,7 @@ $isFoundEmail = false;
 date_default_timezone_set('Asia/bangkok');
 $todayDate = date('Y-m-d h:i:s');
 $dateMovie = $movie['date_time'];
+
 function validate_dateMovie($dateTime, $todayDate)
 {
 
@@ -30,7 +31,7 @@ function validate_dateMovie($dateTime, $todayDate)
 
 function validate_cardNumber($cardNumber, $userCardNumber)
 {
-    return $cardNumber != $userCardNumber;
+    return $cardNumber == $userCardNumber;
 }
 
 function validate_cardName($cardName, $userCardName)
@@ -69,7 +70,7 @@ $isValid = 0;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $qauntityTicket = getDatakey('quantity');
-    $cardNumber = getDatakey('card-num');
+    $cardNumber = getDatakey('card_num');
     $cardName = getDatakey('name');
 
     if (empty($qauntityTicket)) {
@@ -92,9 +93,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($cardNumber)) {
         $cardNumber_error = "Please complete the card number.";
     } elseif (validate_cardNumber($cardNumber, $user['credit_card_number'])) {
-        $cardNumber_error = "incorrect card number";
-    } else {
         $cardNumber_valid = true;
+    } else {
+        $cardNumber_error = "incorrect card number";
     }
     ;
     if (empty($cardName)) {
