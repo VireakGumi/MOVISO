@@ -116,7 +116,7 @@ $cinemaName="";
 $linkTrailer="";
 $image="";
 $description="";
-
+$trailer = '';
 
 
 $title_valid=false;
@@ -331,6 +331,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(empty($linkTrailer)){
         $linkTrailer_error="Please enter a link trailer.";
     }else{
+        $trailer = str_replace('"','',$linkTrailer);
         $linkTrailer_valid=true;
     };
 

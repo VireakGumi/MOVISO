@@ -20,7 +20,7 @@
                 <div class="text">
                     <p>This website had built by students 2023 generation of PNC:</p>
                     <ul>
-                        <li>Vireak Roeun</li>
+                        <li class="list-style-none">Vireak Roeun</li>
                         <li>Chhilin Yun</li>
                         <li>Choreth Kosal</li>
                         <li>Navy Rorn</li>
@@ -46,6 +46,13 @@
 </footer>
 
 </body>
+<style>
+
+    ul li{
+        list-style: none;
+        margin-left: -16px;        
+    }
+</style>
 <script src="views/js/main.js"></script> 
 <script src="views/js/cute-alert.js"></script>
 

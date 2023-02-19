@@ -8,7 +8,7 @@ $user = getUserByID($userid);
 $movie = getMoiveById($movie_id);
 $quanityTicket = $_POST['quantity'];
 $numberTicket = $movie['number_ticket'];
-$seat = $_POST['seats'];
+$seat = $_POST['seat'];
 $arr = explode(',' ,$seat);
 
 if ($isValid) {

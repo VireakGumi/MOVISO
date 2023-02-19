@@ -458,6 +458,10 @@ button a {
     margin-left: -3%
 }
 
+.login{
+    width: 20%;
+}
+
 .customer_or_seller:first-child,
 .form_left p,
 .form_right h1,
@@ -951,15 +955,16 @@ small {
     background-color: rgba(139, 138, 138, .548);
 }
 
-.card-ticket {
-    background-color: rgba(192, 185, 185, .813);
+/* =================buyTicket=================== */
+.card-ticket{
+    background-color: rgba(192, 185, 185, 0.813);
     border-radius: 10px;
     padding: 10px;
 }
-
-div input {
-    border: none;
-    border-radius: 3px;
+div input{
+    background-color:white;
+    border:none;
+    border-radius:3px ;
     padding: 10px;
 }
 
@@ -1156,4 +1161,17 @@ dialog .row img {
     height: 100vh;
     background: rgba(36, 36, 36, 0.807);
     border: none;
+}
+/* =====seat======= */
+.row img{
+    width: 50%;
+}
+.row img:nth-child(3){
+    margin-right: 20px;
+}
+.chair img{
+    width: 50%;
+}
+.form{
+    background: rgba(182, 181, 181, 0.342);
 }

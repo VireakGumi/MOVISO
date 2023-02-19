@@ -54,13 +54,15 @@ $('#confirm').click(function (event) {
             let id = $("#id").val();
             let username = $('#username').val();
             let card = $('#card_value').val();
+            let quantity = $('#quantity').val();
             let seat = $('#seat').val()
             let arr = seat.split(',');
             $.ajax({
                 url: 'controllers/buyticket/validate.with.js.php',
-                data: { name: username, card_num: card, id: id },
+                data: { 'name': username, 'card_num': card, 'quantity':quantity  ,'id': id },
                 type: 'POST',
                 success: function (response) {
+                    console.log(response);
                     if (Number(response)) {
                         cuteToast({
                             type: "success",

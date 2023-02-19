@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       
         $venueId=newVenue($_POST["cinemaname"],$_POST["address"]);
         
-        createShow($venueId,$_POST["title"],$_POST["numberticket"],$_POST["datetime"],$_POST["description"],$_POST["genre"],$_POST["duration"],$_POST["released"],$_POST["country"],$_POST["production"],$_POST["linktrailer"],$image,$_POST["price"],);
+        createShow($venueId,$_POST["title"],$_POST["numberticket"],$_POST["datetime"],$_POST["description"],$_POST["genre"],$_POST["duration"],$_POST["released"],$_POST["country"],$_POST["production"],$trailer,$image,$_POST["price"],);
         $isFound=true;
 
     }

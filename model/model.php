@@ -196,7 +196,7 @@ function newVenue($name, $address){
        
         return $movie['venue_id'];
 }
-function createTicket(int $movieId,int $userId,string $gate,int $row,int $seat) : bool
+function createTicket(int $movieId,int $userId,string $gate,string $row,int $seat) : bool
 {
     
     global $connection;
@@ -231,7 +231,7 @@ function sectionMovies($type){
 
 function getTicketByID($id){
     global $connection;
-    $query = "SELECT * FROM tickets WHERE user_id = :id";
+    $query = "SELECT * FROM tickets WHERE user_id = :id ORDER BY ticket_id DESC";
     $sate = $connection->prepare($query);
     $sate->execute([
         ':id' => $id
@@ -240,7 +240,7 @@ function getTicketByID($id){
 }
 function getMoveiByID($id){
     global $connection;
-    $query = "SELECT * FROM movies WHERE movies_id = :id";
+    $query = "SELECT * FROM movies WHERE movies_id = :id ";
     $sate = $connection->prepare($query);
     $sate->execute([
         ':id' => $id

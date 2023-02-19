@@ -65,7 +65,7 @@ $isValid = false;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $qauntityTicket = getDatakey('quantity');
-    $cardNumber = getDatakey('card-num');
+    $cardNumber = getDatakey('card_num');
     $cardName = getDatakey('name');
 
     if (empty($qauntityTicket)) {

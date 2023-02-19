@@ -108,7 +108,6 @@
                         </span>
                         <small class="text-danger"><?= !empty($cinemaName_error)? $cinemaName_error : "<p>.</p>"?></small>
 
-
                     </div>
                     <div id="production-field">
                         Production<input type="text" id="production_value" class="form-control"  name="production"
@@ -180,7 +179,7 @@
         </div>
         <div class="movie-btn">
             <button class="btn"><a href="/seller">back</a></button>
-            <button class="btn text-center">Add now</button>
+            <button class="btn text-center">Create</button>
 
         </div>
     </form>
