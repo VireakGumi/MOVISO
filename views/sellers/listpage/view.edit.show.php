@@ -5,7 +5,7 @@
     $vanue=  getVenueById($movie['venue_id']);
 ?>
 <?php require("views/partials/header.php"); ?>
-<img src="../../assets/istockphoto-915697084-170667a.jpg" alt="" class="background">
+<img src="../../assets/background/istockphoto-915697084-170667a.jpg" alt="" class="background">
 <form action="/update" method="POST" enctype="multipart/form-data" class="list_movie">
     <div class="d-flex flex-column">
         <h2 class="text-center contain-movie ">UPLOAD MOVIE </h2>

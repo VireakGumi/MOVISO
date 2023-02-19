@@ -1,17 +1,17 @@
 <?php require("views/partials/header.php"); ?>
 
-<img src="../../assets/bg-register-customer.png" alt="" class="background">
+<img src="../../assets/background/bg-register-customer.png" alt="" class="background">
 <form action="#" method="post">
     <div class="form_left">
-        <img src="../../assets/moviso-logo1.png" class="logo_on_form" alt="" width="65%">
+        <img src="../../assets/logo/moviso-logo1.png" class="logo_on_form" alt="" width="65%">
         <h3>Welcome</h3>
         <p>We build MOVISO website in purpose to increase the convenience for customers in booking
             movie tickets. With MOVISO you can booking tickets quickly and choose a seat which you prefer.
         </p>
         <div class="icon">
-            <img src="../../assets/icon-google.png" alt="" width="12%">
-            <img src="../../assets/icon-telegram.png" alt="" width="12%">
-            <img src="../../assets/icon-twifter.png" alt="" width="12%">
+            <img src="../../assets/logo/icon-google.png" alt="" width="12%">
+            <img src="../../assets/logo/icon-telegram.png" alt="" width="12%">
+            <img src="../../assets/logo/icon-twifter.png" alt="" width="12%">
         </div>
     </div>
     <div class="form_right">

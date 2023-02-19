@@ -5,7 +5,7 @@ require_once('views/partials/navbar.php');
         <div class="table-add-record d-flex justify-content-between mb-2">
 
             <h4>All Movies</h4>
-            <a href="/movie">Add New</a>
+            <a class="button" href="/movie">Add New</a>
         </div>
 
         <table class="table bg-white table-hover">
@@ -37,12 +37,12 @@ require_once('views/partials/navbar.php');
                     <td class="text-center"><?php echo $movie["number_ticket"];?></td>
                     <td class="text-center">
                         <a href="/edit?id=<?= $movie['movies_id'] ?>">
-                            <img src="../../assets/edit.png" alt="" width="25" class="color-primary">
+                            <img src="../../assets/logo/edit.png" alt="" width="25" class="color-primary">
                         </a>
                     </td>
                     <td class="text-center">
                         <a href="/delete?id=<?= $movie['movies_id']?>">
-                            <img src="../../assets/delete.png" alt="" width="25" class="">
+                            <img src="../../assets/logo/delete.png" alt="" width="25" class="">
                         </a>
                     </td>
                 </tr>

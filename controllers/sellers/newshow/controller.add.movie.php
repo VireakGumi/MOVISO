@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $image = $_FILES['image']['name'];
         $image_tmp_name=$_FILES['image']['tmp_name'];
-        $image_folder='assets/'. $image;
+        $image_folder='assets/upload/'. $image;
         move_uploaded_file($image_tmp_name, $image_folder);
       
         $venueId=newVenue($_POST["cinemaname"],$_POST["address"]);

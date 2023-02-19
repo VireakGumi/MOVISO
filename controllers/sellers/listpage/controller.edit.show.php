@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       $img = $_FILES['image']['name'];
       $description = $_POST["description"];
       if($img!="") {
-        move_uploaded_file($_FILES['image']['tmp_name'],'assets/'.$img);
+        move_uploaded_file($_FILES['image']['tmp_name'],'assets/upload/'.$img);
       }else {
         $img = $old;
       }

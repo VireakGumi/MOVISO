@@ -1,4 +1,48 @@
-$('#confirm').click(function () {
+const selectSeat = document.querySelector(".select_seat");
+const seats = document.querySelectorAll(".aSeat:not(.occupied)");
+const quantity = document.querySelector("#quantity");
+const total = document.querySelectorAll(".price");
+let price = $('#price').val();
+
+let arr = [];
+let aSeat = "../../assets/logo/seat.png";
+let selected = "../../assets/logo/selected.png";
+let rowOfSeat = 0;
+
+$(document).ready(function () {
+    $('.select_seat').click(function (e) {
+        if (e.target.checked) {
+            e.target.parentNode.querySelector('#img').src = selected
+            arr.push(e.target.value);
+        }
+        else {
+            e.target.parentNode.querySelector('#img').src = aSeat;
+            let n = 0;
+            for (let b of arr) {
+                if (b == e.target.value) {
+                    arr.splice(n, 1);
+                }
+                n++;
+            }
+        }
+        $('#seat').val(arr);
+        quantity.value = arr.length;
+        $('#showPrice').html(quantity.value * price);
+
+    })
+})
+function show(element){
+    document.querySelector(element).style.display = "block";
+    document.querySelector('#container').className = "container row";
+}
+function hide(element){
+
+    document.querySelector(element).style.display = "none";
+    document.querySelector('#container').className = "container";
+}
+
+
+$('#confirm').click(function (event) {
     cuteAlert({
         type: "question",
         title: "Ticket",
@@ -7,34 +51,53 @@ $('#confirm').click(function () {
         cancelText: "Cancel"
     }).then((e) => {
         if (e == ("confirm")) {
-            cuteToast({
-                type: "success",
-                title: "Confirmed",
-                message: "You succes to buy the ticket ",
-                timer: 3000
-            })
+            let id = $("#id").val();
+            let username = $('#username').val();
+            let card = $('#card_value').val();
+            let seat = $('#seat').val()
+            let arr = seat.split(',');
             $.ajax({
-                url: "test.php",
-                method: "POST",
-                data: { moives_id: movies_id, },
-                success: function (result) {
-                    $("#test").html(result);
-                }
+                url: 'controllers/buyticket/validate.with.js.php',
+                data: { name: username, card_num: card, id: id },
+                type: 'POST',
+                success: function (response) {
+                    if (Number(response)) {
+                        cuteToast({
+                            type: "success",
+                            title: "Confirmed",
+                            message: "You succes to buy the ticket ",
+                            timer: 3000
+                        })
+                        $("form").attr('action', '/buyticket');
+                        $("form").method = 'POST';
+                        $("form").submit();
+                    } else {
 
-            })
+                        cuteToast({
+                            type: "error",
+                            title: "Error",
+                            message: "You haven't fill yet",
+                            timer: 5000
+                        })
+                    }
+                }
+            });
         }
+
     })
+    event.preventDefault();
 })
+
 
 $("#slideshow > div:gt(0)").hide();
 
-setInterval(function() { 
-  $('#slideshow > div:first')
-  .fadeOut(1000)
-  .next()
-  .fadeIn(1000)
-  .end()
-  .appendTo('#slideshow');
+setInterval(function () {
+    $('#slideshow > div:first')
+        .fadeOut(1000)
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo('#slideshow');
 }, 4000);
 
 function userNameCheck() {
@@ -46,6 +109,33 @@ function userNameCheck() {
         document.querySelector('#user-field').classList = "fail";
     }
 }
+
+
+try {
+    fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function (response) {
+        return true; 2
+    }).catch(function (e) {
+        var carbonScript = document.createElement("script");
+        carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CE7DC2JW&placement=wwwcssscriptcom";
+        carbonScript.id = "_carbonads_js";
+        document.getElementById("carbon-block").appendChild(carbonScript);
+    });
+} catch (error) {
+    console.log(error);
+}
+
+
+
+(function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-46156385-1', 'cssscript.com');
+ga('send', 'pageview');
+
 
 function emailCheck() {
     let email = document.getElementById('email_value').value;

@@ -33,7 +33,6 @@ function validate_cardName($cardName, $userCardName)
 {
     return $cardName == $userCardName;
 }
-// and !is_numeric($cardName);
 function validate_quanityTicket($qauntityTicket, $numberTicket)
 {
     return $qauntityTicket <= $numberTicket;
